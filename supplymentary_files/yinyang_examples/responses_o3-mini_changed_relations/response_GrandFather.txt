@@ -1,9 +1,0 @@
-Below is one correct answer. In our ontology an “individual is a grand–parent” if it has at least one child who in turn has at least one child. In addition, note that the two positive examples (NonnaLina and Dora) are declared to be Female, while two of the negatives (NonnoLuigi and Gianni) are Male and the third (Maria) is a parent who is not a grand–parent. (Normally one would expect GrandFather to be Male, but because the given positive examples are female, the learned expression distinguishes those women who have grandchildren from the others.) 
-
-A complex class expression (in Manchester syntax) that covers exactly the positive examples and excludes the negatives is therefore:
-
-  Female and (hasChild some (hasChild some Person))
-
-In words: an individual that is Female and has at least one child who in turn has at least one child. 
-
-(If one were instead to learn the usual notion of “grandfather” – that is, a male grand–parent – the corresponding expression would be “Male and (hasChild some (hasChild some Person))”. But given that kb:NonnaLina and kb:Dora are our positive examples, the learned expression is as shown.)

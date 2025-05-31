@@ -1,4 +1,0 @@
-kb:Dino
-kb:Francesco
-kb:Mauro
-kb:Giggino

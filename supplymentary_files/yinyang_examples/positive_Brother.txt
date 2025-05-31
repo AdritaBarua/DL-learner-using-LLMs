@@ -1,5 +1,0 @@
-kb:Dino
-kb:Luigi
-kb:Mauro
-kb:Francesco
-kb:Giuseppe

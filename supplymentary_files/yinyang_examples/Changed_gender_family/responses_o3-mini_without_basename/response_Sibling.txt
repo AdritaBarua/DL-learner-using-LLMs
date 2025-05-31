@@ -1,5 +1,0 @@
-The answer is:
-
-  Person and (hasSibling some Thing)
-
-To explain briefly: when you inspect the individuals, every positive example (kb:Luigi, kb:Maria, kb:Dino, kb:Serena, kb:Ombretta, kb:Francesco, kb:Anna) is involved in at least one hasSibling relationship (for example, kb:Luigi has a sibling kb:Ombretta; kb:Maria is sibling to kb:Rosanna; kb:Francesco has a sibling kb:Giuseppe; kb:Anna is sibling with kb:NonnoLuigi). In contrast, none of the negatives (kb:Dora, kb:Gianni, kb:Luca) have any hasSibling relation asserted. Therefore, the class expression “Person and (hasSibling some Thing)” picks out exactly those individuals that have a sibling—and hence exactly the positives in the knowledge base.

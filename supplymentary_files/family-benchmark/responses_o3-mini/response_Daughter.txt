@@ -1,9 +1,0 @@
-Below is one plausible answer. In our knowledge base every individual is an instance of Thing and every person is a Person. In addition, being “a daughter” means the individual is (a) female and (b) a child (i.e. there is at least one “hasParent” relationship to some person). (Note that a female may be a parent too so we cannot simply rule out “married‐to” or “hasChild” restrictions.) Under these assumptions the positive examples (whose identifiers all begin “F…” and are known to be Female and appear in a “hasParent” statement) are distinguished from the negative examples (which either are male or are females without any hasParent link) by the following conjunctive expression:
-
-  Female and (hasParent some Person)
-
-In DL syntax you might write:
-
-  ex:Female ⊓ ∃ ex:hasParent.ex:Person
-
-This complex class expression captures the idea that a daughter is a female who has (at least one) parent.

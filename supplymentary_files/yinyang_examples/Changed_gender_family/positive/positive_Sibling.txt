@@ -1,7 +1,0 @@
-kb:Luigi
-kb:Maria
-kb:Dino
-kb:Serena
-kb:Ombretta
-kb:Francesco
-kb:Anna

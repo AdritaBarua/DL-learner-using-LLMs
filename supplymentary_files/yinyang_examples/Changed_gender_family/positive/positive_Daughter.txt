@@ -1,8 +1,0 @@
-kb:Serena
-kb:Ombretta
-kb:Valentina
-kb:Milly
-kb:Antonella
-kb:Marisella
-kb:Giovanna
-kb:Nella

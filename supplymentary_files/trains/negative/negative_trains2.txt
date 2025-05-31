@@ -1,3 +1,0 @@
-kb:east1
-kb:east2
-kb:east3

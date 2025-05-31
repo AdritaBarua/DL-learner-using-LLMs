@@ -1,7 +1,0 @@
-kb:Giovanna
-kb:Marisella
-kb:Ombretta
-kb:Serena
-kb:Valentina
-kb:Luca
-kb:Luigi
