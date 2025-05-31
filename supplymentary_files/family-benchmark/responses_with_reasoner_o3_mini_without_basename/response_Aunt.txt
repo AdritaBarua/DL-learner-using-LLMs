@@ -1,0 +1,28 @@
+❌ All 3 attempts were invalid.
+
+Last LLM output:
+1: Female and not { F10F200 F9F156 F2F15 F7F129 F10F189 F9F164 F7F118 F2F10 F6F97 F7F111 F4F55 F8F133 F9F145 F2F30 F3F48 F6F74 F9F169 } (pred. acc.: 100.00%, F‐measure: 100.00%)
+2: Female and not { F10F200 F9F156 F2F15 F7F129 F10F189 F9F164 F7F118 } (pred. acc.: 100.00%, F‐measure: 100.00%)
+3: Person and Female and not { F2F15 F7F118 F2F10 F6F97 F7F111 } (pred. acc.: 100.00%, F‐measure: 100.00%)
+4: Female and (hasSibling some Thing) and not { F7F118 F9F145 } (pred. acc.: 100.00%, F‐measure: 100.00%)
+5: Female and not { F10F200 F9F156 F2F15 } (pred. acc.: 100.00%, F‐measure: 100.00%)
+
+Last reasoner feedback:
+Reasoner: Pellet
+--- Expr 1 ---
+LLM expr: Female and not { F10F200 F9F156 F2F15 F7F129 F10F189 F9F164 F7F118 F2F10 F6F97 F7F111 F4F55 F8F133 F9F145 F2F30 F3F48 F6F74 F9F169 }
+Reported accuracy: 100.00%
+Exception in thread "main" org.semanticweb.owlapi.manchestersyntax.renderer.ParserException: Encountered F9F156 at line 1 column 26. Expected one of:
+	,
+	}
+
+	at org.semanticweb.owlapi.manchestersyntax.parser.ManchesterOWLSyntaxParserImpl$ExceptionBuilder.build(ManchesterOWLSyntaxParserImpl.java:2562)
+	at org.semanticweb.owlapi.manchestersyntax.parser.ManchesterOWLSyntaxParserImpl.parseObjectOneOf(ManchesterOWLSyntaxParserImpl.java:1152)
+	at org.semanticweb.owlapi.manchestersyntax.parser.ManchesterOWLSyntaxParserImpl.parseNestedClassExpression(ManchesterOWLSyntaxParserImpl.java:1111)
+	at org.semanticweb.owlapi.manchestersyntax.parser.ManchesterOWLSyntaxParserImpl.parseNonNaryClassExpression(ManchesterOWLSyntaxParserImpl.java:722)
+	at org.semanticweb.owlapi.manchestersyntax.parser.ManchesterOWLSyntaxParserImpl.parseIntersection(ManchesterOWLSyntaxParserImpl.java:611)
+	at org.semanticweb.owlapi.manchestersyntax.parser.ManchesterOWLSyntaxParserImpl.parseUnion(ManchesterOWLSyntaxParserImpl.java:634)
+	at org.semanticweb.owlapi.manchestersyntax.parser.ManchesterOWLSyntaxParserImpl.parseClassExpression(ManchesterOWLSyntaxParserImpl.java:593)
+	at com.example.MergedReasonerCheck.main(MergedReasonerCheck.java:251)
+
+Processing time for o3-mini: 61.14 seconds

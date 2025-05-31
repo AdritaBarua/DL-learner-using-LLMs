@@ -1,0 +1,27 @@
+To determine the complex class expression for "Father" based on the given positive and negative examples, we need to identify the common characteristics and relationships that apply to the positive examples but not to the negative examples. 
+
+### Analysis:
+
+1. **Class Membership**:
+   - All positive examples are instances of the class `Male`.
+   - Negative examples include both `Male` and `Female` instances.
+
+2. **Relationships**:
+   - Positive examples have relationships indicating they have children (`hasChild`).
+   - Negative examples may have `hasChild` relationships, but they also include individuals without children or with other relationships.
+
+3. **Common Relationships in Positive Examples**:
+   - Many positive examples have the `hasChild` relationship, which is a key indicator of being a "Father".
+
+4. **Exclusion of Negative Examples**:
+   - Negative examples include individuals who are not `Male` or do not have the `hasChild` relationship.
+
+### Complex Class Expression:
+
+Based on the analysis, the complex class expression for "Father" can be constructed as follows:
+
+```plaintext
+Male and (hasChild some Thing)
+```
+
+This expression indicates that a "Father" is a `Male` who has at least one child, which aligns with the characteristics of the positive examples and excludes the negative examples.

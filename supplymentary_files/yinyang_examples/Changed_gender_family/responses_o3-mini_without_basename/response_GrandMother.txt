@@ -1,0 +1,14 @@
+One acceptable answer was to “pin down” the positives as people who have no parents, have at least two children—and whose children are both parents—while one of the negatives is ruled out because it already has a sibling (and another because it has only one child, and another because it is not a founder). For example, using our KB we can show that:
+
+• kb:NonnaLina has no asserted parent and has two children (kb:Nella and kb:Dino) and no asserted sibling.
+• kb:Dora has no asserted parent and has two children (kb:Rosanna and kb:Maria) and no asserted sibling.
+• In contrast, kb:NonnoLuigi has a sibling (kb:Anna), kb:Gianni has only one child (kb:Rosanna) and kb:Maria is not a “founder” (she has a parent, namely kb:Dora).
+
+A complex class expression that “covers” exactly the two positives and not the three negatives is therefore one that says an individual is a Person, has no parent, has at least two children, and has no sibling. In Manchester syntax (using kb: for the vocabulary) one acceptable answer is:
+
+  kb:Person 
+   and not (kb:hasParent some kb:Thing) 
+   and (kb:hasChild min 2) 
+   and not (kb:hasSibling some kb:Thing)
+
+Any equivalent expression that captures these distinguishing features is acceptable.

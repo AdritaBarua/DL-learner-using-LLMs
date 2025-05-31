@@ -1,0 +1,11 @@
+One plausible answer was to capture that an “uncle” is a male who has a sibling who is a parent. In other words, every positive example is (i) an instance of Male and (ii) has at least one sibling that in turn has at least one child. (None of the negatives have that pattern.) In DL notation one acceptable complex class expression is therefore:
+
+  Male and (hasSibling some (hasChild some Thing))
+
+This reads as “an individual that is Male and that has a sibling who has at least one child (i.e. some Thing).” 
+
+This expression excludes the negatives (which either are not male or do not have a sibling with a child) while it is satisfied by all the positives. 
+
+Thus, based on the knowledge base and examples, a valid answer for the complex class expression for Uncle is:
+
+  Male ⊓ ∃hasSibling.(∃hasChild.Thing)

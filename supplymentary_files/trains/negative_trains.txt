@@ -1,0 +1,5 @@
+kb:west6
+kb:west7
+kb:west8
+kb:west9
+kb:west10

@@ -1,0 +1,5 @@
+Below is one acceptable answer. Notice that every one of the positive examples has at least one parent while neither of the negatives does. In Manchester syntax one may “learn” Aunt by saying that an Aunt is a Person who has a parent. That is, one acceptable complex class expression is:
+
+  kb:Person and (kb:hasParent some kb:Person)
+
+This expression covers kb:Luigi, kb:Maria, kb:Dino, kb:Serena, kb:Ombretta and kb:Luca (because each of these has at least one kb:hasParent statement) while neither kb:Dora nor kb:Gianni has any parent assertion. (There are, of course, other ways of “explaining” Aunt—but this is one that DL‐Learner might generate from the given examples.)

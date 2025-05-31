@@ -1,0 +1,17 @@
+We can show that every individual in the positive set is a grand‐parent (that is, it has at least one child who is itself a parent), whereas none of the negatives is a grand‐parent.
+
+For example, consider the positives:
+
+ • kb:NonnaLina has a child kb:Nella (and also kb:Dino) and kb:Nella in turn is parent of kb:Giovanna (and kb:Marisella).  
+ • kb:NonnoLuigi has a child kb:Nella (and kb:Dino) and again one of those children is a parent.  
+ • kb:Carmela is parent of kb:Giuseppe and kb:Francesco, and kb:Francesco is parent of kb:Valentina (and kb:Milly, kb:Antonella).  
+ • kb:Girolamo has a child kb:Francesco (the other child kb:Giuseppe need not be a parent) and kb:Francesco is parent.  
+ • kb:Isidoro is parent of kb:Luciano and kb:Luciano is parent of kb:Luca.
+
+None of the negatives has even one child who is a parent. (For example, although kb:Dino, kb:Maria, kb:Mauro, and kb:Nella are themselves parents, none of their children is recorded as having any child.) 
+
+Thus a class expression distinguishing the positives from the negatives is one that says “is a parent of someone who is also a parent.” In Manchester syntax (using the names from the KB) one correct answer is:
+
+  hasChild some (hasChild some Person)
+
+That is, any kb:Person that has at least one kb:hasChild relationship to an individual that in turn has some kb:hasChild relationship. This expression covers kb:NonnaLina, kb:NonnoLuigi, kb:Carmela, kb:Girolamo and kb:Isidoro but none of the negatives.

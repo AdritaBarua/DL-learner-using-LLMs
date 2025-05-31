@@ -1,0 +1,64 @@
+✅ SUCCESS on attempt 1
+
+LLM output:
+1: Female and (hasChild some Female) (accuracy 100%, length 5, depth 1)
+2: Female and (hasChild some (hasChild some Thing)) (accuracy 100%, length 8, depth 2)
+3: Female and (hasChild some (hasChild some Person)) (accuracy 100%, length 9, depth 2)
+4: Female and (hasChild some (hasChild some Female)) (accuracy 100%, length 10, depth 2)
+5: Female and (hasChild some (hasChild some (not Male))) (accuracy 100%, length 12, depth 3)
+
+Reasoner feedback:
+Reasoner: Pellet
+--- Expr 1 ---
+LLM expr: Female and (hasChild some Female)
+Reported accuracy: 100.00%
+Positive ex. NonnaLina -> true
+Positive ex. Dora -> true
+Negative ex. Gianni -> false
+Negative ex. Maria -> true
+Negative ex. NonnoLuigi -> false
+Reasoner accuracy for expr 1: 80.00% (4/5 correct)
+Expr 1 is INVALID.
+--- Expr 2 ---
+LLM expr: Female and (hasChild some (hasChild some Thing))
+Reported accuracy: 100.00%
+Positive ex. NonnaLina -> true
+Positive ex. Dora -> true
+Negative ex. Gianni -> false
+Negative ex. Maria -> false
+Negative ex. NonnoLuigi -> false
+Reasoner accuracy for expr 2: 100.00% (5/5 correct)
+Expr 2 is VALID.
+--- Expr 3 ---
+LLM expr: Female and (hasChild some (hasChild some Person))
+Reported accuracy: 100.00%
+Positive ex. NonnaLina -> true
+Positive ex. Dora -> true
+Negative ex. Gianni -> false
+Negative ex. Maria -> false
+Negative ex. NonnoLuigi -> false
+Reasoner accuracy for expr 3: 100.00% (5/5 correct)
+Expr 3 is VALID.
+--- Expr 4 ---
+LLM expr: Female and (hasChild some (hasChild some Female))
+Reported accuracy: 100.00%
+Positive ex. NonnaLina -> true
+Positive ex. Dora -> true
+Negative ex. Gianni -> false
+Negative ex. Maria -> false
+Negative ex. NonnoLuigi -> false
+Reasoner accuracy for expr 4: 100.00% (5/5 correct)
+Expr 4 is VALID.
+--- Expr 5 ---
+LLM expr: Female and (hasChild some (hasChild some (not Male)))
+Reported accuracy: 100.00%
+Positive ex. NonnaLina -> true
+Positive ex. Dora -> true
+Negative ex. Gianni -> false
+Negative ex. Maria -> false
+Negative ex. NonnoLuigi -> false
+Reasoner accuracy for expr 5: 100.00% (5/5 correct)
+Expr 5 is VALID.
+=== Overall accuracy: 80.00%
+
+Processing time for gpt-4o: 9.51 seconds

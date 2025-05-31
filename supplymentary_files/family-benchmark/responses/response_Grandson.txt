@@ -1,0 +1,34 @@
+To determine the complex class expression for "Grandson" based on the given positive and negative examples, we need to analyze the relationships and properties that are common among the positive examples but not present in the negative examples. 
+
+### Analysis:
+
+1. **Positive Examples:**
+   - All positive examples are instances of the class `Male`.
+   - Many of the positive examples have a `hasParent` relationship, indicating they are children of someone.
+   - Some positive examples have a `hasChild` relationship, indicating they are parents themselves.
+   - The positive examples are likely to have a `hasParent` relationship with someone who also has a `hasParent` relationship, indicating a grandparent relationship.
+
+2. **Negative Examples:**
+   - The negative examples include both `Male` and `Female` instances.
+   - Some negative examples have a `hasParent` relationship but do not fit the pattern of being a grandson.
+   - The negative examples do not consistently have the `hasParent` relationship with someone who is also a child, breaking the grandparent pattern.
+
+### Complex Class Expression:
+
+Based on the analysis, the complex class expression for "Grandson" can be constructed as follows:
+
+- **Class:** `Male`
+- **Relationships:**
+  - `hasParent` some (`hasParent` some `Thing`)
+
+This expression can be interpreted as: A "Grandson" is a `Male` who has a parent, and that parent also has a parent (i.e., a grandparent).
+
+### Conclusion:
+
+The complex class expression for "Grandson" is:
+
+```plaintext
+Male and (hasParent some (hasParent some Thing))
+```
+
+This expression captures the essence of a grandson being a male who is a child of someone who is also a child of another person, fitting the grandparent-grandchild relationship pattern.

@@ -1,0 +1,38 @@
+To derive a complex class expression for the concept of "Children" based on the given positive and negative examples, we need to analyze the relationships and properties that distinguish the positive examples from the negative ones.
+
+### Positive Examples:
+- **Maria**
+- **Nella**
+- **Rosanna**
+- **Dino**
+- **Francesco**
+- **NonnaLina**
+- **NonnoLuigi**
+- **Mauro**
+- **Carmela**
+- **Girolamo**
+
+### Negative Examples:
+- **Giovanna**
+- **Marisella**
+- **Ombretta**
+- **Serena**
+- **Valentina**
+- **Luca**
+- **Luigi**
+
+### Analysis:
+1. **Positive Examples Analysis:**
+   - All positive examples have the property `hasChild` with at least one individual. This means they are parents.
+   - They are instances of either `Male` or `Female`, which are subclasses of `Person`.
+
+2. **Negative Examples Analysis:**
+   - The negative examples do not have the `hasChild` property, meaning they are not parents in the given knowledge base.
+   - They are also instances of either `Male` or `Female`.
+
+### Complex Class Expression:
+Given the analysis, the complex class expression that captures the essence of the positive examples (those who have children) and excludes the negative examples (those who do not have children) is:
+
+\[ \text{Person} \, \text{and} \, (\text{hasChild} \, \text{some} \, \text{Thing}) \]
+
+This expression states that the individuals are of type `Person` and have at least one `hasChild` relationship with any `Thing` (which, in this ontology, is equivalent to any `Person`). This expression correctly includes all the positive examples and excludes the negative ones based on the given knowledge base.

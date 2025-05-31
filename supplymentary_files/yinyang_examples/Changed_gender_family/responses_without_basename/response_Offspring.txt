@@ -1,0 +1,65 @@
+To determine the complex class expression that applies to the positive examples but not to the negative examples, we need to analyze the relationships and class memberships of the individuals in the knowledge base.
+
+### Positive Examples:
+1. **kb:Luigi**
+   - Instance of: Female, Person
+   - Relationships: 
+     - hasParent: Dino, Maria
+     - hasSibling: Serena, Ombretta
+
+2. **kb:Maria**
+   - Instance of: Male, Person
+   - Relationships:
+     - hasChild: Luigi, Serena, Ombretta
+     - hasParent: Dora
+     - hasSibling: Rosanna
+
+3. **kb:Dino**
+   - Instance of: Female, Person
+   - Relationships:
+     - hasChild: Luigi, Serena, Ombretta
+     - hasParent: NonnoLuigi, NonnaLina
+     - hasSibling: Nella
+
+4. **kb:Serena**
+   - Instance of: Male, Person
+   - Relationships:
+     - hasParent: Dino, Maria
+     - hasSibling: Luigi, Ombretta
+
+5. **kb:Ombretta**
+   - Instance of: Male, Person
+   - Relationships:
+     - hasParent: Dino, Maria
+     - hasSibling: Serena, Luigi
+
+6. **kb:Luca**
+   - Instance of: Female, Person
+   - Relationships:
+     - hasParent: Luciano, Lucrezia
+
+### Negative Examples:
+1. **kb:Dora**
+   - Instance of: Male
+   - Relationships:
+     - hasChild: Maria, Rosanna
+
+2. **kb:Gianni**
+   - Instance of: Female
+   - Relationships:
+     - hasChild: Maria, Rosanna
+
+### Analysis:
+- All positive examples are instances of the class `Person`.
+- The positive examples have relationships involving `hasParent` and `hasSibling`.
+- The positive examples are involved in sibling relationships, which is a symmetric property.
+- The negative examples, Dora and Gianni, are not involved in sibling relationships with the positive examples.
+
+### Complex Class Expression:
+Given the analysis, the complex class expression that applies to the positive examples but not to the negative examples is:
+
+```plaintext
+Person and (hasSibling some Thing)
+```
+
+This expression captures the fact that all positive examples are persons who have at least one sibling, while the negative examples do not share this characteristic in the context of the given knowledge base.

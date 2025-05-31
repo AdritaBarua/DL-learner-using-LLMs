@@ -1,0 +1,61 @@
+To find the complex class expression, we need to identify the properties and characteristics that apply to the positive examples (kb:east1, kb:east2, kb:east3) but not to the negative examples (kb:west7, kb:west9).
+
+### Analysis of Positive Examples:
+
+1. **kb:east1:**
+   - hasCar: car_14, car_13, car_12, car_11
+   - car_14: ShortCar, OpenCar, Car, hasShape rectangle, load circle, wheels two, loadCount one
+   - car_13: Car, OpenCar, LongCar, hasShape rectangle, load hexagon, wheels three, loadCount one
+   - car_12: ShortCar, Car, ClosedCar, hasShape rectangle, load triangle, wheels two, loadCount one
+   - car_11: Car, OpenCar, LongCar, hasShape rectangle, load rectangle, wheels two, loadCount three
+
+2. **kb:east2:**
+   - hasCar: car_21, car_23, car_22
+   - car_21: ShortCar, Car, OpenCar, hasShape u_shaped, load triangle, wheels two, loadCount one
+   - car_23: ShortCar, Car, ClosedCar, hasShape rectangle, load circle, wheels two, loadCount two
+   - car_22: ShortCar, Car, OpenCar, hasShape u_shaped, load rectangle, wheels two, loadCount one
+
+3. **kb:east3:**
+   - hasCar: car_31, car_32, car_33
+   - car_31: ShortCar, Car, OpenCar, hasShape rectangle, load triangle, wheels two, loadCount one
+   - car_32: ShortCar, Car, ClosedCar, hasShape hexagon, load triangle, wheels two, loadCount one
+   - car_33: Car, ClosedCar, LongCar, hasShape rectangle, load triangle, wheels three, loadCount one
+
+### Analysis of Negative Examples:
+
+1. **kb:west7:**
+   - hasCar: car_73, car_71, car_72
+   - car_73: Car, JaggedCar, LongCar, hasShape rectangle, loadCount zero, wheels two
+   - car_71: ShortCar, Car, DoubleCar, hasShape rectangle, load circle, wheels two, loadCount one
+   - car_72: ShortCar, Car, OpenCar, hasShape u_shaped, load triangle, wheels two, loadCount one
+
+2. **kb:west9:**
+   - hasCar: car_92, car_91, car_94, car_93
+   - car_92: Car, JaggedCar, LongCar, hasShape rectangle, load rectangle, wheels two, loadCount one
+   - car_91: ShortCar, Car, OpenCar, hasShape u_shaped, load circle, wheels two, loadCount one
+   - car_94: ShortCar, Car, OpenCar, hasShape u_shaped, load circle, wheels two, loadCount one
+   - car_93: ShortCar, Car, OpenCar, hasShape rectangle, load rectangle, wheels two, loadCount one
+
+### Identifying Common Characteristics:
+
+- **Positive Examples:**
+  - Common car types: ShortCar, OpenCar, ClosedCar
+  - Common shapes: rectangle, u_shaped
+  - Common loads: circle, triangle
+  - Common wheel count: two
+  - Common load count: one
+
+- **Negative Examples:**
+  - Common car types: JaggedCar, LongCar, DoubleCar
+  - Common shapes: rectangle, u_shaped
+  - Common loads: circle, triangle, rectangle
+  - Common wheel count: two
+  - Common load count: one, zero
+
+### Complex Class Expression:
+
+The complex class expression should capture the unique characteristics of the positive examples that are not present in the negative examples. One distinguishing feature is the presence of ClosedCar in the positive examples, which is not present in the negative examples.
+
+Therefore, the complex class expression is:
+
+**hasCar some (ClosedCar and ShortCar)**

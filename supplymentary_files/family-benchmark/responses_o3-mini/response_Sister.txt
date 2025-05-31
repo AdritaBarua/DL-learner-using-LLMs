@@ -1,0 +1,23 @@
+We can show—in a “DL‐Learner style” answer—that a good candidate for “Sister” is a class expression that picks out exactly those females that are known to have at least one sibling. (In our sample “Brother” definition the DL expression was
+
+  Male and (hasSibling some Thing)
+
+so by symmetry a natural definition for Sister is:)
+
+  Female and (hasSibling some Thing)
+
+How do we arrive at this?
+
+1. All of the positive examples have IDs beginning with “F” (for female) and (directly or by inference) are members of the class Female. In addition, by inspecting the many assertions in the knowledge base you can see that each positive individual is connected by at least one “hasSibling” relationship to some other individual (for example, F1F5 and F1F7 are siblings; F10F175 and F10F177 are explicitly asserted as having a sibling relationship; F10F186’s only sibling is F10M173 but that is enough to know that F10F186 is not isolated).
+
+2. In contrast, many of the negative examples are either not female (their identifiers such as “M” in F4M54, F9M146, F1M1, etc. show that they belong to class Male) or are “female‐named” individuals that are not known to have any sibling relations (for example, F2F14, F7F124, F10F189, etc.). Therefore the simple combination of being female and having at least one sibling distinguishes the positive examples.
+
+Thus, the complex class expression to capture “Sister” is:
+
+  Female and (hasSibling some Thing)
+
+In OWL Manchester Syntax you could also write it as:
+
+  Female ⊓ (hasSibling some Thing)
+
+This expression correctly covers all our positive examples while ruling out the negatives.

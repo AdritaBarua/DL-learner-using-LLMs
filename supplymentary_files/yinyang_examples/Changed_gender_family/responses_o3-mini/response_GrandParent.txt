@@ -1,0 +1,21 @@
+We can view a “grand‐parent” as a person who has a child who in turn has a child—that is, someone with a two‐generation “hasChild” chain. In our ontology the property hasChild has range Person, so we can express that idea simply. In Manchester syntax a common way to define GrandParent is as follows:
+
+  Person and (hasChild some (hasChild some Person))
+
+Let’s briefly check this against our examples:
+
+• kb:NonnaLina has a child kb:Nella (and also kb:Dino) and kb:Nella (for example) is the parent of kb:Giovanna and kb:Marisella. So NonnaLina meets (hasChild some (hasChild some Person)).
+
+• kb:NonnoLuigi is the parent of kb:Nella and kb:Dino, each of whom have children (kb:Nella’s children include kb:Giovanna/Marisella; kb:Dino’s children include kb:Luigi, kb:Ombretta, kb:Serena).
+
+• kb:Carmela is the parent of kb:Francesco, and Francesco is in turn the parent of kb:Milly, kb:Antonella, and kb:Valentina.
+
+• kb:Girolamo has children kb:Giuseppe and kb:Francesco; again, Francesco has children.
+
+• kb:Isidoro has child kb:Luciano, and Luciano has child kb:Luca.
+
+On the other hand, none of the negative individuals (who are not grandparents) have a child who is also a parent. (For example, kb:Giovanna and kb:Marisella are present as children but do not have any known offspring.)
+
+Thus, the complex class expression for GrandParent based on our knowledge base is:
+
+  Person and (hasChild some (hasChild some Person))

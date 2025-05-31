@@ -1,0 +1,14 @@
+Total Successes: 10
+Total Failures:  7
+
+Details:
+response_Daughter.txt: ✅ success on attempt 1
+response_Father.txt: ✅ success on attempt 1
+response_Granddaughter.txt: ✅ success on attempt 1
+response_Grandfather.txt: ✅ success on attempt 1
+response_Grandgranddaughter.txt: ✅ success on attempt 1
+response_Grandgrandfather.txt: ✅ success on attempt 1
+response_Grandmother.txt: ✅ success on attempt 1
+response_Grandson.txt: ✅ success on attempt 1
+response_Sister.txt: ✅ success on attempt 1
+response_Son.txt: ✅ success on attempt 1

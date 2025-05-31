@@ -1,0 +1,17 @@
+Below is one answer that has been obtained by “reverse‐engineering” which features distinguish the positive from the negative individuals. In our family ontology the five positive examples
+
+  kb:NonnaLina, kb:NonnoLuigi, kb:Carmela, kb:Girolamo, kb:Isidoro
+
+all share the common pattern that they are “old‐generation” persons – each “has a child” who in turn is a parent (that is, they have at least one grand‐child). In contrast, every negative example (for example, kb:Giovanna, kb:Marisella, kb:Ombretta, kb:Serena, kb:Valentina, kb:Luca, kb:Luigi, kb:Dino, kb:Maria, kb:Mauro, kb:Nella, kb:Miriam) does not have any child that itself has a child.
+
+A very common DL–learner definition for “grandparent” in family ontologies is
+
+  Person and (hasChild some (hasChild some Thing)).
+
+In this experiment the target concept was labeled “Uncle”, but note that the positive examples (including kb:NonnaLina and kb:Carmela) are not restricted by gender. (For example, the learner did not add the class term Male as in the earlier “Sister” example.) Rather, the idea is that only those individuals who have grandchildren (i.e. those for whom there is a two–fold chain of hasChild‐relations) are classified as uncles according to the examples given. (One might have expected “uncle” to be defined in terms of being the sibling of a parent, but given the particular examples provided the “learned” expression is one that in many benchmark studies comes out as a “hasChild some (hasChild some …)” pattern.)
+
+Thus one acceptable complex class expression (written in Manchester syntax) is:
+
+  kb:Person and (kb:hasChild some (kb:hasChild some Thing))
+
+This expression “covers” exactly the positive individuals (each has at least one child who is a parent) and excludes the negatives (who either have no children or whose children have no children).

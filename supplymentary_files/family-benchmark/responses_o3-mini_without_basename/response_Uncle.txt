@@ -1,0 +1,21 @@
+One answer that has been obtained using DL‐Learner’s approach is to “explain” the chosen male individuals in terms of an “extended family” structure. In our knowledge–base all the examples in the positive set are male individuals who (by virtue of their family data) have at least one sibling, whereas the males in the negative set (even if they are male too) do not have any sibling in the asserted graph. (In other words, when one “asks” for a class that covers e.g. F2M11, F2M13, F2M20, … F10M196 but not F2M9, F3M43, F7M117, F9M165, F10M188, … the learner “discovers” that being male plus having at least one sibling is exactly what distinguishes the two groups.)
+
+A complex class expression that “captures” this is
+
+  Male and (hasSibling some Thing)
+
+In OWL Manchester syntax you might write:
+
+  Male and (hasSibling some owl:Thing)
+
+This is the answer reported by DL‐Learner for the above positive and negative examples. 
+
+Below is some short explanation:
+– All the individuals in the positive set are instances of Male.
+– In addition, each one of these males is “embedded” in a family with at least one other child (that is, the parent has at least two children—which in our ontology gives rise to an asserted hasSibling relation).
+– In contrast, the male individuals in the negative set lack a corresponding “hasSibling” assertion.
+Thus, using the knowledge‐base the complex class expression that “covers” (i.e. describes) the positive examples but not the negatives is:
+
+  Male and (hasSibling some Thing)
+
+That is the complex class expression generated in this case.

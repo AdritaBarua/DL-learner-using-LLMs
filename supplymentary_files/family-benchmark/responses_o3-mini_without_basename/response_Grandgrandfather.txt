@@ -1,0 +1,9 @@
+One acceptable answer was to “hone‐in” on those male individuals that are “family‐founders” – that is, they are male, they are in a marriage (so they have a spouse) and they are parents (i.e. they have at least one child), whereas most of the males that are not “founders” (or are still “growing up”) either are not married or do not have any children. For example, in family F2 the founders F2M20, F2M29 and F2M9 (which have a spouse and are registered as having a child) contrast with F2M34 (which – even though he may have a child – appears in a generation that is “child‐of” someone). In F10 the sole positive F10M171 is married to F10F172 and is a father, whereas the negatives F10M190, F10M182 and F10M173 (even when they are male and sometimes have children) are not recorded as having a spouse. 
+
+A complex class expression that distinguishes the positive examples from the negatives is therefore one that “selects” males who are both married and are parents. (In OWL–DL syntax this is often written in “Manchester syntax”.) For example, one acceptable answer is
+
+  Male and (married some Thing) and (hasChild some Thing)
+
+This expression says an individual is in the target class if it is a Male, has at least one spouse (via the “married” property), and has at least one child (via the “hasChild” property). In the given knowledge base the individuals in the positive set all fall into that category, whereas those in the negative set fail one or more of these conditions.
+
+Note that other answers are possible (depending on which properties the learner uses) but the above expression is an acceptable DL‐learner–style answer.

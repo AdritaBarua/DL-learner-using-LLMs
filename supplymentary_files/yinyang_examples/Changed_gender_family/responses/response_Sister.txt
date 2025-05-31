@@ -1,0 +1,42 @@
+To find the complex class expression for "Sister" using the given positive and negative examples, we need to identify the properties and class memberships that apply to all the positive examples but none of the negative examples.
+
+### Analysis:
+
+1. **Class Membership:**
+   - All positive examples are instances of `Person`.
+   - All positive examples are instances of `Female`.
+   - Negative examples are also instances of `Person` and `Female`.
+
+2. **Properties:**
+   - **hasSibling:** 
+     - Antonella has siblings: Valentina, Milly.
+     - Giovanna has a sibling: Marisella.
+     - Maria has a sibling: Rosanna.
+     - Marisella has a sibling: Giovanna.
+     - Milly has siblings: Antonella, Valentina.
+     - Miriam has siblings: Paolo, Emilia, Mauro.
+     - Nella has a sibling: Dino.
+     - Ombretta has siblings: Luigi, Serena.
+     - Rosanna has a sibling: Maria.
+     - Serena has siblings: Luigi, Ombretta.
+     - Valentina has siblings: Antonella, Milly.
+
+   - **hasParent:**
+     - All positive examples have at least one parent, but this is also true for negative examples.
+
+3. **Symmetric Property:**
+   - The `hasSibling` property is symmetric, meaning if A hasSibling B, then B hasSibling A.
+
+### Conclusion:
+
+The key distinguishing feature for the positive examples is the presence of the `hasSibling` property, which is not exclusive to the negative examples. However, since all positive examples are instances of `Female` and have siblings, while the negative examples do not consistently have this property, we can use this to define the complex class expression.
+
+### Complex Class Expression for Sister:
+
+The complex class expression for "Sister" is:
+
+```
+Female and (hasSibling some Thing)
+```
+
+This expression captures the fact that all positive examples are female and have at least one sibling, which is not consistently true for the negative examples.

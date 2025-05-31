@@ -1,0 +1,55 @@
+To find a complex class expression that applies to the positive examples but not to the negative examples, we need to analyze the relationships and properties associated with each individual in the knowledge base.
+
+### Positive Examples:
+1. **Luigi**
+   - Male
+   - hasParent: Dino, Maria
+   - hasSibling: Ombretta, Serena
+
+2. **Maria**
+   - Female
+   - hasChild: Serena, Ombretta, Luigi
+   - hasSibling: Rosanna
+
+3. **Dino**
+   - Male
+   - hasChild: Luigi, Ombretta, Serena
+   - hasSibling: Nella
+   - hasParent: NonnaLina, NonnoLuigi
+
+4. **Serena**
+   - Female
+   - hasParent: Maria, Dino
+   - hasSibling: Luigi, Ombretta
+
+5. **Ombretta**
+   - Female
+   - hasParent: Maria, Dino
+   - hasSibling: Luigi, Serena
+
+6. **Luca**
+   - Male
+   - hasParent: Luciano, Lucrezia
+
+### Negative Examples:
+1. **Dora**
+   - Female
+   - hasChild: Maria, Rosanna
+
+2. **Gianni**
+   - Male
+   - hasChild: Maria, Rosanna
+
+### Analysis:
+- All positive examples have a parent-child relationship with either Maria or Dino.
+- The negative examples do not have a parent-child relationship with Maria or Dino.
+- The positive examples are either children of Maria or Dino, or they are Maria or Dino themselves.
+
+### Complex Class Expression:
+The complex class expression that captures the positive examples but not the negative examples is:
+
+```plaintext
+(hasParent value Maria) or (hasParent value Dino) or (self value Maria) or (self value Dino)
+```
+
+This expression indicates that the individuals are either Maria or Dino themselves, or they have Maria or Dino as a parent. This expression applies to all the positive examples and excludes the negative examples.

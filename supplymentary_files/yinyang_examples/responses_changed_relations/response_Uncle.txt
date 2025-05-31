@@ -1,0 +1,48 @@
+To derive a complex class expression for the concept of "Uncle" based on the given positive and negative examples, we need to analyze the relationships and properties that distinguish the positive examples from the negative ones.
+
+### Positive Examples:
+- **NonnaLina**
+- **NonnoLuigi**
+- **Carmela**
+- **Girolamo**
+- **Isidoro**
+
+### Negative Examples:
+- **Giovanna**
+- **Marisella**
+- **Ombretta**
+- **Serena**
+- **Valentina**
+- **Luca**
+- **Luigi**
+- **Dino**
+- **Maria**
+- **Mauro**
+- **Nella**
+- **Miriam**
+
+### Analysis:
+1. **Positive Examples Characteristics:**
+   - All positive examples are instances of the class `Person`.
+   - They have relationships indicating they are parents or have children, but not necessarily siblings.
+   - They are not directly siblings with the negative examples.
+
+2. **Negative Examples Characteristics:**
+   - The negative examples include individuals who are siblings or children of other individuals.
+   - They do not have the same parental relationships as the positive examples.
+
+3. **Distinguishing Features:**
+   - The positive examples are not directly siblings with the negative examples.
+   - The positive examples have children, which might be a distinguishing feature.
+   - The positive examples are not directly related to the negative examples through the `hasSibling` property.
+
+### Complex Class Expression:
+Given the analysis, the complex class expression for "Uncle" could be derived by focusing on the properties that apply to the positive examples but not to the negative ones. Since the positive examples are not siblings with the negative examples and have children, we can use these features to form the expression.
+
+A possible complex class expression for "Uncle" could be:
+
+```plaintext
+Person and (hasChild some Person) and not (hasSibling some {Giovanna, Marisella, Ombretta, Serena, Valentina, Luca, Luigi, Dino, Maria, Mauro, Nella, Miriam})
+```
+
+This expression captures the idea that an "Uncle" is a `Person` who has a `hasChild` relationship with some `Person` and does not have a `hasSibling` relationship with any of the negative examples. This distinguishes the positive examples from the negative ones based on the given ontology.

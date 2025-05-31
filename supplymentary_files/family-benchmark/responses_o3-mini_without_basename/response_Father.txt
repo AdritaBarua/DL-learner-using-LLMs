@@ -1,0 +1,5 @@
+One reasonable answer found by DL‐Learner on this family–ontology is that the positive examples (which come from the “father‐generation”) are exactly those male individuals who are “producers” – that is, who have at least one child (an instance of Person) – whereas many of the negative examples (even though some are male) do not have any outgoing hasChild–links. In description‐logic syntax one answer is:
+
+  Male and (hasChild some Person)
+
+That is, the DL class expression “Male ⊓ ∃hasChild.Person” covers all the positive examples but not the negative ones.

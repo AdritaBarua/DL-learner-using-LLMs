@@ -1,0 +1,177 @@
+// declare some prefixes to use as abbreviations
+prefixes = [ ("ex","http://www.benchmark.org/family#") ]
+
+// knowledge source definition
+ks.type = "OWL File"
+ks.fileName = "family-benchmark.owl"
+
+// reasoner
+reasoner.type = "closed world reasoner"
+reasoner.sources = { ks }
+
+op.type = "rho"
+op.useCardinalityRestrictions = false
+// op.useAllConstructor = false
+
+// CELOE configuration
+h.type ="celoe_heuristic"
+h.expansionPenaltyFactor = 0.02
+alg.type = "celoe"
+alg.maxExecutionTimeInSeconds = 200
+alg.terminateOnNoiseReached = true
+
+
+// PCELOE configuration
+/*h.type ="celoe_heuristic"
+h.expansionPenaltyFactor = 0.02
+alg.type = "pceloe"
+alg.nrOfThreads = 4
+alg.maxExecutionTimeInSeconds = 200
+alg.terminateOnNoiseReached = true
+*/
+
+// OCEL configuration
+// alg.type = "ocel"
+
+// Disjunctive ELTL
+// alg.type = "deltl"
+
+// learning problem
+lp.type = "posNegStandard"
+lp.positiveExamples = { "ex:F2M13"
+,"ex:F2M11"
+,"ex:F2M20"
+,"ex:F2M27"
+,"ex:F2M32"
+,"ex:F2M29"
+,"ex:F2M37"
+,"ex:F3M44"
+,"ex:F5M63"
+,"ex:F6M71"
+,"ex:F6M80"
+,"ex:F6M78"
+,"ex:F6M90"
+,"ex:F6M85"
+,"ex:F6M100"
+,"ex:F6M92"
+,"ex:F7M113"
+,"ex:F7M107"
+,"ex:F7M115"
+,"ex:F7M120"
+,"ex:F7M125"
+,"ex:F7M131"
+,"ex:F7M122"
+,"ex:F9M149"
+,"ex:F9M144"
+,"ex:F9M151"
+,"ex:F9M153"
+,"ex:F9M142"
+,"ex:F9M159"
+,"ex:F9M162"
+,"ex:F9M157"
+,"ex:F9M167"
+,"ex:F10M173"
+,"ex:F10M180"
+,"ex:F10M182"
+,"ex:F10M194"
+,"ex:F10M187"
+,"ex:F10M196"
+}
+
+lp.negativeExamples = {
+"ex:F10F198"
+,"ex:F7F108"
+,"ex:F9M165"
+,"ex:F6F82"
+,"ex:F9F148"
+,"ex:F3M43"
+,"ex:F7F103"
+,"ex:F10M188"
+,"ex:F1F3"
+,"ex:F9F156"
+,"ex:F9M147"
+,"ex:F10F191"
+,"ex:F9F160"
+,"ex:F6M95"
+,"ex:F2F14"
+,"ex:F6F94"
+,"ex:F1F2"
+,"ex:F6F86"
+,"ex:F10F174"
+,"ex:F2F12"
+,"ex:F2F28"
+,"ex:F5M60"
+,"ex:F8M134"
+,"ex:F7M117"
+,"ex:F10F189"
+,"ex:F4F55"
+,"ex:F6F76"
+,"ex:F7F119"
+,"ex:F2F36"
+,"ex:F2M9"
+,"ex:F2F38"
+,"ex:F2F22"
+,"ex:F6F89"
+,"ex:F5M64"
+,"ex:F5F67"
+,"ex:F3F53"
+,"ex:F2F26"
+,"ex:F5F65"
+}
+DL-Learner command line interface
+Initializing component 'ks' of type OWL File ...
+... initialized component 'ks' in 1ms. Status: OK
+Initializing component 'reasoner' of type closed world reasoner ...
+Loaded reasoner: Pellet (com.clarkparsia.pellet.owlapiv3.PelletReasoner)
+Materializing TBox...
+materialising concepts
+
+[.....] 0%
+[.....] 14%
+[=....] 28%materialising object properties ...
+
+[==...] 42%
+[==...] 57%
+[===..] 71%
+[====.] 85%materialising datatype properties
+...TBox materialised in 74 ms.
+... initialized component 'reasoner' in 580ms. Status: OK
+Initializing component 'op' of type rho refinement operator ...
+... initialized component 'op' in 32ms. Status: OK
+Initializing component 'lp' of type PosNegLPStandard ...
+... initialized component 'lp' in 0ms. Status: OK
+Initializing component 'h' of type OEHeuristicRuntime ...
+... initialized component 'h' in 0ms. Status: OK
+Initializing component 'alg' of type CELOE ...
+... initialized component 'alg' in 1ms. Status: OK
+Running algorithm instance "alg" (CELOE)
+start class:Thing
+more accurate (50.00%) class expression found after 15ms: Thing
+more accurate (86.84%) class expression found after 54ms: not (Female)
+more accurate (88.16%) class expression found after 290ms: ((hasSibling some Thing) or (married some Thing)) and (not (Female))
+more accurate (89.47%) class expression found after 1s117ms: ((hasSibling some Thing) or (hasParent only Male)) and (not (Female))
+more accurate (93.42%) class expression found after 2s355ms: ((hasSibling some (hasChild some Thing)) or (hasParent only Male)) and (not (Female))
+more accurate (97.37%) class expression found after 4s533ms: ((hasSibling some (hasChild some Thing)) or (married some (hasSibling some Thing))) and (not (Female))
+more accurate (100.00%) class expression found after 4s589ms: ((hasSibling some (hasChild some Thing)) or (married some (hasSibling some (hasChild some Thing)))) and (not (Female))
+Algorithm terminated successfully (time: 4s 590ms, 16584 descriptions tested, 6655 nodes in the search tree).
+
+number of retrievals: 16722
+retrieval reasoning time: 2s 603ms ( 0ms per retrieval)
+number of instance checks: 1148 (0 multiple)
+instance check reasoning time: 5ms ( 0ms per instance check)
+(complex) subsumption checks: 636 (0 multiple)
+subsumption reasoning time: 252ms ( 0ms per subsumption check)
+overall reasoning time: 2s 861ms
+
+solutions:
+1: ((hasSibling some (hasChild some Thing)) or (married some (hasSibling some (hasChild some Thing)))) and (not (Female)) (pred. acc.: 100.00%, F-measure: 100.00%)
+2: ((hasSibling some (hasChild some Thing)) or (married some (hasSibling some Thing))) and (not (Female)) (pred. acc.: 97.37%, F-measure: 97.44%)
+3: ((hasSibling some (hasChild some Thing)) or (married some (hasSibling some Person))) and (not (Female)) (pred. acc.: 97.37%, F-measure: 97.44%)
+4: ((hasSibling some (hasChild some Person)) or (married some (hasSibling some Thing))) and (not (Female)) (pred. acc.: 97.37%, F-measure: 97.44%)
+5: ((hasSibling some (hasChild some Person)) or (married some (hasSibling some Person))) and (not (Female)) (pred. acc.: 97.37%, F-measure: 97.44%)
+6: ((hasSibling some (hasChild some Thing)) or (married some (Person and (hasSibling some Thing)))) and (not (Female)) (pred. acc.: 97.37%, F-measure: 97.44%)
+7: ((hasSibling some (Person and (hasChild some Thing))) or (married some (hasSibling some Thing))) and (not (Female)) (pred. acc.: 97.37%, F-measure: 97.44%)
+8: ((Person and (married some (hasSibling some Thing))) or (hasSibling some (hasChild some Thing))) and (not (Female)) (pred. acc.: 97.37%, F-measure: 97.44%)
+9: ((Person and (hasSibling some (hasChild some Thing))) or (married some (hasSibling some Thing))) and (not (Female)) (pred. acc.: 97.37%, F-measure: 97.44%)
+10: Person and ((hasSibling some (hasChild some Thing)) or (married some (hasSibling some Thing))) and (not (Female)) (pred. acc.: 97.37%, F-measure: 97.44%)
+

@@ -1,0 +1,30 @@
+To find a complex class expression that applies to the positive examples but not to the negative examples, we need to analyze the relationships and properties of the individuals in both sets.
+
+### Positive Examples:
+1. **NonnoLuigi**
+   - Instance of `Male`
+   - Has a sibling relationship with `Anna`
+   - Has children: `Nella`, `Dino`
+
+2. **Isidoro**
+   - Instance of `Male`
+   - Has a child: `Luciano`
+
+3. **Gianni**
+   - Instance of `Male`
+   - Has children: `Rosanna`, `Maria`
+
+### Negative Examples:
+- **Giovanna**, **Marisella**, **Ombretta**, **Serena**, **Valentina**, **Luca**, **Luigi**, **Dino**, **Maria**, **Mauro**, **Nella**, **Miriam**, **NonnaLina**, **Carmela**
+
+### Analysis:
+- All positive examples are instances of `Male`.
+- All positive examples have the `hasChild` property.
+- The negative examples include both males and females, but none of the negative examples have the same combination of properties as the positive examples.
+
+### Complex Class Expression:
+Given the analysis, the complex class expression that applies to the positive examples but not to the negative examples is:
+
+\[ \text{Male} \, \text{and} \, (\text{hasChild some Thing}) \]
+
+This expression captures the fact that the positive examples are all males who have at least one child, which distinguishes them from the negative examples.

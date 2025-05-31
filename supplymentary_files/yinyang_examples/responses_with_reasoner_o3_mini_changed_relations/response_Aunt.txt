@@ -1,0 +1,79 @@
+✅ SUCCESS on attempt 1
+
+LLM output:
+1: Person and ((hasSibling some Thing) or (not (hasChild some Thing))) (accuracy 100%, length 10, depth 2)
+2: Person and ((not (hasChild some Thing)) or (hasSibling some Thing)) (accuracy 100%, length 10, depth 2)
+3: Person and ((hasSibling some Thing) or (hasChild max 0 Thing)) (accuracy 100%, length 10, depth 2)
+4: Person and ((hasChild max 0 Thing) or (hasSibling some Thing)) (accuracy 100%, length 10, depth 2)
+5: (hasSibling some Thing) or (not (hasChild some Thing)) (accuracy 100%, length 9, depth 1)
+
+Reasoner feedback:
+Reasoner: Pellet
+--- Expr 1 ---
+LLM expr: Person and ((hasSibling some Thing) or (not (hasChild some Thing)))
+Reported accuracy: 100.00%
+Positive ex. Ombretta -> true
+Positive ex. Luca -> true
+Positive ex. Dino -> true
+Positive ex. Luigi -> true
+Positive ex. Maria -> true
+Positive ex. Serena -> true
+Negative ex. Gianni -> false
+Negative ex. Dora -> false
+Reasoner accuracy for expr 1: 100.00% (8/8 correct)
+Expr 1 is VALID.
+--- Expr 2 ---
+LLM expr: Person and ((not (hasChild some Thing)) or (hasSibling some Thing))
+Reported accuracy: 100.00%
+Positive ex. Ombretta -> true
+Positive ex. Luca -> true
+Positive ex. Dino -> true
+Positive ex. Luigi -> true
+Positive ex. Maria -> true
+Positive ex. Serena -> true
+Negative ex. Gianni -> false
+Negative ex. Dora -> false
+Reasoner accuracy for expr 2: 100.00% (8/8 correct)
+Expr 2 is VALID.
+--- Expr 3 ---
+LLM expr: Person and ((hasSibling some Thing) or (hasChild max 0 Thing))
+Reported accuracy: 100.00%
+Positive ex. Ombretta -> true
+Positive ex. Luca -> true
+Positive ex. Dino -> true
+Positive ex. Luigi -> true
+Positive ex. Maria -> true
+Positive ex. Serena -> true
+Negative ex. Gianni -> false
+Negative ex. Dora -> false
+Reasoner accuracy for expr 3: 100.00% (8/8 correct)
+Expr 3 is VALID.
+--- Expr 4 ---
+LLM expr: Person and ((hasChild max 0 Thing) or (hasSibling some Thing))
+Reported accuracy: 100.00%
+Positive ex. Ombretta -> true
+Positive ex. Luca -> true
+Positive ex. Dino -> true
+Positive ex. Luigi -> true
+Positive ex. Maria -> true
+Positive ex. Serena -> true
+Negative ex. Gianni -> false
+Negative ex. Dora -> false
+Reasoner accuracy for expr 4: 100.00% (8/8 correct)
+Expr 4 is VALID.
+--- Expr 5 ---
+LLM expr: (hasSibling some Thing) or (not (hasChild some Thing))
+Reported accuracy: 100.00%
+Positive ex. Ombretta -> true
+Positive ex. Luca -> true
+Positive ex. Dino -> true
+Positive ex. Luigi -> true
+Positive ex. Maria -> true
+Positive ex. Serena -> true
+Negative ex. Gianni -> false
+Negative ex. Dora -> false
+Reasoner accuracy for expr 5: 100.00% (8/8 correct)
+Expr 5 is VALID.
+=== Overall accuracy: 100.00%
+
+Processing time for o3-mini: 126.48 seconds

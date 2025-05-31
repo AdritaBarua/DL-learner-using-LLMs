@@ -1,0 +1,46 @@
+To determine the complex class expression for "GrandMother" based on the given positive and negative examples, we need to analyze the relationships and properties that apply to the positive examples but not to the negative examples.
+
+### Positive Examples:
+1. **NonnaLina**
+   - Has a child: Dino, Nella
+   - Is a Person
+   - Is a Male (according to the ontology, but this seems incorrect given the context)
+
+2. **Dora**
+   - Has a child: Rosanna, Maria
+   - Is a Person
+   - Is a Male (according to the ontology, but this seems incorrect given the context)
+
+### Negative Examples:
+1. **NonnoLuigi**
+   - Has a child: Dino, Nella
+   - Has a sibling: Anna
+   - Is a Person
+   - Is a Male
+
+2. **Gianni**
+   - Has a child: Rosanna, Maria
+   - Is a Person
+   - Is a Female
+
+3. **Maria**
+   - Has a child: Serena, Ombretta, Luigi
+   - Has a sibling: Rosanna
+   - Is a Person
+   - Is a Male
+
+### Analysis:
+- Both positive examples, NonnaLina and Dora, have children who themselves have children, indicating a grandparent relationship.
+- The negative examples, NonnoLuigi, Gianni, and Maria, do not have this specific property of having children who have children.
+
+### Complex Class Expression for GrandMother:
+The complex class expression for "GrandMother" can be derived as follows:
+
+- **Person**: Both positive and negative examples are instances of the class Person.
+- **Has a child who has a child**: This is the distinguishing feature of the positive examples.
+
+Thus, the complex class expression for "GrandMother" is:
+
+**Person and (hasChild some (hasChild some Thing))**
+
+This expression captures the essence of being a grandparent, specifically a grandmother, by indicating that the individual has a child who also has a child.

@@ -1,0 +1,11 @@
+We can “learn” a daughter’s description by looking at what the positive examples have in common that distinguishes them from the negative examples. In our knowledge base the “child” individuals all have a parent (that is, they occur in a hasParent–triple) but what really “separates” the positives from the two negatives is the (apparently inverted) gender assertion. In our KB the individuals that we wish to call Daughter (for our learning task) are those that are asserted to be in kb:Male (even though in common life one would expect daughters to be female, notice that in this KB the names have been “swapped” between the two genders) while the negatives (kb:Luigi and kb:Dino) are not in kb:Male (they instead occur as instances of kb:Female).
+
+Indeed, checking the assertions we find that all the positives—
+ kb:Serena, kb:Ombretta, kb:Valentina, kb:Milly, kb:Antonella, kb:Marisella, kb:Giovanna, kb:Nella—
+are also asserted as instances of kb:Male and each appears as the child of someone (i.e. there is a hasParent–triple). In contrast the two negatives (kb:Luigi and kb:Dino) are not in kb:Male.
+
+Thus one complex class expression that “covers” all the positives but not the negatives is the conjunction of being a male child, namely:
+
+  kb:Male and (kb:hasParent some Thing)
+
+In Manchester OWL syntax this is written exactly as above. (Note that one could also use “kb:hasParent some kb:Person” but since the range of kb:hasParent is kb:Person the use of Thing is acceptable—as in the DL‐Learner example for Brother.)

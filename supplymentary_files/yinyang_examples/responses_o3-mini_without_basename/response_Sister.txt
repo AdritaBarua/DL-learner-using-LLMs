@@ -1,0 +1,13 @@
+The answer is:
+
+  Female and (hasSibling some Thing)
+
+Explanation:
+
+– All of the positive individuals (Antonella, Giovanna, Maria, Marisella, Milly, Miriam, Nella, Ombretta, Rosanna, Serena, Valentina) are explicitly declared to be instances of the class Female.
+  
+– In addition, every one of those examples participates in at least one hasSibling–relationship. In contrast, none of the negatives satisfy both conditions. (All of the male individuals are excluded by “Female” and the only negative that is female—Carmela—does not have any sibling relationship.)
+
+Thus, when expressed in Manchester syntax the complex class expression that covers the positive examples but not the negative ones is:
+
+  Female and (hasSibling some Thing)

@@ -1,0 +1,8 @@
+The DL‐Learner result is:
+
+  kb:Female and (kb:hasChild some kb:Thing)
+
+Explanation:
+– Every positive individual (kb:Dino, kb:Francesco, kb:Mauro, kb:Giggino) is asserted to be a kb:Female and appears as a parent (there is at least one kb:hasChild relation).
+– In contrast, none of the negative examples are both female with an outgoing kb:hasChild relationship (the ones that are female—e.g. kb:Luca and kb:Luigi—lack any kb:hasChild assertion, while the others are not female).
+Thus, “kb:Female and (kb:hasChild some kb:Thing)” covers exactly the positive examples (and possibly other non‐negative individuals) while excluding all the listed negatives.

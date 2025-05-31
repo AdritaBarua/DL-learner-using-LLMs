@@ -1,0 +1,25 @@
+✅ SUCCESS on attempt 1
+
+LLM output:
+1: (hasSibling some Thing) (accuracy 100%, length 3, depth 1)
+
+Reasoner feedback:
+Reasoner: Pellet
+--- Expr 1 ---
+LLM expr: (hasSibling some Thing)
+Reported accuracy: 100.00%
+Positive ex. Francesco -> true
+Positive ex. Ombretta -> true
+Positive ex. Dino -> true
+Positive ex. Luigi -> true
+Positive ex. Maria -> true
+Positive ex. Serena -> true
+Positive ex. Anna -> true
+Negative ex. Luca -> false
+Negative ex. Gianni -> false
+Negative ex. Dora -> false
+Reasoner accuracy for expr 1: 100.00% (10/10 correct)
+Expr 1 is VALID.
+=== Overall accuracy: 100.00%
+
+Processing time for gpt-4o: 0.67 seconds

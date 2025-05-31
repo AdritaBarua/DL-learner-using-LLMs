@@ -1,0 +1,17 @@
+The idea is to “learn” from the knowledge base that all the positive examples share a common characteristic that the negatives do not. In our case, every positive individual is one that has at least one child (via the hasChild property), whereas none of the negatives do.
+
+Looking at the list:
+
+• Positive examples (Maria, Nella, Rosanna, Dino, Francesco, NonnaLina, NonnoLuigi, Mauro, Carmela, Girolamo) all appear in one or more hasChild relationships.
+
+• In contrast, each negative individual (Giovanna, Marisella, Ombretta, Serena, Valentina, Luca, Luigi) has no information stating that they have a child.
+
+Since the range of hasChild is Person, we can capture this difference by requiring that an individual “hasChild some Person.” (In Manchester syntax the existential restriction “R some C” means “there is at least one R‑filler that is a C.”)
+
+We also include that they are Persons. (Note that the positive set contains both Male and Female individuals.)
+
+Thus, a suitable complex class expression in Manchester syntax is:
+
+  kb:Person and (kb:hasChild some kb:Person)
+
+This expression describes exactly those individuals that are persons and that have at least one child (of type Person), which is true for all the positives but not for any of the negatives.

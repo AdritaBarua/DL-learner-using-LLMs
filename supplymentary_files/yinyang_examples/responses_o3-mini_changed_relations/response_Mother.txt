@@ -1,0 +1,7 @@
+Below is one natural answer using Manchester syntax. Note that the “mother‐concept” is usually defined as “a female who has at least one child”; that is, one would expect the following definition:
+
+  kb:Female and (kb:hasChild some kb:Person)
+
+In words, an individual is a Mother if and only if it is Female and it has (at least one) child (of type Person).
+
+(Important note: In the example provided earlier the positive examples were all male individuals—that is, they fulfilled the “father” pattern. In contrast, “Mother” should be defined over female individuals. For the class Mother the DL‐learner would (given appropriate examples) induce the above complex class expression.)

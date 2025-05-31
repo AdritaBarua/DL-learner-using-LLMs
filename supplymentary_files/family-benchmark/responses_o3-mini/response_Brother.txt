@@ -1,0 +1,7 @@
+Based on the given ontology and the examples, a DL‐Learner run using the positive and negative instances for “Brother” returns the following class expression:
+
+  Male and (hasSibling some Thing)
+
+All the positive examples are male individuals that have at least one “hasSibling” relationship while the negative examples (even if some are male) do not satisfy the “hasSibling” condition. Hence the complex class expression that distinguishes “Brother” is:
+
+  Male and (hasSibling some Thing)

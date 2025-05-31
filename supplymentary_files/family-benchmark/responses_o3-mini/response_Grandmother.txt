@@ -1,0 +1,11 @@
+The idea is that a grandmother is a female who is the parent of a person who is in turn a parent herself. In our ontology every individual is a Thing and persons (including females) participate in the “hasChild” relation. In checking the examples you’ll notice that every positive individual (for example ex:F1F2, ex:F2F12, …, ex:F10F172 and the others) is a female and in the data you can trace a two‐generation “hasChild” chain (for instance, F1F2 hasChild F1F3 and F1F3 hasChild F1F5, making F1F2 a grandmother). In contrast, the negatives either are male, or if they are female (like ex:F10F174) they do not have a child who has a child.
+
+Thus a natural complex class expression that covers exactly those individuals is:
+
+  Female and (hasChild some (hasChild some Thing))
+
+In Description Logic notation, you might write this as:
+
+  Female ⊓ ∃hasChild.(∃hasChild.Thing)
+
+This is the desired complex class expression for Grandmother.

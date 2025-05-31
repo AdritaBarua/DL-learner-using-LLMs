@@ -1,0 +1,35 @@
+To determine the complex class expression for "GrandFather" using the given positive and negative examples, we need to identify the properties and class memberships that are common to the positive examples but not present in the negative examples.
+
+### Positive Examples:
+- **NonnoLuigi**
+  - Instance of `Male`
+  - Has children: `Nella`, `Dino`
+  - Has sibling: `Anna`
+- **Isidoro**
+  - Instance of `Male`
+  - Has child: `Luciano`
+- **Gianni**
+  - Instance of `Male`
+  - Has children: `Rosanna`, `Maria`
+
+### Negative Examples:
+- **Giovanna**, **Marisella**, **Ombretta**, **Serena**, **Valentina**, **Luca**, **Luigi**, **Dino**, **Maria**, **Mauro**, **Nella**, **Miriam**, **NonnaLina**, **Carmela**
+
+### Analysis:
+1. **Class Membership**: All positive examples are instances of `Male`.
+2. **Property Relationships**:
+   - Each positive example has a `hasChild` relationship with at least one child.
+   - The children of the positive examples are themselves parents, making the positive examples grandparents.
+
+### Complex Class Expression:
+To be classified as a "GrandFather", an individual should:
+- Be a `Male`.
+- Have a `hasChild` relationship with at least one individual who also has a `hasChild` relationship (i.e., the child is a parent).
+
+Thus, the complex class expression for "GrandFather" is:
+
+```plaintext
+Male and (hasChild some (hasChild some Thing))
+```
+
+This expression captures the essence of being a grandfather: being male and having a child who is also a parent.

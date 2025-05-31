@@ -1,0 +1,41 @@
+To find the complex class expression for "GrandMother" using the given positive and negative examples, we need to identify the properties and class memberships that apply to the positive examples (NonnaLina and Dora) but not to the negative examples (NonnoLuigi, Gianni, and Maria).
+
+### Analysis:
+
+1. **Class Membership:**
+   - Both NonnaLina and Dora are instances of the class `Female`.
+   - NonnoLuigi and Gianni are instances of the class `Male`, while Maria is an instance of `Female`.
+
+2. **Relationships:**
+   - **NonnaLina:**
+     - `hasChild` relationship with Dino and Nella.
+     - `hasChild` relationship implies she is a parent.
+   - **Dora:**
+     - `hasChild` relationship with Rosanna and Maria.
+     - `hasChild` relationship implies she is a parent.
+
+3. **Grandmother Relationship:**
+   - A grandmother is typically a female who has a child who is also a parent.
+   - Both NonnaLina and Dora have children who are parents themselves:
+     - Dino (child of NonnaLina) is a parent of Luigi, Ombretta, and Serena.
+     - Nella (child of NonnaLina) is a parent of Giovanna and Marisella.
+     - Rosanna (child of Dora) is a parent of Valentina, Milly, and Antonella.
+     - Maria (child of Dora) is a parent of Serena, Luigi, and Ombretta.
+
+4. **Negative Examples:**
+   - NonnoLuigi, Gianni, and Maria do not fit the pattern of having children who are parents.
+
+### Complex Class Expression:
+
+Based on the analysis, the complex class expression for "GrandMother" can be constructed as follows:
+
+- **Female**: The individual must be female.
+- **hasChild some (hasChild some Thing)**: The individual must have a child who also has a child (i.e., a grandchild).
+
+Thus, the complex class expression for "GrandMother" is:
+
+```plaintext
+Female and (hasChild some (hasChild some Thing))
+```
+
+This expression captures the essence of being a grandmother by ensuring the individual is female and has a child who is also a parent.

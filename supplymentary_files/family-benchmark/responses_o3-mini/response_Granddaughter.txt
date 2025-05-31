@@ -1,0 +1,21 @@
+One acceptable answer was that an individual is a granddaughter exactly when:
+
+  she is Female and there is some person p such that she hasParent p and p in turn hasParent someone.
+
+In DL–syntax one acceptable answer is:
+
+  Female ⊓ (∃hasParent.(∃hasParent.Person))
+
+That is, “Granddaughter” is defined as the class of those individuals that are female and that have a parent who in turn has a parent. 
+
+Below is some explanation of how one may come to this answer:
+
+• All the positive examples (for instance, F1F5, F1F7, F2F17, …, F10F201) are female individuals (their names begin with “F” are the ones already asserted as Female) and (when one inspects the many “hasParent” and “hasChild” relationships in the knowledge base) each one is not the first‐generation daughter but is instead “two steps down” – that is, each has a parent who (having its own “hasParent” statement) is in turn a child of someone.
+
+• In contrast, many of the negative examples are either male or (if female) do not have that “grandparent” (two‐step hasParent) chain. For instance, F10F195 is female, but the only “hasParent” edge occurring for her is to a parent for which no “hasParent” is given.
+
+Thus, the complex class expression that covers exactly those individuals with a two–generation “hasParent” chain and who are female is:
+
+  Female ⊓ (∃hasParent.(∃hasParent.Person))
+
+This is one acceptable answer for the complex class expression for “Granddaughter.”

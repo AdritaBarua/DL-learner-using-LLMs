@@ -1,0 +1,6 @@
+Total Successes: 2
+Total Failures:  3
+
+Details:
+response_trains2.txt: ✅ success on attempt 2
+response_trains4.txt: ✅ success on attempt 2

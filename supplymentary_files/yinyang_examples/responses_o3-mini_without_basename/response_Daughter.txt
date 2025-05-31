@@ -1,0 +1,11 @@
+The answer is simply:
+
+  kb:Female
+
+Let me explain briefly:
+
+All of the positive examples—
+  kb:Serena, kb:Ombretta, kb:Valentina, kb:Milly, kb:Antonella, kb:Marisella, kb:Giovanna, and kb:Nella—
+are explicitly asserted to be instances of the class Female, whereas the negative examples (kb:Luigi and kb:Dino) are asserted to be Male. (In this ontology Male and Female are used to classify persons so that being Female is what distinguishes the positives from the negatives.) 
+
+In Manchester syntax the atomic class kb:Female is a valid complex class expression that covers the positives and excludes the negatives.

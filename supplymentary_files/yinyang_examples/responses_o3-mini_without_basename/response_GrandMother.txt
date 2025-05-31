@@ -1,0 +1,18 @@
+The answer is:
+
+  kb:Female and (kb:hasChild some (kb:hasChild some Thing))
+
+Here's some explanation:
+
+• Both kb:NonnaLina and kb:Dora are female individuals.
+• In the ontology, each “hasChild” relationship has values of type Person. Moreover, by “kb:hasChild some (kb:hasChild some Thing)” we require that the individual has at least one child who in turn has at least one child—that is, the individual is a grandparent.
+• Looking at the assertions:
+ – kb:NonnaLina has children kb:Dino and kb:Nella; for example, kb:Dino is a parent (he is related by “hasChild” to kb:Luigi, kb:Ombretta, or kb:Serena).
+ – kb:Dora has a child kb:Rosanna (and also kb:Maria as a child), and kb:Rosanna in turn is a parent (kb:Rosanna has children kb:Valentina, kb:Milly and kb:Antonella).
+• In contrast, among the negatives:
+ – kb:NonnoLuigi and kb:Gianni are male, so they are immediately excluded by “kb:Female.”
+ – kb:Maria (although female) has a child kb:Luigi but there is no assertion that kb:Luigi is a parent; hence kb:Maria does not satisfy “hasChild some (hasChild some Thing).”
+
+Thus the complex class expression that covers the positives but not the negatives is:
+
+  kb:Female and (kb:hasChild some (kb:hasChild some Thing))

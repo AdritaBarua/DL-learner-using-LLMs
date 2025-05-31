@@ -1,0 +1,28 @@
+To determine the complex class expression that distinguishes the positive examples from the negative examples, we need to analyze the relationships and properties that are common among the positive examples but not present in the negative examples. 
+
+### Analysis:
+
+1. **Class Membership**:
+   - All positive examples are instances of the class `Female`.
+   - Negative examples include instances of both `Male` and `Female`.
+
+2. **Relationships**:
+   - Many positive examples have relationships such as `married`, `hasChild`, `hasParent`, and `hasSibling`.
+   - We need to identify a relationship or a combination of relationships that are common among the positive examples but not in the negative examples.
+
+3. **Common Patterns**:
+   - Positive examples like `ex:F1F2`, `ex:F2F12`, `ex:F2F22`, `ex:F2F19`, `ex:F2F30`, `ex:F2F28`, `ex:F2F10`, `ex:F3F48`, `ex:F3F46`, `ex:F3F42`, `ex:F3F41`, `ex:F4F55`, `ex:F5F65`, `ex:F5F61`, `ex:F6F72`, `ex:F6F77`, `ex:F6F84`, `ex:F6F94`, `ex:F6F93`, `ex:F6F70`, `ex:F7F108`, `ex:F7F106`, `ex:F7F124`, `ex:F7F121`, `ex:F7F105`, `ex:F7F103`, `ex:F8F135`, `ex:F8F133`, `ex:F9F143`, `ex:F9F141`, `ex:F9F158`, `ex:F9F140`, `ex:F10F186`, `ex:F10F195`, `ex:F10F172` are all `Female` and have various relationships.
+
+4. **Distinctive Relationships**:
+   - Many positive examples have the `married` relationship, which is less common in the negative examples.
+   - The `hasChild` relationship is also prevalent among positive examples.
+
+### Conclusion:
+
+Based on the analysis, a complex class expression that captures the commonalities among the positive examples while excluding the negative examples could be:
+
+```plaintext
+Female and (married some Thing)
+```
+
+This expression indicates that the individuals are `Female` and have a `married` relationship with some `Thing`, which is a pattern more common in the positive examples than in the negative ones.

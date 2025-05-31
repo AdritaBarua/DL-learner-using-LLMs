@@ -1,0 +1,124 @@
+✅ SUCCESS on attempt 1
+
+LLM output:
+1: Person and (hasChild some Thing) (accuracy 100%, length 5, depth 1)
+2: Person and ((not (Female)) or (hasChild some Thing)) (accuracy 100%, length 8, depth 1)
+3: Person and ((hasChild some Thing) or (hasSibling some Thing)) (accuracy 100%, length 9, depth 1)
+4: Person and ((hasChild some Thing) or (hasParent max 1 Thing)) (accuracy 100%, length 10, depth 1)
+5: Person and ((hasChild some Thing) or (hasSibling some Thing)) (accuracy 100%, length 9, depth 1)
+
+Reasoner feedback:
+Reasoner: Pellet
+--- Expr 1 ---
+LLM expr: Person and (hasChild some Thing)
+Reported accuracy: 100.00%
+Positive ex. Francesco -> true
+Positive ex. NonnaLina -> true
+Positive ex. Mauro -> true
+Positive ex. Carmela -> true
+Positive ex. Dino -> true
+Positive ex. Nella -> true
+Positive ex. Girolamo -> true
+Positive ex. Maria -> true
+Positive ex. Rosanna -> true
+Positive ex. NonnoLuigi -> true
+Negative ex. Valentina -> false
+Negative ex. Marisella -> false
+Negative ex. Ombretta -> false
+Negative ex. Luca -> false
+Negative ex. Giovanna -> false
+Negative ex. Luigi -> false
+Negative ex. Serena -> false
+Reasoner accuracy for expr 1: 100.00% (17/17 correct)
+Expr 1 is VALID.
+--- Expr 2 ---
+LLM expr: Person and ((not (Female)) or (hasChild some Thing))
+Reported accuracy: 100.00%
+Positive ex. Francesco -> true
+Positive ex. NonnaLina -> true
+Positive ex. Mauro -> true
+Positive ex. Carmela -> true
+Positive ex. Dino -> true
+Positive ex. Nella -> true
+Positive ex. Girolamo -> true
+Positive ex. Maria -> true
+Positive ex. Rosanna -> true
+Positive ex. NonnoLuigi -> true
+Negative ex. Valentina -> true
+Negative ex. Marisella -> true
+Negative ex. Ombretta -> true
+Negative ex. Luca -> false
+Negative ex. Giovanna -> true
+Negative ex. Luigi -> false
+Negative ex. Serena -> true
+Reasoner accuracy for expr 2: 70.59% (12/17 correct)
+Expr 2 is INVALID.
+--- Expr 3 ---
+LLM expr: Person and ((hasChild some Thing) or (hasSibling some Thing))
+Reported accuracy: 100.00%
+Positive ex. Francesco -> true
+Positive ex. NonnaLina -> true
+Positive ex. Mauro -> true
+Positive ex. Carmela -> true
+Positive ex. Dino -> true
+Positive ex. Nella -> true
+Positive ex. Girolamo -> true
+Positive ex. Maria -> true
+Positive ex. Rosanna -> true
+Positive ex. NonnoLuigi -> true
+Negative ex. Valentina -> true
+Negative ex. Marisella -> true
+Negative ex. Ombretta -> true
+Negative ex. Luca -> false
+Negative ex. Giovanna -> true
+Negative ex. Luigi -> true
+Negative ex. Serena -> true
+Reasoner accuracy for expr 3: 64.71% (11/17 correct)
+Expr 3 is INVALID.
+--- Expr 4 ---
+LLM expr: Person and ((hasChild some Thing) or (hasParent max 1 Thing))
+Reported accuracy: 100.00%
+Positive ex. Francesco -> true
+Positive ex. NonnaLina -> true
+Positive ex. Mauro -> true
+Positive ex. Carmela -> true
+Positive ex. Dino -> true
+Positive ex. Nella -> true
+Positive ex. Girolamo -> true
+Positive ex. Maria -> true
+Positive ex. Rosanna -> true
+Positive ex. NonnoLuigi -> true
+Negative ex. Valentina -> false
+Negative ex. Marisella -> false
+Negative ex. Ombretta -> false
+Negative ex. Luca -> false
+Negative ex. Giovanna -> false
+Negative ex. Luigi -> false
+Negative ex. Serena -> false
+Reasoner accuracy for expr 4: 100.00% (17/17 correct)
+Expr 4 is VALID.
+--- Expr 5 ---
+LLM expr: Person and ((hasChild some Thing) or (hasSibling some Thing))
+Reported accuracy: 100.00%
+Positive ex. Francesco -> true
+Positive ex. NonnaLina -> true
+Positive ex. Mauro -> true
+Positive ex. Carmela -> true
+Positive ex. Dino -> true
+Positive ex. Nella -> true
+Positive ex. Girolamo -> true
+Positive ex. Maria -> true
+Positive ex. Rosanna -> true
+Positive ex. NonnoLuigi -> true
+Negative ex. Valentina -> true
+Negative ex. Marisella -> true
+Negative ex. Ombretta -> true
+Negative ex. Luca -> false
+Negative ex. Giovanna -> true
+Negative ex. Luigi -> true
+Negative ex. Serena -> true
+Reasoner accuracy for expr 5: 64.71% (11/17 correct)
+Expr 5 is INVALID.
+=== Overall accuracy: 40.00%
+
+Processing time for gpt-4o: 3.47 seconds
