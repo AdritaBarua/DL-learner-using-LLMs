@@ -1,0 +1,38 @@
+To find a complex class expression for the concept of "Offspring" using the given positive and negative examples, we need to identify the properties and class memberships that are common to all positive examples but not present in any of the negative examples.
+
+### Positive Examples:
+- **kb:Luigi**
+- **kb:Maria**
+- **kb:Dino**
+- **kb:Serena**
+- **kb:Ombretta**
+- **kb:Luca**
+
+### Negative Examples:
+- **kb:Dora**
+- **kb:Gianni**
+
+### Analysis:
+
+1. **Common Properties and Relationships:**
+   - **hasParent**: All positive examples have a `hasParent` relationship.
+     - **Luigi** has parents **Maria** and **Dino**.
+     - **Maria** has parents **Gianni** and **Dora**.
+     - **Dino** has parents **NonnaLina** and **NonnoLuigi**.
+     - **Serena** has parents **Maria** and **Dino**.
+     - **Ombretta** has parents **Maria** and **Dino**.
+     - **Luca** has parents **Luciano** and **Lucrezia**.
+
+2. **Class Membership:**
+   - All positive examples are instances of the class **Person**.
+
+3. **Properties Not Shared by Negative Examples:**
+   - **Dora** and **Gianni** do not have a `hasParent` relationship in the given data.
+
+### Complex Class Expression:
+
+Based on the analysis, the complex class expression for "Offspring" can be defined as:
+
+\[ \text{Person} \, \text{and} \, (\text{hasParent} \, \text{some} \, \text{Thing}) \]
+
+This expression captures the idea that an "Offspring" is a person who has at least one parent, which is true for all positive examples and not true for the negative examples in the given knowledge base.

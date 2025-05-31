@@ -1,0 +1,42 @@
+To derive a complex class expression for the concept of "Son" based on the given positive and negative examples, we need to analyze the relationships and properties that distinguish the positive examples from the negative ones.
+
+### Positive Examples:
+- **Serena**
+- **Ombretta**
+- **Valentina**
+- **Milly**
+- **Antonella**
+- **Marisella**
+- **Giovanna**
+- **Nella**
+
+### Negative Examples:
+- **Luigi**
+- **Dino**
+
+### Analysis:
+1. **Class Membership:**
+   - All positive examples are instances of the class `Female`, which is a subclass of `Person`.
+   - The negative examples, `Luigi` and `Dino`, are instances of the class `Male`.
+
+2. **Relationships:**
+   - The positive examples have relationships indicating they are children of someone, as seen in the `hasParent` relationships.
+   - The negative examples, `Luigi` and `Dino`, also have `hasParent` relationships, but they are not classified as `Female`.
+
+3. **Sibling Relationships:**
+   - The positive examples have sibling relationships, but this is not a distinguishing factor since the negative examples also have siblings.
+
+4. **Parent-Child Relationships:**
+   - The positive examples are all children of someone, but this is not unique to them as the negative examples also have parents.
+
+### Conclusion:
+The key distinguishing factor between the positive and negative examples is the class membership. The positive examples are all `Female`, while the negative examples are `Male`. Therefore, the complex class expression for "Son" should focus on the gender distinction and the parent-child relationship.
+
+### Complex Class Expression for "Son":
+Given the analysis, the complex class expression for "Son" can be derived as:
+
+```plaintext
+Male and (hasParent some Thing)
+```
+
+This expression captures the essence of being a "Son" by specifying that the individual must be `Male` and have at least one parent (`hasParent some Thing`). This distinguishes the negative examples from the positive ones, as the positive examples are `Female`.

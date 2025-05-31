@@ -1,0 +1,17 @@
+To determine the complex class expression that distinguishes the positive examples from the negative examples, we need to analyze the relationships and properties that are common among the positive examples but not present in the negative examples. Based on the given ontology and examples, let's identify the key characteristics:
+
+1. **Class Membership**: All positive examples are instances of the class 'Male', which is a subclass of 'Person'. This is a common feature among the positive examples.
+
+2. **Relationships**:
+   - Many of the positive examples have relationships such as 'hasSibling', 'hasChild', or 'hasParent' with other instances.
+   - The positive examples often have relationships indicating familial connections, such as 'married' or 'hasChild'.
+
+3. **Exclusion of Negative Examples**:
+   - The negative examples include instances from both 'Male' and 'Female' classes, but the positive examples are exclusively 'Male'.
+   - Some negative examples have relationships like 'hasSibling' or 'hasChild', but they are not consistently present across all negative examples.
+
+Given these observations, a complex class expression that captures the essence of the positive examples while excluding the negative examples could be:
+
+**Male and (hasSibling some Thing or hasChild some Thing or hasParent some Thing)**
+
+This expression indicates that the individual is male and has at least one sibling, child, or parent, which aligns with the characteristics observed in the positive examples.

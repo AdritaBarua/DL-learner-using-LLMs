@@ -1,0 +1,39 @@
+To determine the complex class expression for "Parent" based on the given positive and negative examples, we need to analyze the relationships and properties that apply to the positive examples but not to the negative ones.
+
+### Analysis:
+
+1. **Positive Examples:**
+   - **Maria**: hasChild relationships with Serena, Ombretta, and Luigi.
+   - **Nella**: hasChild relationships with Giovanna and Marisella.
+   - **Rosanna**: hasChild relationships with Valentina, Milly, and Antonella.
+   - **Dino**: hasChild relationships with Luigi, Ombretta, and Serena.
+   - **Francesco**: hasChild relationships with Valentina, Milly, and Antonella.
+   - **NonnaLina**: hasChild relationships with Dino and Nella.
+   - **NonnoLuigi**: hasChild relationships with Dino and Nella.
+   - **Mauro**: hasChild relationships with Marisella and Giovanna.
+   - **Carmela**: hasChild relationships with Francesco and Giuseppe.
+   - **Girolamo**: hasChild relationships with Francesco and Giuseppe.
+
+2. **Negative Examples:**
+   - **Giovanna**: hasParent relationships with Mauro and Nella.
+   - **Marisella**: hasParent relationships with Mauro and Nella.
+   - **Ombretta**: hasParent relationships with Maria and Dino.
+   - **Serena**: hasParent relationships with Maria and Dino.
+   - **Valentina**: hasParent relationships with Francesco and Rosanna.
+   - **Luca**: hasParent relationships with Luciano and Lucrezia.
+   - **Luigi**: hasParent relationships with Dino and Maria.
+
+### Common Characteristics of Positive Examples:
+- All positive examples have the `hasChild` property, indicating they are parents.
+
+### Common Characteristics of Negative Examples:
+- Negative examples do not have the `hasChild` property; instead, they have `hasParent` relationships.
+
+### Complex Class Expression:
+The complex class expression for "Parent" should capture the essence of having a child, which is a distinguishing feature of the positive examples and absent in the negative examples.
+
+Therefore, the complex class expression for "Parent" is:
+
+**`Person and (hasChild some Person)`**
+
+This expression indicates that a "Parent" is a "Person" who has at least one "hasChild" relationship with another "Person". This expression applies to all the positive examples and none of the negative examples, as required.

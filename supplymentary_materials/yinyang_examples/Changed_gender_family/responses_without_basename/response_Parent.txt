@@ -1,0 +1,107 @@
+To determine the complex class expression that applies to the positive examples but not to the negative examples, we need to analyze the relationships and class memberships of the individuals in both sets.
+
+### Positive Examples:
+1. **Maria**: 
+   - Female, Person
+   - hasChild: Luigi, Serena, Ombretta
+   - hasParent: Dora, Gianni
+   - hasSibling: Rosanna
+
+2. **Nella**: 
+   - Person, Male
+   - hasChild: Giovanna, Marisella
+   - hasParent: NonnoLuigi, NonnaLina
+   - hasSibling: Dino
+
+3. **Rosanna**: 
+   - Female, Person, Male
+   - hasChild: Milly, Antonella, Valentina
+   - hasSibling: Maria
+
+4. **Dino**: 
+   - Female, Person
+   - hasChild: Luigi, Serena, Ombretta
+   - hasParent: NonnoLuigi, NonnaLina
+   - hasSibling: Nella
+
+5. **Francesco**: 
+   - Female, Person
+   - hasChild: Milly, Antonella, Valentina
+   - hasParent: Girolamo, Carmela
+   - hasSibling: Giuseppe
+
+6. **NonnaLina**: 
+   - Person, Male
+   - hasChild: Nella, Dino
+
+7. **NonnoLuigi**: 
+   - Female, Person
+   - hasChild: Nella, Dino
+   - hasSibling: Anna
+
+8. **Mauro**: 
+   - Female, Person
+   - hasChild: Giovanna, Marisella
+   - hasSibling: Paolo, Miriam, Emilia
+
+9. **Carmela**: 
+   - Male
+   - hasChild: Francesco, Giuseppe
+
+10. **Girolamo**: 
+    - Female
+    - hasChild: Francesco, Giuseppe
+
+### Negative Examples:
+1. **Giovanna**: 
+   - Male, Person
+   - hasParent: Mauro, Nella
+   - hasSibling: Marisella
+
+2. **Marisella**: 
+   - Male, Person
+   - hasParent: Mauro, Nella
+   - hasSibling: Giovanna
+
+3. **Ombretta**: 
+   - Male, Person
+   - hasParent: Dino, Maria
+   - hasSibling: Serena, Luigi
+
+4. **Serena**: 
+   - Male, Person
+   - hasParent: Dino, Maria
+   - hasSibling: Ombretta, Luigi
+
+5. **Valentina**: 
+   - Male, Person
+   - hasParent: Francesco, Rosanna
+   - hasSibling: Antonella, Milly
+
+6. **Luca**: 
+   - Female, Person
+   - hasParent: Luciano, Lucrezia
+
+7. **Luigi**: 
+   - Female, Person
+   - hasParent: Dino, Maria
+   - hasSibling: Serena, Ombretta
+
+### Analysis:
+- **Common Traits in Positive Examples**:
+  - Many are instances of both `Female` and `Person`.
+  - Many have the `hasChild` property.
+  - Many have the `hasSibling` property.
+
+- **Common Traits in Negative Examples**:
+  - Many are instances of `Male`.
+  - Many have the `hasParent` property with individuals in the positive set.
+
+### Complex Class Expression:
+Given the analysis, a complex class expression that captures the positive examples but not the negative ones could be:
+
+```plaintext
+(Female and (hasChild some Thing))
+```
+
+This expression captures individuals who are classified as `Female` and have at least one child, which aligns with the characteristics of the positive examples and excludes the negative examples.

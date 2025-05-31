@@ -1,0 +1,37 @@
+To find a complex class expression for "Sibling" that includes the positive examples and excludes the negative examples, we need to analyze the relationships and properties that are common among the positive examples but not present in the negative examples.
+
+### Positive Examples:
+- **kb:Luigi**
+  - hasSibling: Ombretta, Serena
+- **kb:Maria**
+  - hasSibling: Rosanna
+- **kb:Dino**
+  - hasSibling: Nella
+- **kb:Serena**
+  - hasSibling: Luigi, Ombretta
+- **kb:Ombretta**
+  - hasSibling: Luigi, Serena
+- **kb:Francesco**
+  - hasSibling: Giuseppe
+- **kb:Anna**
+  - hasSibling: NonnoLuigi
+
+### Negative Examples:
+- **kb:Dora**
+  - No siblings mentioned
+- **kb:Gianni**
+  - No siblings mentioned
+- **kb:Luca**
+  - No siblings mentioned
+
+### Analysis:
+The common property among the positive examples is the presence of the `hasSibling` relationship. Each positive example has at least one sibling, while the negative examples do not have any siblings mentioned.
+
+### Complex Class Expression:
+The complex class expression for "Sibling" that includes all the positive examples and excludes the negative examples is:
+
+```plaintext
+Person and (hasSibling some Thing)
+```
+
+This expression indicates that the individual is a `Person` and has at least one sibling, which is consistent with the positive examples and not applicable to the negative examples.

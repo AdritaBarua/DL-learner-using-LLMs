@@ -1,0 +1,199 @@
+// declare some prefixes to use as abbreviations
+prefixes = [ ("ex","http://www.benchmark.org/family#") ]
+
+// knowledge source definition
+ks.type = "OWL File"
+ks.fileName = "family-benchmark.owl"
+
+// reasoner
+reasoner.type = "closed world reasoner"
+reasoner.sources = { ks }
+
+// CELOE
+/*
+alg.type = "celoe"
+alg.terminateOnNoiseReached = true
+*/
+
+// OCEL
+alg.type = "ocel"
+
+// ELTL
+// alg.type = "eltl"
+
+// learning problem
+lp.type = "posNegStandard"
+lp.positiveExamples = { "ex:F1F3"
+,"ex:F1F2"
+,"ex:F2F15"
+,"ex:F2F12"
+,"ex:F2F24"
+,"ex:F2F22"
+,"ex:F2F19"
+,"ex:F2F33"
+,"ex:F2F30"
+,"ex:F2F28"
+,"ex:F2F36"
+,"ex:F2F10"
+,"ex:F3F49"
+,"ex:F3F48"
+,"ex:F3F46"
+,"ex:F3F42"
+,"ex:F3F41"
+,"ex:F4F56"
+,"ex:F4F55"
+,"ex:F5F67"
+,"ex:F5F65"
+,"ex:F5F61"
+,"ex:F6F74"
+,"ex:F6F72"
+,"ex:F6F82"
+,"ex:F6F77"
+,"ex:F6F87"
+,"ex:F6F84"
+,"ex:F6F97"
+,"ex:F6F94"
+,"ex:F6F93"
+,"ex:F6F70"
+,"ex:F7F111"
+,"ex:F7F108"
+,"ex:F7F106"
+,"ex:F7F116"
+,"ex:F7F127"
+,"ex:F7F124"
+,"ex:F7F121"
+,"ex:F7F105"
+,"ex:F7F103"
+,"ex:F8F137"
+,"ex:F8F135"
+,"ex:F8F133"
+,"ex:F9F145"
+,"ex:F9F143"
+,"ex:F9F154"
+,"ex:F9F141"
+,"ex:F9F160"
+,"ex:F9F163"
+,"ex:F9F158"
+,"ex:F9F168"
+,"ex:F9F140"
+,"ex:F10F174"
+,"ex:F10F181"
+,"ex:F10F189"
+,"ex:F10F186"
+,"ex:F10F198"
+,"ex:F10F195"
+,"ex:F10F172"
+}
+
+lp.negativeExamples = {
+"ex:F10F200"
+,"ex:F10M197"
+,"ex:F6F96"
+,"ex:F9M146"
+,"ex:F10M173"
+,"ex:F6M69"
+,"ex:F1M6"
+,"ex:F9M166"
+,"ex:F6M95"
+,"ex:F5M68"
+,"ex:F6M73"
+,"ex:F10M199"
+,"ex:F7M123"
+,"ex:F5M66"
+,"ex:F9F152"
+,"ex:F10M180"
+,"ex:F9M162"
+,"ex:F10F175"
+,"ex:F2M39"
+,"ex:F6M98"
+,"ex:F8M136"
+,"ex:F9M170"
+,"ex:F1M4"
+,"ex:F10F191"
+,"ex:F7M117"
+,"ex:F1F7"
+,"ex:F2M35"
+,"ex:F7M120"
+,"ex:F4F58"
+,"ex:F10M182"
+,"ex:F7F126"
+,"ex:F9F156"
+,"ex:F3M45"
+,"ex:F6M80"
+,"ex:F7F118"
+,"ex:F3M51"
+,"ex:F10F201"
+,"ex:F7M128"
+,"ex:F6M81"
+,"ex:F2F17"
+,"ex:F6F86"
+,"ex:F8M134"
+,"ex:F3M47"
+,"ex:F10M194"
+,"ex:F7F114"
+,"ex:F5F62"
+,"ex:F6F79"
+,"ex:F2M16"
+,"ex:F7M115"
+,"ex:F3F52"
+,"ex:F6M90"
+,"ex:F6F101"
+,"ex:F3M44"
+,"ex:F6M99"
+,"ex:F9F169"
+,"ex:F2M18"
+,"ex:F6M100"
+,"ex:F8M138"
+,"ex:F3F53"
+,"ex:F10M176"
+}
+DL-Learner command line interface
+Initializing component 'ks' of type OWL File ...
+... initialized component 'ks' in 1ms. Status: OK
+Initializing component 'reasoner' of type closed world reasoner ...
+Loaded reasoner: Pellet (com.clarkparsia.pellet.owlapiv3.PelletReasoner)
+Materializing TBox...
+materialising concepts
+
+[.....] 0%
+[.....] 14%
+[=....] 28%materialising object properties ...
+
+[==...] 42%
+[==...] 57%
+[===..] 71%
+[====.] 85%materialising datatype properties
+...TBox materialised in 72 ms.
+... initialized component 'reasoner' in 635ms. Status: OK
+Initializing component 'lp' of type PosNegLPStandard ...
+... initialized component 'lp' in 0ms. Status: OK
+Initializing component 'alg' of type OWL Class Expression Learner ...
+... initialized component 'alg' in 36ms. Status: OK
+Running algorithm instance "alg" (OCEL)
+starting top down refinement with: Thing (50% accuracy)
+more accurate (83.33%) class expression found: Female
+more accurate (100.00%) class expression found: Female and (hasChild some Thing)
+Maximum time (10 seconds) reached, stopping now...
+solutions (at most 20 are shown):
+1: Female and (hasChild some Thing) (accuracy 100%, length 5, depth 1)
+2: Female and (hasChild some Person) (accuracy 100%, length 5, depth 1)
+3: Female and (hasChild some (hasParent some Thing)) (accuracy 100%, length 7, depth 2)
+4: Female and Person and (hasChild some Thing) (accuracy 100%, length 7, depth 1)
+5: Female and (hasChild some (Person or Person)) (accuracy 100%, length 7, depth 1)
+6: Female and (hasChild some (hasChild only Thing)) (accuracy 100%, length 7, depth 2)
+7: Female and (hasChild some (hasParent only Thing)) (accuracy 100%, length 7, depth 2)
+8: Female and (hasChild some (hasSibling only Thing)) (accuracy 100%, length 7, depth 2)
+9: Female and (hasChild some (married only Thing)) (accuracy 100%, length 7, depth 2)
+10: Female and (not (Male)) and (hasChild some Thing) (accuracy 100%, length 8, depth 1)
+11: Female and (hasChild some Thing) and (married some Thing) (accuracy 100%, length 9, depth 1)
+12: Female and (hasChild some (Person or (not (Female)))) (accuracy 100%, length 8, depth 1)
+13: Female and (hasChild some (Person or (not (Male)))) (accuracy 100%, length 8, depth 1)
+14: Female and (hasChild some (Person or (hasChild some Thing))) (accuracy 100%, length 9, depth 2)
+15: Female and (hasChild some (Person or (hasParent some Thing))) (accuracy 100%, length 9, depth 2)
+16: Female and (hasChild some (Person or (hasSibling some Thing))) (accuracy 100%, length 9, depth 2)
+17: Female and (hasChild some (Person or (married some Thing))) (accuracy 100%, length 9, depth 2)
+18: Female and (hasChild some (hasChild max 4 Thing)) (accuracy 100%, length 8, depth 2)
+19: Female and (hasChild some Person) and (hasChild some Thing) (accuracy 100%, length 9, depth 1)
+20: Female and (Person or Person) and (hasChild some Thing) (accuracy 100%, length 9, depth 1)
+Algorithm stopped (34150 descriptions tested).
+

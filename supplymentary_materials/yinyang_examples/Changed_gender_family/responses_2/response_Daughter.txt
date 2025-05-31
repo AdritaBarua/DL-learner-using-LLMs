@@ -1,0 +1,62 @@
+To determine the complex class expression for "Daughter" based on the given positive and negative examples, we need to analyze the relationships and class memberships of the individuals in the knowledge base.
+
+### Positive Examples:
+- **Serena**
+  - Parent: Maria, Dino
+  - Siblings: Luigi, Ombretta
+
+- **Ombretta**
+  - Parent: Maria, Dino
+  - Siblings: Serena, Luigi
+
+- **Valentina**
+  - Parent: Francesco, Rosanna
+  - Siblings: Milly, Antonella
+
+- **Milly**
+  - Parent: Francesco, Rosanna
+  - Siblings: Valentina, Antonella
+
+- **Antonella**
+  - Parent: Francesco, Rosanna
+  - Siblings: Valentina, Milly
+
+- **Marisella**
+  - Parent: Mauro, Nella
+  - Sibling: Giovanna
+
+- **Giovanna**
+  - Parent: Mauro, Nella
+  - Sibling: Marisella
+
+- **Nella**
+  - Parent: NonnaLina, NonnoLuigi
+  - Children: Marisella, Giovanna
+
+### Negative Examples:
+- **Luigi**
+  - Parent: Maria, Dino
+  - Sibling: Serena, Ombretta
+
+- **Dino**
+  - Parent: NonnaLina, NonnoLuigi
+  - Children: Serena, Ombretta, Luigi
+
+### Analysis:
+1. **Class Membership**: All positive examples are instances of the class `Person`. However, the negative examples are also instances of `Person`, so this does not help in distinguishing them.
+
+2. **Parent-Child Relationship**: The positive examples have a `hasParent` relationship, indicating they are children of someone. The negative examples also have this relationship, so this alone is not sufficient.
+
+3. **Sibling Relationship**: The positive examples have siblings, but so do the negative examples.
+
+4. **Gender**: The positive examples are all instances of `Male`, which is a subclass of `Person`. The negative examples, however, are instances of `Female`.
+
+### Conclusion:
+The distinguishing factor between the positive and negative examples is the gender. The positive examples are all instances of `Male`, while the negative examples are instances of `Female`. Therefore, the complex class expression for "Daughter" can be defined as:
+
+**Complex Class Expression for Daughter**:
+``` 
+Person and Male
+```
+
+This expression captures the fact that all positive examples are instances of `Male`, which is a subclass of `Person`, and none of the negative examples are instances of `Male`.

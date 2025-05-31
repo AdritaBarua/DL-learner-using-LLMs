@@ -1,0 +1,33 @@
+To determine the complex class expression for "Daughter" based on the given positive and negative examples, we need to analyze the relationships and class memberships in the ontology.
+
+### Analysis:
+
+1. **Class Membership:**
+   - All positive examples are instances of the class `Female`.
+   - Negative examples include instances of both `Male` and `Female`.
+
+2. **Relationships:**
+   - Positive examples often have relationships indicating they are children of other individuals (e.g., `hasParent`).
+   - Negative examples include individuals with `hasChild` relationships, indicating they are parents, not children.
+
+3. **Sibling Relationships:**
+   - Positive examples may have `hasSibling` relationships, but this is not exclusive to them.
+
+4. **Marital Status:**
+   - Positive examples do not have `married` relationships, which is more common in negative examples.
+
+### Complex Class Expression:
+
+Given the analysis, the complex class expression for "Daughter" can be constructed as follows:
+
+- **Female:** The individual must be an instance of the class `Female`.
+- **Has Parent:** The individual should have a `hasParent` relationship, indicating they are a child.
+- **Not Married:** The individual should not have a `married` relationship, as daughters in this context are likely unmarried.
+
+Thus, the complex class expression for "Daughter" is:
+
+```plaintext
+Female and (hasParent some Thing) and not (married some Thing)
+```
+
+This expression captures the essence of being a daughter: a female who is a child of someone and is not married.

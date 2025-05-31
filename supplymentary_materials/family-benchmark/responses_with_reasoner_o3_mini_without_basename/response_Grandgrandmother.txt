@@ -1,0 +1,39 @@
+❌ All 3 attempts were invalid.
+
+Last LLM output:
+1: Female and not (oneOf(F10F191, F2F24, F2F33, F10F198, F10F174, F2F22, F6F77)) (pred. acc.: 100.00%, F‐measure: 100.00%)
+
+2: Female and (hasChild some Thing) and not (oneOf(F10F191, F2F24, F2F33, F10F198, F10F174, F2F22, F6F77)) (pred. acc.: 100.00%, F‐measure: 100.00%)
+
+3: Female and (married some Person) and not (oneOf(F10F191, F2F24, F2F33, F10F198, F10F174, F2F22, F6F77)) (pred. acc.: 100.00%, F‐measure: 100.00%)
+
+4: Person and Female and not (oneOf(F10F191, F2F24, F2F33, F10F198, F10F174, F2F22, F6F77)) (pred. acc.: 100.00%, F‐measure: 100.00%)
+
+5: Female and ((hasChild some Thing) or (married some Person)) and not (oneOf(F10F191, F2F24, F2F33, F10F198, F10F174, F2F22, F6F77)) (pred. acc.: 100.00%, F‐measure: 100.00%)
+
+Last reasoner feedback:
+Reasoner: Pellet
+--- Expr 1 ---
+LLM expr: Female and not (oneOf(F10F191, F2F24, F2F33, F10F198, F10F174, F2F22, F6F77))
+Reported accuracy: 100.00%
+Exception in thread "main" org.semanticweb.owlapi.manchestersyntax.renderer.ParserException: Encountered oneOf at line 1 column 17. Expected one of:
+	Class name
+	Object property name
+	Data property name
+	inverse
+	not
+	(
+	{
+
+	at org.semanticweb.owlapi.manchestersyntax.parser.ManchesterOWLSyntaxParserImpl$ExceptionBuilder.build(ManchesterOWLSyntaxParserImpl.java:2562)
+	at org.semanticweb.owlapi.manchestersyntax.parser.ManchesterOWLSyntaxParserImpl.parseNonNaryClassExpression(ManchesterOWLSyntaxParserImpl.java:741)
+	at org.semanticweb.owlapi.manchestersyntax.parser.ManchesterOWLSyntaxParserImpl.parseIntersection(ManchesterOWLSyntaxParserImpl.java:611)
+	at org.semanticweb.owlapi.manchestersyntax.parser.ManchesterOWLSyntaxParserImpl.parseUnion(ManchesterOWLSyntaxParserImpl.java:634)
+	at org.semanticweb.owlapi.manchestersyntax.parser.ManchesterOWLSyntaxParserImpl.parseNestedClassExpression(ManchesterOWLSyntaxParserImpl.java:1103)
+	at org.semanticweb.owlapi.manchestersyntax.parser.ManchesterOWLSyntaxParserImpl.parseNonNaryClassExpression(ManchesterOWLSyntaxParserImpl.java:722)
+	at org.semanticweb.owlapi.manchestersyntax.parser.ManchesterOWLSyntaxParserImpl.parseIntersection(ManchesterOWLSyntaxParserImpl.java:611)
+	at org.semanticweb.owlapi.manchestersyntax.parser.ManchesterOWLSyntaxParserImpl.parseUnion(ManchesterOWLSyntaxParserImpl.java:634)
+	at org.semanticweb.owlapi.manchestersyntax.parser.ManchesterOWLSyntaxParserImpl.parseClassExpression(ManchesterOWLSyntaxParserImpl.java:593)
+	at com.example.MergedReasonerCheck.main(MergedReasonerCheck.java:251)
+
+Processing time for o3-mini: 233.00 seconds

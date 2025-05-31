@@ -1,0 +1,17 @@
+We can show that with the given ontology the “grandfather‐pattern” is the one for a male who has at least one child who in turn has at least one child. In DL (OWL) syntax this is usually written as:
+
+  Male and (hasChild some (hasChild some Thing))
+
+That is, an individual is a Grandfather if and only if it is a Male and it has some child who has some child. 
+
+Let’s briefly explain why this works in our case:
+
+• All the positive examples are male individuals (their names start with “F?M…” and are asserted as individuals of Male) and we know from the knowledge base that each of these individuals is connected (by a chain of “hasChild” relationships) to a grandchild. For example, if ex:F1M1 is a positive example then there is some ex:F1F3 (or related child) such that ex:F1M1 hasChild ex:F1F3, and ex:F1F3 in turn has a child (say ex:F1F5).
+
+• On the other hand, many of the negative examples—although some are male—do not have any “hasChild” chain of length two. For instance, an individual that is male but has a child without a further “hasChild” link will not satisfy (hasChild some (hasChild some Thing)).
+
+Thus the complex class expression discovered (by DL‐Learner in similar tasks) for Grandfather based on the positive and negative examples is:
+
+  Male and (hasChild some (hasChild some Thing))
+
+This is our answer.

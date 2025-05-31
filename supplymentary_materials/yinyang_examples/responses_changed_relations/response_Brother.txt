@@ -1,0 +1,27 @@
+To derive a complex class expression for "Brother" based on the given positive and negative examples, we need to identify the characteristics that are common among the positive examples but not present in the negative examples. 
+
+### Analysis:
+
+1. **Positive Examples:**
+   - **Antonella, Giovanna, Maria, Marisella, Milly, Miriam, Nella, Ombretta, Rosanna, Serena, Valentina**
+   - These are all instances of the class `Female` or `Person`.
+
+2. **Negative Examples:**
+   - **Dino, Luigi, Mauro, Francesco, Giuseppe, Carmela**
+   - These are all instances of the class `Male` or `Person`.
+
+### Observations:
+
+- The positive examples are primarily instances of `Female`, while the negative examples are instances of `Male`.
+- The property `hasSibling` is symmetric, meaning if `x hasSibling y`, then `y hasSibling x`.
+- The positive examples do not have the `Male` class, which is a key differentiator.
+
+### Complex Class Expression:
+
+Given that the positive examples are primarily `Female` and the negative examples are `Male`, the complex class expression for "Brother" should focus on the `Male` class and the `hasSibling` property. The expression should capture the idea that a "Brother" is a `Male` who has a sibling.
+
+Thus, the complex class expression for "Brother" is:
+
+\[ \text{Male} \, \text{and} \, (\text{hasSibling some Person}) \]
+
+This expression indicates that a "Brother" is a `Male` who has at least one sibling, which aligns with the characteristics of the negative examples (who are all `Male` and have siblings) and excludes the positive examples (who are primarily `Female`).

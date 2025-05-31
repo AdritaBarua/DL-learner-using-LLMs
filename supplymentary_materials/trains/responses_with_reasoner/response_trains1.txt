@@ -1,0 +1,64 @@
+❌ All 3 attempts were invalid.
+
+Last LLM output:
+1: hasCar some (OpenCar and (loadCount value one)) (accuracy 100%, length 7, depth 2)
+2: Train and (hasCar some (OpenCar and (loadCount value one))) (accuracy 100%, length 9, depth 2)
+3: (not (ClosedCar)) and (hasCar some (OpenCar and (loadCount value one))) (accuracy 100%, length 10, depth 2)
+4: (not (DoubleCar)) and (hasCar some (OpenCar and (loadCount value one))) (accuracy 100%, length 10, depth 2)
+5: (not (JaggedCar)) and (hasCar some (OpenCar and (loadCount value one))) (accuracy 100%, length 10, depth 2)
+
+Last reasoner feedback:
+Reasoner: Pellet
+--- Expr 1 ---
+LLM expr: hasCar some (OpenCar and (loadCount value one))
+Reported accuracy: 100.00%
+Positive ex. east2 -> true
+Positive ex. east3 -> true
+Positive ex. east1 -> true
+Negative ex. west9 -> true
+Negative ex. west7 -> true
+Reasoner accuracy for expr 1: 60.00% (3/5 correct)
+Expr 1 is INVALID.
+--- Expr 2 ---
+LLM expr: Train and (hasCar some (OpenCar and (loadCount value one)))
+Reported accuracy: 100.00%
+Positive ex. east2 -> true
+Positive ex. east3 -> true
+Positive ex. east1 -> true
+Negative ex. west9 -> true
+Negative ex. west7 -> true
+Reasoner accuracy for expr 2: 60.00% (3/5 correct)
+Expr 2 is INVALID.
+--- Expr 3 ---
+LLM expr: (not (ClosedCar)) and (hasCar some (OpenCar and (loadCount value one)))
+Reported accuracy: 100.00%
+Positive ex. east2 -> true
+Positive ex. east3 -> true
+Positive ex. east1 -> true
+Negative ex. west9 -> true
+Negative ex. west7 -> true
+Reasoner accuracy for expr 3: 60.00% (3/5 correct)
+Expr 3 is INVALID.
+--- Expr 4 ---
+LLM expr: (not (DoubleCar)) and (hasCar some (OpenCar and (loadCount value one)))
+Reported accuracy: 100.00%
+Positive ex. east2 -> true
+Positive ex. east3 -> true
+Positive ex. east1 -> true
+Negative ex. west9 -> true
+Negative ex. west7 -> true
+Reasoner accuracy for expr 4: 60.00% (3/5 correct)
+Expr 4 is INVALID.
+--- Expr 5 ---
+LLM expr: (not (JaggedCar)) and (hasCar some (OpenCar and (loadCount value one)))
+Reported accuracy: 100.00%
+Positive ex. east2 -> true
+Positive ex. east3 -> true
+Positive ex. east1 -> true
+Negative ex. west9 -> true
+Negative ex. west7 -> true
+Reasoner accuracy for expr 5: 60.00% (3/5 correct)
+Expr 5 is INVALID.
+=== Overall accuracy: 0.00%
+
+Processing time for gpt-4o: 4.42 seconds

@@ -1,0 +1,43 @@
+To find the complex class expression for "GrandParent" using the given positive and negative examples, we need to identify the properties and relationships that apply to the positive examples but not to the negative ones.
+
+### Positive Examples:
+- **NonnaLina**
+  - hasChild: Dino, Nella
+- **NonnoLuigi**
+  - hasChild: Dino, Nella
+- **Carmela**
+  - hasChild: Francesco, Giuseppe
+- **Girolamo**
+  - hasChild: Francesco, Giuseppe
+- **Isidoro**
+  - hasChild: Luciano
+
+### Negative Examples:
+- **Giovanna**
+- **Marisella**
+- **Ombretta**
+- **Serena**
+- **Valentina**
+- **Luca**
+- **Luigi**
+- **Dino**
+- **Maria**
+- **Mauro**
+- **Nella**
+- **Miriam**
+
+### Analysis:
+The positive examples are all individuals who have children, and those children have children of their own, making them grandparents. The negative examples do not have this property.
+
+### Complex Class Expression:
+The complex class expression for "GrandParent" can be defined as follows:
+
+- An individual is a "GrandParent" if they have a child who also has a child.
+
+In OWL, this can be expressed as:
+
+```plaintext
+Person and (hasChild some (hasChild some Thing))
+```
+
+This expression means that a "GrandParent" is a "Person" who has at least one child, and that child also has at least one child. This matches the pattern seen in the positive examples and excludes the negative examples.

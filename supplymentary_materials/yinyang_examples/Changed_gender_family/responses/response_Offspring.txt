@@ -1,0 +1,40 @@
+To determine the complex class expression for "Offspring" based on the given positive and negative examples, we need to identify the properties and class memberships that apply to all the positive examples but none of the negative examples.
+
+### Positive Examples:
+- **kb:Luigi**
+- **kb:Maria**
+- **kb:Dino**
+- **kb:Serena**
+- **kb:Ombretta**
+- **kb:Luca**
+
+### Negative Examples:
+- **kb:Dora**
+- **kb:Gianni**
+
+### Analysis:
+
+1. **Class Membership:**
+   - All positive examples are instances of the class `Person`.
+   - The negative examples are also instances of the class `Person`.
+
+2. **Properties:**
+   - **hasParent**: This property is common among the positive examples:
+     - Luigi hasParent Maria
+     - Maria hasParent Gianni
+     - Dino hasParent NonnaLina
+     - Serena hasParent Dino
+     - Ombretta hasParent Maria
+     - Luca hasParent Luciano and Lucrezia
+   - The negative examples do not have any `hasParent` relationships explicitly mentioned in the knowledge base.
+
+3. **Symmetric Properties:**
+   - The `hasSibling` property is symmetric, but it does not uniquely apply to the positive examples.
+
+### Conclusion:
+
+The complex class expression for "Offspring" that applies to all the positive examples but none of the negative examples is:
+
+**Person and (hasParent some Person)**
+
+This expression captures the fact that all the positive examples have a `hasParent` relationship with some instance of `Person`, which is not the case for the negative examples.

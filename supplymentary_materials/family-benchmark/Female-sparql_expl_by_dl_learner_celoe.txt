@@ -1,0 +1,79 @@
+// declare some prefixes to use as abbreviations
+prefixes = [ ("ex","http://www.benchmark.org/family#") ]
+
+// knowledge source definition
+//ks.type = "SPARQL endpoint fragment"
+ks.type = "OWL File"
+ks.fileName = "family-benchmark.owl"
+//ks.type = "SPARQL endpoint"
+//ks.url = "http://localhost:8890/sparql"
+//ks.defaultGraphURIs = {"http://family-benchmark.owl"}
+
+// reasoner
+reasoner.type = "SPARQL Reasoner"
+reasoner.laxMode = true
+reasoner.sources = { ks }
+reasoner.useInstanceChecks = false
+
+// CELOE
+
+alg.type = "celoe"
+//alg.maxExecutionTimeInSeconds = 300
+alg.maxExecutionTimeInSeconds = 60
+// alg.terminateOnNoiseReached = true
+alg.writeSearchTree = true
+alg.replaceSearchTree = true
+alg.searchTreeFile = "/tmp/tree.log"
+
+
+// OCEL
+// alg.type = "ocel"
+
+// ELTL
+// alg.type = "eltl"
+
+// learning problem
+lp.type = "ClassLearningProblem"
+lp.classToDescribe = "http://www.benchmark.org/family#Female"
+
+DL-Learner command line interface
+Initializing component 'ks' of type OWL File ...
+... initialized component 'ks' in 2ms. Status: OK
+Initializing component 'reasoner' of type SPARQL Reasoner ...
+... initialized component 'reasoner' in 221ms. Status: OK
+Initializing component 'lp' of type ClassLearningProblem ...
+... initialized component 'lp' in 338ms. Status: OK
+Initializing component 'alg' of type CELOE ...
+Ignoring unsatisfiable check due to org.dllearner.reasoning.SPARQLReasoner.getInconsistentClassesImpl(SPARQLReasoner.java:1863)
+Preparing object property subsumption hierarchy ...
+... done in 19ms
+Preparing data property subsumption hierarchy ...
+... done in 3ms
+Numeric Facet restrictions are not (yet) implemented for SPARQL Reasoner, option ignored
+Time based Facet restrictions are not (yet) implemented for SPARQL Reasoner, option ignored
+Cardinality restrictions in Sparql not fully implemented, defaulting to 10.
+... initialized component 'alg' in 100ms. Status: OK
+Running algorithm instance "alg" (CELOE)
+start class:Thing
+more accurate (48.51%) class expression found after 87ms: Thing
+more accurate (100.00%) class expression found after 243ms: not (Male)
+Algorithm terminated successfully (time: 60s 11ms, 11328 descriptions tested, 5911 nodes in the search tree).
+
+number of retrievals: 11393
+retrieval reasoning time: 20s 126ms ( 1ms per retrieval)
+(complex) subsumption checks: 1686 (0 multiple)
+subsumption reasoning time: 36ms ( 0ms per subsumption check)
+overall reasoning time: 20s 163ms
+
+solutions:
+1: not (Male) 100.00%
+2: Person and (not (Male)) 100.00%
+3: (Female and Male) or (not (Male)) 100.00%
+4: Person and (Female or (not (Person))) 100.00%
+5: (Female and (hasSibling some Thing)) or (not (Male)) 100.00%
+6: (Female and (hasSibling some Person)) or (not (Male)) 100.00%
+7: (Female and (hasSibling some Male)) or (not (Male)) 100.00%
+8: (Female and (hasSibling some Female)) or (not (Male)) 100.00%
+9: (Female and (hasParent some Thing)) or (not (Male)) 100.00%
+10: (Female and (hasParent some Person)) or (not (Male)) 100.00%
+

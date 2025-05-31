@@ -1,0 +1,29 @@
+To determine the complex class expression that distinguishes the positive examples from the negative examples, we need to analyze the relationships and properties that are common among the positive examples but not present in the negative examples. 
+
+### Analysis:
+
+1. **Class Membership**:
+   - All positive examples are instances of the class `Male`.
+   - Some negative examples are also instances of `Male`, so this alone is not sufficient.
+
+2. **Relationships**:
+   - Many positive examples have relationships like `hasSibling`, `hasChild`, or `hasParent`.
+   - We need to identify a pattern in these relationships that is common among the positive examples but not the negative ones.
+
+3. **Common Relationships**:
+   - **hasChild**: Many positive examples have a `hasChild` relationship.
+   - **hasSibling**: Some positive examples have a `hasSibling` relationship.
+   - **hasParent**: Some positive examples have a `hasParent` relationship.
+
+4. **Exclusion of Negative Examples**:
+   - The negative examples include instances that have relationships like `married`, `hasParent`, and `hasChild`, but the specific pattern of these relationships differs from the positive examples.
+
+### Conclusion:
+
+Based on the analysis, a potential complex class expression that captures the commonality among the positive examples while excluding the negative examples could be:
+
+```plaintext
+Male and (hasChild some Thing) and (hasSibling some Thing)
+```
+
+This expression suggests that the positive examples are males who have both a child and a sibling, which is a pattern not commonly found in the negative examples. This expression leverages the relationships `hasChild` and `hasSibling` to distinguish the positive examples from the negative ones.

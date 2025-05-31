@@ -1,0 +1,15 @@
+Below is one acceptable answer and an explanation of how it was derived.
+
+For example, one answer produced by DL‐Learner for the concept “Aunt” was:
+
+  Female and (hasSibling some (hasChild some Thing))
+
+Why does this work? Notice that all the positive examples (F2F14, F2F12, …, F10F195) are female individuals. In contrast, many of the negatives are either male or females that do not have the “family‐role” relationship we expect from an aunt. Recall that an “aunt” is (by one common definition) a female who is a sibling of one of a child’s parents—that is, she has a brother or sister (that is, a sibling) who is also a parent (that is, who has at least one child). 
+
+In our ontology we have the roles hasSibling and hasChild. So if a female has some sibling that (in turn) has some child then she is (or is in the role of) an aunt. In OWL/Manchester syntax the complex class expression
+
+  Female and (hasSibling some (hasChild some Thing))
+
+says exactly this. It picks out those individuals that are known to be Female and have at least one sibling who in turn has at least one child. (Any individual with that property would be an aunt—even if she herself is also a parent.) 
+
+Thus, given the positive and negative examples in the knowledge base, one acceptable complex class expression for Aunt is exactly the expression above.

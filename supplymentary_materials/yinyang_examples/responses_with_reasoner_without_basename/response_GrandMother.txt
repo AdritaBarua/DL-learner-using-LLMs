@@ -1,0 +1,31 @@
+❌ All 3 attempts were invalid.
+
+Last LLM output:
+1: Female and (hasChild some Thing) (accuracy 100%, length 5, depth 1)
+2: Female and (hasChild min 1 Thing) (accuracy 100%, length 6, depth 1)
+
+Last reasoner feedback:
+Reasoner: Pellet
+--- Expr 1 ---
+LLM expr: Female and (hasChild some Thing)
+Reported accuracy: 100.00%
+Positive ex. NonnaLina -> true
+Positive ex. Dora -> true
+Negative ex. Gianni -> false
+Negative ex. Maria -> true
+Negative ex. NonnoLuigi -> false
+Reasoner accuracy for expr 1: 80.00% (4/5 correct)
+Expr 1 is INVALID.
+--- Expr 2 ---
+LLM expr: Female and (hasChild min 1 Thing)
+Reported accuracy: 100.00%
+Positive ex. NonnaLina -> true
+Positive ex. Dora -> true
+Negative ex. Gianni -> false
+Negative ex. Maria -> true
+Negative ex. NonnoLuigi -> false
+Reasoner accuracy for expr 2: 80.00% (4/5 correct)
+Expr 2 is INVALID.
+=== Overall accuracy: 0.00%
+
+Processing time for gpt-4o: 1.37 seconds

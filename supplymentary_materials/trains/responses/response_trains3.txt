@@ -1,0 +1,35 @@
+To find the complex class expression, we need to identify the properties and characteristics that apply to the positive examples (kb:east1, kb:east2, kb:east3) but not to the negative examples (kb:east4, kb:east5).
+
+Let's analyze the given knowledge base:
+
+**Positive Examples:**
+- **kb:east1** hasCar: car_14, car_13, car_12, car_11
+- **kb:east2** hasCar: car_23, car_22, car_21
+- **kb:east3** hasCar: car_33, car_32, car_31
+
+**Negative Examples:**
+- **kb:east4** hasCar: car_44, car_43, car_42, car_41
+- **kb:east5** hasCar: car_53, car_52, car_51
+
+**Analysis:**
+1. **Positive Example Cars:**
+   - car_14, car_13, car_12, car_11, car_23, car_22, car_21, car_33, car_32, car_31
+   - Common properties:
+     - Many have the shape "rectangle" (car_13, car_12, car_11, car_23, car_22, car_33, car_32, car_31).
+     - Many have "loadCount" of "one" (car_13, car_12, car_21, car_33, car_32, car_31).
+     - Many have "wheels" with "two" (car_12, car_22, car_21, car_32, car_31).
+
+2. **Negative Example Cars:**
+   - car_44, car_43, car_42, car_41, car_53, car_52, car_51
+   - Common properties:
+     - Many have the shape "rectangle" (car_44, car_42, car_52, car_51).
+     - Many have "loadCount" of "one" (car_44, car_43, car_52, car_51).
+     - Many have "wheels" with "two" (car_42, car_43, car_51).
+
+**Distinctive Features:**
+- The positive examples have cars with "wheels" of "two" and "loadCount" of "one" that are not present in the negative examples.
+
+**Complex Class Expression:**
+The complex class expression that applies to the positive examples but not the negative examples is:
+
+\[ \text{hasCar some (Car and (wheels value two) and (loadCount value one))} \]

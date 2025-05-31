@@ -1,0 +1,26 @@
+To determine the complex class expression for "Sister" based on the given positive and negative examples, we need to analyze the relationships and class memberships in the ontology.
+
+### Analysis:
+
+1. **Class Membership:**
+   - Positive examples (Antonella, Giovanna, Maria, Marisella, Milly, Miriam, Nella, Ombretta, Rosanna, Serena, Valentina) are all instances of the class `Person`.
+   - Negative examples (Dino, Luigi, Mauro, Francesco, Giuseppe, Carmela) are also instances of the class `Person`.
+
+2. **Gender Classification:**
+   - The positive examples are instances of the class `Male`.
+   - The negative examples are instances of the class `Female`.
+
+3. **Sibling Relationships:**
+   - The property `hasSibling` is a `SymmetricProperty`, meaning if A has a sibling B, then B has a sibling A.
+   - Positive examples have sibling relationships with other individuals, as indicated in the knowledge base.
+
+4. **Parent-Child Relationships:**
+   - The positive examples have parent-child relationships, but this is not a distinguishing factor between the positive and negative examples.
+
+### Complex Class Expression:
+
+Given the analysis, the distinguishing feature of the positive examples is that they are all classified as `Male` and have sibling relationships. The negative examples are classified as `Female`. Therefore, the complex class expression for "Sister" can be derived as follows:
+
+- **Sister:** `Male and (hasSibling some Thing)`
+
+This expression captures the fact that the positive examples are all `Male` and have at least one sibling, which aligns with the definition of a "Sister" in this context.

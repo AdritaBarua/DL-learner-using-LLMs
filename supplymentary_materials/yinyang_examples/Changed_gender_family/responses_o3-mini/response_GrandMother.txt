@@ -1,0 +1,17 @@
+A common way to “explain” what it means to be a grandmother is that she must be a female who has at least one child that in turn has at least one child. In Manchester syntax the standard definition would be written as follows:
+
+  Female and (hasChild some (hasChild some Thing))
+
+Let’s briefly check this expression against the examples:
+
+• Both kb:NonnaLina and kb:Dora (the positive examples) have at least one child who is a parent—that is, they have grandchildren.
+
+• kb:NonnoLuigi and kb:Gianni (negative examples) do have children (and even grandchildren) but they are not female according to the intended meaning of the names.
+
+• kb:Maria is female but none of her children have any children, so she does not satisfy (hasChild some (hasChild some Thing)).
+
+Thus, the complex class expression
+
+  Female and (hasChild some (hasChild some Thing))
+
+selects exactly the individuals that have the structure of a “grandmother” according to the knowledge base.

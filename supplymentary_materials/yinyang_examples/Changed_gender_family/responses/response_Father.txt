@@ -1,0 +1,46 @@
+To find the complex class expression for "Father" using the given positive and negative examples, we need to identify the properties and relationships that are common to all positive examples but not present in any of the negative examples.
+
+### Positive Examples:
+1. **Dino**
+   - hasChild: Luigi, Ombretta, Serena
+   - hasParent: NonnaLina
+   - hasSibling: Nella
+
+2. **Francesco**
+   - hasChild: Valentina, Milly, Antonella
+   - hasParent: Girolamo, Carmela
+   - hasSibling: Giuseppe
+
+3. **Mauro**
+   - hasChild: Marisella, Giovanna
+   - hasSibling: Paolo, Miriam, Emilia
+
+4. **Giggino**
+   - hasChild: Felice
+
+### Negative Examples:
+- **Giovanna**
+- **Marisella**
+- **Ombretta**
+- **Serena**
+- **Valentina**
+- **Luca**
+- **Luigi**
+- **Maria**
+- **Nella**
+- **Miriam**
+- **NonnaLina**
+- **Carmela**
+
+### Analysis:
+From the positive examples, we can observe the following commonalities:
+- All positive examples have the property `hasChild` with at least one child.
+- The positive examples are instances of `Person`.
+
+The negative examples do not consistently have the `hasChild` property with children, which is a key differentiator.
+
+### Complex Class Expression for "Father":
+The complex class expression for "Father" can be defined as:
+\[ \text{Person} \, \text{and} \, (\text{hasChild some Person}) \]
+
+This expression captures the essence of being a "Father" in this ontology, as it requires the individual to be a `Person` and to have at least one `hasChild` relationship with another `Person`.

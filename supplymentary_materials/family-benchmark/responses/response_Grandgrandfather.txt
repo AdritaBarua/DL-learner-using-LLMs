@@ -1,0 +1,29 @@
+To determine the complex class expression for "Grandgrandfather" based on the given positive and negative examples, we need to analyze the relationships and properties that are common among the positive examples but not present in the negative examples. 
+
+### Analysis:
+
+1. **Positive Examples:**
+   - **ex:F2M20, ex:F2M29, ex:F2M9, ex:F3M45, ex:F3M43, ex:F3M40, ex:F5M60, ex:F6M92, ex:F6M69, ex:F7M107, ex:F7M122, ex:F7M104, ex:F7M102, ex:F8M132, ex:F9M142, ex:F9M139, ex:F10M171**
+   - These individuals are all instances of the class 'Male'.
+   - Many of them have relationships indicating they are parents or have children, which is a key aspect of being a "Grandgrandfather".
+
+2. **Negative Examples:**
+   - **ex:F10M190, ex:F9F169, ex:F9F168, ex:F7F106, ex:F7M128, ex:F7F129, ex:F7F105, ex:F10M182, ex:F2F17, ex:F2M34, ex:F7M120, ex:F6M81, ex:F6F101, ex:F8M134, ex:F7M109, ex:F3F53, ex:F10M173**
+   - These include both males and females, and some do not have the necessary parent-child relationships to be considered "Grandgrandfathers".
+
+### Common Characteristics of Positive Examples:
+- **Male:** All positive examples are instances of the class 'Male'.
+- **Has Child:** Many positive examples have a 'hasChild' relationship.
+- **Has Grandchild:** To be a "Grandgrandfather", an individual must have a child who also has a child (i.e., a grandchild).
+
+### Complex Class Expression:
+To be classified as a "Grandgrandfather", an individual must:
+- Be a male.
+- Have a child who also has a child (i.e., a grandchild).
+
+In OWL, this can be expressed as:
+``` 
+Male and (hasChild some (hasChild some Thing))
+```
+
+This expression captures the essence of being a "Grandgrandfather" by ensuring the individual is male and has a child who is also a parent.

@@ -1,0 +1,86 @@
+To find a complex class expression that applies to the positive examples but not to the negative examples, we need to analyze the relationships and properties associated with each individual in the positive and negative sets.
+
+### Positive Examples:
+1. **NonnaLina**
+   - hasChild: Dino, Nella
+
+2. **NonnoLuigi**
+   - hasChild: Dino, Nella
+   - hasSibling: Anna
+
+3. **Carmela**
+   - hasChild: Francesco, Giuseppe
+
+4. **Girolamo**
+   - hasChild: Francesco, Giuseppe
+
+5. **Isidoro**
+   - hasChild: Luciano
+
+### Negative Examples:
+1. **Giovanna**
+   - hasParent: Mauro, Nella
+   - hasSibling: Marisella
+
+2. **Marisella**
+   - hasParent: Mauro, Nella
+   - hasSibling: Giovanna
+
+3. **Ombretta**
+   - hasParent: Dino, Maria
+   - hasSibling: Luigi, Serena
+
+4. **Serena**
+   - hasParent: Dino, Maria
+   - hasSibling: Luigi, Ombretta
+
+5. **Valentina**
+   - hasParent: Francesco, Rosanna
+   - hasSibling: Antonella, Milly
+
+6. **Luca**
+   - hasParent: Luciano, Lucrezia
+
+7. **Luigi**
+   - hasParent: Dino, Maria
+   - hasSibling: Ombretta, Serena
+
+8. **Dino**
+   - hasParent: NonnaLina, NonnoLuigi
+   - hasChild: Luigi, Ombretta, Serena
+   - hasSibling: Nella
+
+9. **Maria**
+   - hasParent: Gianni, Dora
+   - hasChild: Luigi, Ombretta, Serena
+   - hasSibling: Rosanna
+
+10. **Mauro**
+    - hasChild: Marisella, Giovanna
+    - hasSibling: Paolo, Miriam, Emilia
+
+11. **Nella**
+    - hasParent: NonnaLina, NonnoLuigi
+    - hasChild: Marisella, Giovanna
+    - hasSibling: Dino
+
+12. **Miriam**
+    - hasSibling: Paolo, Mauro, Emilia
+
+### Analysis:
+From the positive examples, we observe that:
+- All individuals have the property `hasChild`.
+- They are not children themselves in the given data (i.e., they do not have a `hasParent` relationship in the provided examples).
+
+From the negative examples, we observe that:
+- Many have the property `hasParent`.
+- Some have the property `hasSibling`.
+
+### Complex Class Expression:
+Based on the analysis, a complex class expression that distinguishes the positive examples from the negative ones could be:
+
+```plaintext
+(hasChild some Thing) and not (hasParent some Thing)
+```
+
+This expression captures individuals who have children but are not listed as children themselves in the given data, which aligns with the characteristics of the positive examples and excludes the negative examples.

@@ -1,0 +1,9 @@
+One acceptable answer was to “chain” the parent–sibling–child roles. In words, a cousin is a person whose parent has a sibling who in turn is a parent (so that the person is the child of an aunt or uncle). In DL syntax this can be written as
+
+  Person ⊓ ∃hasParent.(∃hasSibling.(∃hasChild.Person))
+
+That is, an individual is a cousin if and only if it is a Person and it has some parent who has some sibling that in turn has some child (a Person). When you check the many family‐relations in the knowledge base, all the individuals in the positive example set satisfy that condition while those in the negative example set do not.
+
+Thus, one complex class expression for Cousin is:
+
+  Person and (hasParent some (hasSibling some (hasChild some Person))).

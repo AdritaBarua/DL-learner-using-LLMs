@@ -1,0 +1,26 @@
+Based on the knowledge base the DL‐Learner “discovers” that all the individuals intended to be sisters (i.e. those that should be in the target class) share two features:
+ 
+• they are asserted to be in the class Male (because of the “swapped” or inconsistent gender assertions)  
+• they have at least one sibling (that is, there is some kb:hasSibling–relationship to something)
+ 
+In Manchester syntax the resulting complex class expression is:
+
+  kb:Male and (kb:hasSibling some kb:Thing)
+ 
+Let’s explain briefly how this is reached:
+
+1. The positive examples for Sister are  
+  kb:Antonella, kb:Giovanna, kb:Maria, kb:Marisella,  
+  kb:Milly, kb:Miriam, kb:Nella, kb:Ombretta,  
+  kb:Rosanna, kb:Serena, kb:Valentina.  
+When you inspect the assertions in the knowledge base, you see that these individuals are (in the “Male” branch of the ontology) even though their names would normally suggest otherwise. (In our ontology the genders appear “swapped” relative to the usual interpretation.)  
+
+2. In contrast, the negative examples –  
+  kb:Dino, kb:Luigi, kb:Mauro, kb:Francesco, kb:Giuseppe, kb:Carmela –  
+mostly appear as members of kb:Female (and so are excluded by “kb:Male”). The only male negative (kb:Carmela) happens not to have any sibling (no kb:hasSibling relationship is provided), so including the existential restriction “(kb:hasSibling some kb:Thing)” removes her.
+
+Thus, the only individuals that satisfy “being male” (as asserted in our KB) and “having at least oneSibling” are exactly the positive examples. (This is analogous to the way DL‐Learner “discovered” for the Brother examples an expression that used kb:Female.)
+
+So the final answer is:
+
+  kb:Male and (kb:hasSibling some kb:Thing)

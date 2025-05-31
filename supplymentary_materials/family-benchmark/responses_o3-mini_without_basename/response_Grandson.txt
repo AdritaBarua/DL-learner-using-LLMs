@@ -1,0 +1,21 @@
+One answer that has been accepted in DL‐Learner experiments is very concise. For example, one solution was:
+
+  Male and (hasSibling some Thing)
+
+What does this mean? It says that an individual is in the complex concept exactly when it is a Male and it has at least one sibling.
+
+In our knowledge base the positive examples (ex:F2M13, ex:F2M18, ex:F2M25, ex:F2M23, ex:F2M21, ex:F2M32, ex:F2M35, ex:F3M44, ex:F3M51, ex:F3M47, ex:F3M45, ex:F5M68, ex:F5M66, ex:F6M75, ex:F6M73, ex:F6M81, ex:F6M90, ex:F6M99, ex:F6M100, ex:F7M112, ex:F7M110, ex:F7M113, ex:F7M117, ex:F7M115, ex:F7M125, ex:F7M123, ex:F7M131, ex:F8M138, ex:F8M136, ex:F9M147, ex:F9M151, ex:F9M155, ex:F9M153, ex:F9M161, ex:F9M159, ex:F9M166, ex:F9M162, ex:F10M183, ex:F10M184, ex:F10M190, ex:F10M188, ex:F10M199, ex:F10M197) are all males that (by virtue of sharing a parent with at least one other child) have a sibling.
+
+In contrast, many of the negative examples (for example, ex:F4M57, ex:F1M8, ex:F2M16, ex:F2M34, ex:F10M182, etc.) either are not known to have any sibling (or at least no sibling relationship is asserted or inferred) or belong to the “only‐child” part of their family.
+
+Thus one acceptable complex class expression (in Manchester syntax) is
+
+  Male and (hasSibling some Thing)
+
+Note that other equivalent or slightly more complex expressions (for example, using the “hasParent” role to “compute” the siblinghood by saying that the individual has a parent who has at least two children) are also possible. For example, one may also write
+
+  Male and (hasParent some (hasChild min 2 Thing))
+
+which is equivalent (under the usual assumptions that hasSibling is defined via common parents) to the simpler expression. 
+
+Any answer of the general form “Male and …” that picks out exactly those individuals that occur as positive examples (and not the negatives) is acceptable.

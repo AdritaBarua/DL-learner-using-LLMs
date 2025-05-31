@@ -1,0 +1,13 @@
+Total Successes: 9
+Total Failures:  0
+
+Details:
+response_Aunt.txt: ✅ success on attempt 1
+response_Brother.txt: ✅ success on attempt 1
+response_Children.txt: ✅ success on attempt 1
+response_Friend.txt: ✅ success on attempt 1
+response_GrandFather.txt: ✅ success on attempt 1
+response_GrandMother.txt: ✅ success on attempt 1
+response_Mother.txt: ✅ success on attempt 1
+response_Son.txt: ✅ success on attempt 1
+response_Uncle.txt: ✅ success on attempt 1

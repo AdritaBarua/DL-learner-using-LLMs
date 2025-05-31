@@ -1,0 +1,19 @@
+The answer is:
+
+  Male and (hasSibling some Thing)
+
+Here's a brief explanation of how this answer is reached:
+
+1. If you inspect the knowledge base, you will see that many individuals are asserted to be Persons and then even to be either Male or Female. In our positive example set (Antonella, Giovanna, Maria, Marisella, Milly, Miriam, Nella, Ombretta, Rosanna, Serena, Valentina) every one is also asserted to be an instance of Male. (Even though their “names” might suggest otherwise, the ontology assigns them to Male.)
+
+2. In contrast, nearly all of the negative examples (Dino, Luigi, Mauro, Francesco, Giuseppe) are asserted to be Female. (The only exception is Carmela—which is asserted as Male—but as we check her relationships she does not have any sibling relation.)
+
+3. Moreover, every individual in the positive example list participates in at least one hasSibling relationship. (For example, Antonella has siblings Milly and Valentina; Giovanna is sibling to Marisella; Rosanna is sibling to Maria; etc.) In the negatives, even the few individuals that might be Male (here only Carmela) do not have any explicit sibling relationships.
+
+4. Consequently, the DL‐learner “learns” that the positive examples share the additional properties of being Male and having at least one sibling. In Manchester syntax that is expressed as:
+  Male and (hasSibling some Thing)
+
+When using the kb: prefix you may write it as:
+  kb:Male and (kb:hasSibling some kb:Thing)
+
+This complex class expression correctly covers the positive examples while excluding the negative ones.

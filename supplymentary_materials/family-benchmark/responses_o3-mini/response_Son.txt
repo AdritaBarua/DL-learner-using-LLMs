@@ -1,0 +1,7 @@
+We can show that every individual we wish to call a “Son” is (a) in the class Male and (b) is the child of someone (that is, it appears in a hasParent relationship with some Person). In our knowledge‐base every individual that is “male” but is not known as being a child (that is, not occurring as the object of a hasParent assertion) appears in the negative example list, while every positive example is a male that has at least one parent. (Note that the parent does not have to be of any specific gender since every parent is a Person.) 
+
+Thus, by “mining” the properties that distinguish the positive from the negative examples, a DL‐Learner (or similar analysis) would return the complex class expression
+
+  Male ⊓ (hasParent some Person)
+
+which reads “a Male that has at least one parent which is a Person.” This exactly captures the intended meaning of “Son” in this knowledge‐base.

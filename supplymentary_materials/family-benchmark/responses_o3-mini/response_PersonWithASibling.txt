@@ -1,0 +1,9 @@
+Below is one acceptable answer. One way to “explain” the result is by observing that every positive example in the set is a Person who is known (by one or more explicit assertions in the KB) to have a sibling, whereas none of the negatives have any such “hasSibling” partner. (Note that the KB uses “hasSibling” for mutually related individuals.) 
+
+Thus one complex class expression (in DL– or Manchester–style notation) that covers exactly those individuals is:
+
+  Person and (hasSibling some Person)
+
+In words, “a Person that has at least one sibling who is also a Person.” 
+
+Any equivalent expression (for example, using a minimum cardinality restriction such as “Person and (hasSibling min 1 Person)”) is acceptable as a solution for PersonWithASibling.

@@ -1,0 +1,33 @@
+To determine the complex class expression for "Grandfather" based on the given positive and negative examples, we need to analyze the relationships and properties that distinguish the positive examples from the negative ones. The goal is to identify a pattern or set of conditions that apply to the positive examples but not to the negative examples.
+
+### Analysis:
+
+1. **Positive Examples:**
+   - All positive examples are instances of the class `Male`.
+   - Many of the positive examples have relationships indicating they are parents of other individuals, suggesting a generational relationship.
+   - Some positive examples have relationships indicating they are married, which might be relevant for identifying family structures.
+
+2. **Negative Examples:**
+   - The negative examples include both males and females, but the focus is on distinguishing the males who are not grandfathers.
+   - Some negative examples are also parents, but they might not have the additional generational link that would make them grandfathers.
+
+### Key Observations:
+
+- **Generational Link:** A grandfather is typically a male who has a child who is also a parent. This implies a two-step generational relationship: `hasChild` followed by `hasChild`.
+- **Marital Status:** While marital status might be relevant for family structures, it is not a defining feature of being a grandfather.
+- **Sibling Relationships:** These are not directly relevant to the concept of a grandfather.
+
+### Complex Class Expression:
+
+Based on the analysis, the complex class expression for "Grandfather" can be constructed as follows:
+
+- **Male:** The individual must be a male.
+- **Has a Child who is a Parent:** The individual must have a child who, in turn, has a child (i.e., the individual's grandchild).
+
+In OWL, this can be expressed as:
+
+```plaintext
+Male and (hasChild some (Person and (hasChild some Person)))
+```
+
+This expression captures the essence of a grandfather: a male who has a child, and that child is also a parent. This distinguishes the positive examples from the negative ones, as the negative examples either do not have this two-step generational relationship or are not male.

@@ -1,0 +1,108 @@
+/**
+ * Trains Example
+ *
+ * possible solution: EXISTS hasCar.(short AND closed)
+ *
+ * This is a very popular learning task in Inductive Logic Programming
+ * proposed 20 years ago by Ryszard Michalski.
+ * 10 trains are described, 5 of which are eastbound and 5 westbound. The
+ * aim is to find the discriminating features between these two classes.
+ * The file "trains.gif" visualises the learning task. (TODO: Find orginal
+ * source of this file.)
+ *
+ * An important difference between learning in Desription Logics and standard 
+ * Inductive Logic Programming is that the Open World Assumption is used.
+ * In order to complete this example we would have to introduce definitions
+ * and/or assertions to model the closed world (the closed world assumption
+ * holds in this example, because we have complete knowledge of the world).
+ * This is not done here, but the system is still able to learn the correct
+ * definition e.g. using the standard settings of the refinement operator
+ * algorithm.
+ *
+ * Original Reference:
+ *
+ * Michalski, R. S., "Pattern Recognition as Rule-Guided Inductive
+ * Inference," IEEE Transactions on Pattern Analysis and Machine
+ * Intelligence, Vol. PAMI-2, No. 4, pp. 349-361, July 1980.
+ *
+ * http://www.mli.gmu.edu/papers/79-80/80-05.pdf (page 11)
+ *
+ * Copyright (C) 2007, Jens Lehmann
+ */
+
+
+/*Background knowledge*/
+prefixes = [ ("kb","http://localhost/foo#") ]
+
+// knowledge source definition
+ks.type = "KB File"
+ks.fileName = "trains.kb"
+
+// reasoner
+reasoner.type = "closed world reasoner"
+reasoner.sources = { ks }
+
+lp.type = "posNegStandard"
+lp.positiveExamples = {"kb:east1", "kb:east2", "kb:east3", "kb:east4", "kb:east5"}
+lp.negativeExamples = {"kb:west6", "kb:west7", "kb:west8", "kb:west9", "kb:west10"}
+
+alg.type = "ocel"
+alg.maxExecutionTimeInSeconds = 5
+
+
+DL-Learner command line interface
+Initializing component 'ks' of type KB File ...
+... initialized component 'ks' in 71ms. Status: OK
+Initializing component 'reasoner' of type closed world reasoner ...
+Loaded reasoner: Pellet (com.clarkparsia.pellet.owlapiv3.PelletReasoner)
+Materializing TBox...
+materialising concepts
+
+[.....] 0%
+[.....] 7%
+[.....] 15%
+[=....] 23%
+[=....] 30%
+[=....] 38%
+[==...] 46%
+[==...] 53%materialising object properties ...
+
+[===..] 61%
+[===..] 69%
+[===..] 76%
+[====.] 84%
+[====.] 92%materialising datatype properties
+...TBox materialised in 65 ms.
+... initialized component 'reasoner' in 278ms. Status: OK
+Initializing component 'lp' of type PosNegLPStandard ...
+... initialized component 'lp' in 1ms. Status: OK
+Initializing component 'alg' of type OWL Class Expression Learner ...
+... initialized component 'alg' in 45ms. Status: OK
+Running algorithm instance "alg" (OCEL)
+starting top down refinement with: Thing (50% accuracy)
+more accurate (80.00%) class expression found: has_car some closed
+more accurate (100.00%) class expression found: has_car some (closed and short)
+Maximum time (5 seconds) reached, stopping now...
+solutions (at most 20 are shown):
+1: has_car some (closed and short) (accuracy 100%, length 5, depth 1)
+2: train and (has_car some (closed and short)) (accuracy 100%, length 7, depth 1)
+3: has_car some (car and closed and short) (accuracy 100%, length 7, depth 1)
+4: (not (car)) and (has_car some (closed and short)) (accuracy 100%, length 8, depth 1)
+5: (not (closed)) and (has_car some (closed and short)) (accuracy 100%, length 8, depth 1)
+6: (not (double)) and (has_car some (closed and short)) (accuracy 100%, length 8, depth 1)
+7: (not (jagged)) and (has_car some (closed and short)) (accuracy 100%, length 8, depth 1)
+8: (not (long)) and (has_car some (closed and short)) (accuracy 100%, length 8, depth 1)
+9: (not (open_car)) and (has_car some (closed and short)) (accuracy 100%, length 8, depth 1)
+10: (not (short)) and (has_car some (closed and short)) (accuracy 100%, length 8, depth 1)
+11: (has_car some Thing) and (has_car some (closed and short)) (accuracy 100%, length 9, depth 1)
+12: has_car some (closed and short and (not (double))) (accuracy 100%, length 8, depth 1)
+13: has_car some (closed and short and (not (jagged))) (accuracy 100%, length 8, depth 1)
+14: has_car some (closed and short and (not (long))) (accuracy 100%, length 8, depth 1)
+15: has_car some (closed and short and (not (open_car))) (accuracy 100%, length 8, depth 1)
+16: has_car some (closed and short and (not (train))) (accuracy 100%, length 8, depth 1)
+17: has_car some (closed and short and (load some Thing)) (accuracy 100%, length 9, depth 2)
+18: has_car some (closed and short and (load_count some Thing)) (accuracy 100%, length 9, depth 2)
+19: has_car some (closed and short and (shape some Thing)) (accuracy 100%, length 9, depth 2)
+20: has_car some (closed and short and (wheels some Thing)) (accuracy 100%, length 9, depth 2)
+Algorithm stopped (27721 descriptions tested).
+

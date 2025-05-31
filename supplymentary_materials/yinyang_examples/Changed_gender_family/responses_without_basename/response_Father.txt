@@ -1,0 +1,110 @@
+To determine the complex class expression that applies to the positive examples but not to the negative examples, we need to analyze the relationships and class memberships of the individuals in both sets.
+
+### Positive Examples:
+1. **Dino**:
+   - Instance of: Female, Person
+   - Relationships: 
+     - hasChild: Luigi, Serena, Ombretta
+     - hasParent: NonnoLuigi, NonnaLina
+     - hasSibling: Nella
+
+2. **Francesco**:
+   - Instance of: Female, Person
+   - Relationships:
+     - hasChild: Milly, Antonella, Valentina
+     - hasParent: Girolamo, Carmela
+     - hasSibling: Giuseppe
+
+3. **Mauro**:
+   - Instance of: Female, Person
+   - Relationships:
+     - hasChild: Giovanna, Marisella
+     - hasSibling: Paolo, Miriam, Emilia
+
+4. **Giggino**:
+   - Instance of: Female, Person
+   - Relationships:
+     - hasChild: Felice
+
+### Negative Examples:
+1. **Giovanna**:
+   - Instance of: Male, Person
+   - Relationships:
+     - hasParent: Mauro
+     - hasSibling: Marisella
+
+2. **Marisella**:
+   - Instance of: Male, Person
+   - Relationships:
+     - hasParent: Mauro, Nella
+     - hasSibling: Giovanna
+
+3. **Ombretta**:
+   - Instance of: Male, Person
+   - Relationships:
+     - hasParent: Dino, Maria
+     - hasSibling: Serena, Luigi
+
+4. **Serena**:
+   - Instance of: Male, Person
+   - Relationships:
+     - hasParent: Dino, Maria
+     - hasSibling: Ombretta, Luigi
+
+5. **Valentina**:
+   - Instance of: Male, Person
+   - Relationships:
+     - hasParent: Francesco, Rosanna
+     - hasSibling: Milly, Antonella
+
+6. **Luca**:
+   - Instance of: Female, Person
+   - Relationships:
+     - hasParent: Luciano, Lucrezia
+
+7. **Luigi**:
+   - Instance of: Female, Person
+   - Relationships:
+     - hasParent: Dino, Maria
+     - hasSibling: Serena, Ombretta
+
+8. **Maria**:
+   - Instance of: Male, Person
+   - Relationships:
+     - hasChild: Luigi, Serena, Ombretta
+     - hasParent: Gianni, Dora
+     - hasSibling: Rosanna
+
+9. **Nella**:
+   - Instance of: Male, Person
+   - Relationships:
+     - hasChild: Giovanna, Marisella
+     - hasParent: NonnoLuigi, NonnaLina
+     - hasSibling: Dino
+
+10. **Miriam**:
+    - Instance of: Male, Person
+    - Relationships:
+      - hasSibling: Mauro, Paolo, Emilia
+
+11. **NonnaLina**:
+    - Instance of: Male, Person
+    - Relationships:
+      - hasChild: Dino, Nella
+
+12. **Carmela**:
+    - Instance of: Male, Person
+    - Relationships:
+      - hasChild: Francesco, Giuseppe
+
+### Analysis:
+- All positive examples are instances of the class **Female**.
+- All positive examples have the property **hasChild** with some individual.
+- The negative examples include individuals who are instances of **Male** or do not have the **hasChild** property.
+
+### Complex Class Expression:
+Based on the analysis, the complex class expression that applies to the positive examples but not to the negative examples is:
+
+**Female and (hasChild some Thing)**
+
+This expression captures the fact that the positive examples are all instances of the class **Female** and have at least one child, which distinguishes them from the negative examples.

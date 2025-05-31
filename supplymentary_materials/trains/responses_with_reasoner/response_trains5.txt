@@ -1,0 +1,64 @@
+❌ All 3 attempts were invalid.
+
+Last LLM output:
+1: hasCar some (ClosedCar and (loadCount value three)) (accuracy 100%, length 7, depth 2)
+2: Train and (hasCar some (ClosedCar and (loadCount value three))) (accuracy 100%, length 9, depth 2)
+3: (not (JaggedCar)) and (hasCar some (ClosedCar and (loadCount value three))) (accuracy 100%, length 10, depth 2)
+4: (not (DoubleCar)) and (hasCar some (ClosedCar and (loadCount value three))) (accuracy 100%, length 10, depth 2)
+5: (not (OpenCar)) and (hasCar some (ClosedCar and (loadCount value three))) (accuracy 100%, length 10, depth 2)
+
+Last reasoner feedback:
+Reasoner: Pellet
+--- Expr 1 ---
+LLM expr: hasCar some (ClosedCar and (loadCount value three))
+Reported accuracy: 100.00%
+Positive ex. west10 -> false
+Positive ex. west8 -> false
+Positive ex. west6 -> true
+Negative ex. west9 -> false
+Negative ex. west7 -> false
+Reasoner accuracy for expr 1: 60.00% (3/5 correct)
+Expr 1 is INVALID.
+--- Expr 2 ---
+LLM expr: Train and (hasCar some (ClosedCar and (loadCount value three)))
+Reported accuracy: 100.00%
+Positive ex. west10 -> false
+Positive ex. west8 -> false
+Positive ex. west6 -> true
+Negative ex. west9 -> false
+Negative ex. west7 -> false
+Reasoner accuracy for expr 2: 60.00% (3/5 correct)
+Expr 2 is INVALID.
+--- Expr 3 ---
+LLM expr: (not (JaggedCar)) and (hasCar some (ClosedCar and (loadCount value three)))
+Reported accuracy: 100.00%
+Positive ex. west10 -> false
+Positive ex. west8 -> false
+Positive ex. west6 -> true
+Negative ex. west9 -> false
+Negative ex. west7 -> false
+Reasoner accuracy for expr 3: 60.00% (3/5 correct)
+Expr 3 is INVALID.
+--- Expr 4 ---
+LLM expr: (not (DoubleCar)) and (hasCar some (ClosedCar and (loadCount value three)))
+Reported accuracy: 100.00%
+Positive ex. west10 -> false
+Positive ex. west8 -> false
+Positive ex. west6 -> true
+Negative ex. west9 -> false
+Negative ex. west7 -> false
+Reasoner accuracy for expr 4: 60.00% (3/5 correct)
+Expr 4 is INVALID.
+--- Expr 5 ---
+LLM expr: (not (OpenCar)) and (hasCar some (ClosedCar and (loadCount value three)))
+Reported accuracy: 100.00%
+Positive ex. west10 -> false
+Positive ex. west8 -> false
+Positive ex. west6 -> true
+Negative ex. west9 -> false
+Negative ex. west7 -> false
+Reasoner accuracy for expr 5: 60.00% (3/5 correct)
+Expr 5 is INVALID.
+=== Overall accuracy: 0.00%
+
+Processing time for gpt-4o: 2.11 seconds

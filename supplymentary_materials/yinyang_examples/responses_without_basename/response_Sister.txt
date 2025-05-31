@@ -1,0 +1,38 @@
+To derive a complex class expression that distinguishes the positive examples from the negative examples, we need to identify the common characteristics of the positive examples that are not shared by the negative examples. Let's analyze the given examples:
+
+### Positive Examples:
+- **Antonella**
+- **Giovanna**
+- **Maria**
+- **Marisella**
+- **Milly**
+- **Miriam**
+- **Nella**
+- **Ombretta**
+- **Rosanna**
+- **Serena**
+- **Valentina**
+
+### Negative Examples:
+- **Dino**
+- **Luigi**
+- **Mauro**
+- **Francesco**
+- **Giuseppe**
+- **Carmela**
+
+### Analysis:
+1. **Gender**: All positive examples are instances of `Female`, while all negative examples are instances of `Male` or `Carmela`, who is a parent of males.
+2. **Parent-Child Relationships**: Many of the positive examples have relationships involving `hasParent` or `hasChild` with other individuals, but this is not unique to them as some negative examples also have such relationships.
+3. **Sibling Relationships**: The positive examples have various `hasSibling` relationships, but this is also true for some negative examples.
+
+### Common Characteristics:
+- **Female**: All positive examples are instances of the `Female` class.
+- **Sibling Relationships**: Many positive examples have `hasSibling` relationships, but this is not exclusive to them.
+
+### Complex Class Expression:
+Given the analysis, the most distinguishing feature of the positive examples is that they are all instances of the `Female` class. Therefore, the complex class expression that applies to the positive examples but not to the negative examples is:
+
+\[ \text{Female} \]
+
+This expression captures the fact that all positive examples are female, which is not true for the negative examples.

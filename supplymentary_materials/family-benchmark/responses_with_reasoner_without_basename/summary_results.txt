@@ -1,0 +1,7 @@
+Total Successes: 3
+Total Failures:  14
+
+Details:
+response_Father.txt: ✅ success on attempt 1
+response_PersonWithASibling.txt: ✅ success on attempt 1
+response_Son.txt: ✅ success on attempt 1

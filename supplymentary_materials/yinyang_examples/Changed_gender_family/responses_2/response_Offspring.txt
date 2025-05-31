@@ -1,0 +1,44 @@
+To determine the complex class expression for "Offspring" based on the given positive and negative examples, we need to analyze the relationships and class memberships of the individuals in the knowledge base.
+
+### Positive Examples:
+- **kb:Luigi**
+  - hasParent: Maria, Dino
+  - hasSibling: Ombretta, Serena
+
+- **kb:Maria**
+  - hasParent: Gianni, Dora
+  - hasSibling: Rosanna
+
+- **kb:Dino**
+  - hasParent: NonnaLina, NonnoLuigi
+  - hasSibling: Nella
+
+- **kb:Serena**
+  - hasParent: Maria, Dino
+  - hasSibling: Luigi, Ombretta
+
+- **kb:Ombretta**
+  - hasParent: Maria, Dino
+  - hasSibling: Luigi, Serena
+
+- **kb:Luca**
+  - hasParent: Luciano, Lucrezia
+
+### Negative Examples:
+- **kb:Dora**
+  - hasChild: Maria, Rosanna
+
+- **kb:Gianni**
+  - hasChild: Maria, Rosanna
+
+### Analysis:
+The positive examples share a common characteristic: they all have a "hasParent" relationship, indicating they are offspring of someone. The negative examples, on the other hand, do not have this characteristic; instead, they have a "hasChild" relationship, indicating they are parents rather than offspring.
+
+### Complex Class Expression for "Offspring":
+The complex class expression for "Offspring" can be defined as follows:
+
+```plaintext
+Person and (hasParent some Thing)
+```
+
+This expression captures the essence of being an offspring, as it includes individuals who are instances of the class "Person" and have at least one "hasParent" relationship, which applies to all the positive examples and none of the negative examples.

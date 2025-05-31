@@ -1,0 +1,90 @@
+To derive a complex class expression that distinguishes the positive examples from the negative examples, we need to analyze the relationships and properties that are common among the positive examples but not present in the negative examples.
+
+### Analysis of Positive Examples:
+1. **Maria**: 
+   - Has children: Serena, Ombretta, Luigi
+   - Has siblings: Rosanna
+   - Has parents: Gianni, Dora
+
+2. **Nella**: 
+   - Has children: Giovanna, Marisella
+   - Has sibling: Dino
+   - Has parent: NonnaLina, NonnoLuigi
+
+3. **Rosanna**: 
+   - Has children: Valentina, Milly, Antonella
+   - Has sibling: Maria
+   - Has parents: Gianni, Dora
+
+4. **Dino**: 
+   - Has children: Luigi, Ombretta, Serena
+   - Has sibling: Nella
+   - Has parents: NonnaLina, NonnoLuigi
+
+5. **Francesco**: 
+   - Has children: Valentina, Milly, Antonella
+   - Has sibling: Giuseppe
+   - Has parents: Girolamo, Carmela
+
+6. **NonnaLina**: 
+   - Has children: Dino, Nella
+
+7. **NonnoLuigi**: 
+   - Has children: Dino, Nella
+   - Has sibling: Anna
+
+8. **Mauro**: 
+   - Has children: Marisella, Giovanna
+   - Has siblings: Paolo, Miriam, Emilia
+
+9. **Carmela**: 
+   - Has children: Francesco, Giuseppe
+
+10. **Girolamo**: 
+    - Has children: Francesco, Giuseppe
+
+### Analysis of Negative Examples:
+1. **Giovanna**: 
+   - Has parent: Mauro, Nella
+   - Has sibling: Marisella
+
+2. **Marisella**: 
+   - Has parent: Mauro, Nella
+   - Has sibling: Giovanna
+
+3. **Ombretta**: 
+   - Has parent: Maria, Dino
+   - Has sibling: Luigi, Serena
+
+4. **Serena**: 
+   - Has parent: Maria, Dino
+   - Has sibling: Luigi, Ombretta
+
+5. **Valentina**: 
+   - Has parent: Francesco, Rosanna
+   - Has sibling: Antonella, Milly
+
+6. **Luca**: 
+   - Has parent: Luciano, Lucrezia
+
+7. **Luigi**: 
+   - Has parent: Dino, Maria
+   - Has sibling: Ombretta, Serena
+
+### Common Characteristics of Positive Examples:
+- Many of the positive examples are parents (Maria, Rosanna, Dino, Francesco, Carmela, Girolamo).
+- Some are siblings (Nella, Dino, Francesco, NonnoLuigi).
+- Some are grandparents (NonnaLina, NonnoLuigi).
+
+### Common Characteristics of Negative Examples:
+- Many are children (Giovanna, Marisella, Ombretta, Serena, Valentina, Luca, Luigi).
+- They do not have children themselves.
+
+### Complex Class Expression:
+Based on the analysis, a distinguishing feature of the positive examples is that they are either parents or have siblings. The negative examples are primarily children and do not have children themselves. Therefore, the complex class expression that captures this distinction is:
+
+```plaintext
+(Person and (hasChild some Thing)) or (hasSibling some Thing)
+```
+
+This expression indicates that the individuals are either parents (have at least one child) or have siblings, which aligns with the characteristics of the positive examples and not the negative ones.

@@ -1,0 +1,39 @@
+To find a complex class expression for "Daughter" using the given positive and negative examples, we need to identify the common characteristics and relationships that apply to all the positive examples but not to the negative examples.
+
+### Positive Examples:
+- **Serena**
+- **Ombretta**
+- **Valentina**
+- **Milly**
+- **Antonella**
+- **Marisella**
+- **Giovanna**
+- **Nella**
+
+### Negative Examples:
+- **Luigi**
+- **Dino**
+
+### Analysis:
+
+1. **Class Membership:**
+   - All positive examples are instances of the class **Female**.
+   - Negative examples are instances of the class **Male**.
+
+2. **Parent-Child Relationships:**
+   - Positive examples have a **hasParent** relationship with another person.
+   - Negative examples, particularly **Luigi**, also have a **hasParent** relationship, but they are not female.
+
+3. **Sibling Relationships:**
+   - Some positive examples have **hasSibling** relationships, but this is not consistent across all positive examples.
+
+4. **Commonality:**
+   - The key distinction is that all positive examples are **Female** and have a **hasParent** relationship, which is a typical characteristic of a "Daughter."
+
+### Complex Class Expression:
+
+Given the analysis, the complex class expression for "Daughter" that applies to all positive examples and none of the negative examples is:
+
+\[ \text{Female} \, \text{and} \, (\text{hasParent} \, \text{some} \, \text{Thing}) \]
+
+This expression captures the essence of being a "Daughter" by ensuring the individual is female and has at least one parent, which distinguishes them from the negative examples.

@@ -1,0 +1,21 @@
+To determine the complex class expression that distinguishes the positive examples from the negative examples, we need to analyze the relationships and properties that are common among the positive examples but not present in the negative examples. 
+
+Given the ontology and the examples, let's identify some key characteristics:
+
+1. **Marital Status**: Many of the positive examples are involved in a "married" relationship. This is a potential distinguishing feature.
+
+2. **Parent-Child Relationships**: Several positive examples have "hasChild" or "hasParent" relationships, which might not be as prevalent in the negative examples.
+
+3. **Sibling Relationships**: Some positive examples have "hasSibling" relationships, which could be another distinguishing factor.
+
+4. **Gender**: The positive examples include both males and females, so gender alone is not a distinguishing factor.
+
+5. **Class Membership**: All examples are instances of the class 'Person', so this is not a distinguishing factor.
+
+Based on these observations, a potential complex class expression could be:
+
+``` 
+Person and (married some Person) and (hasChild some Person or hasParent some Person or hasSibling some Person)
+```
+
+This expression captures individuals who are married and have at least one child, parent, or sibling, which seems to be a common trait among the positive examples and less common among the negative examples.

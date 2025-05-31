@@ -1,0 +1,5 @@
+We can see that all the positive examples (kb:Maria, kb:Nella, kb:Rosanna, kb:Dino, kb:Francesco, kb:NonnaLina, kb:NonnoLuigi, kb:Mauro, kb:Carmela, kb:Girolamo) are known to have at least one child via the “hasChild” property, whereas none of the negative examples (kb:Giovanna, kb:Marisella, kb:Ombretta, kb:Serena, kb:Valentina, kb:Luca) are connected by a “hasChild” relationship. Since the property “hasChild” has range Person (so its fillers are persons), we can characterize a Parent as an individual of type Person that has at least one child (i.e. has at least one “hasChild” relationship).
+
+Using Manchester syntax the complex class expression is:
+
+  Person and (hasChild some Person)

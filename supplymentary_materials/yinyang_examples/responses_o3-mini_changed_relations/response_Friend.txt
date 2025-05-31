@@ -1,0 +1,27 @@
+We can look at the ontology and ask: “What do the individuals that should be classified as Friend have in common that the others do not?”
+
+Let’s first list the positive examples and note one of their key asserted relationships:
+
+ • kb:Luigi has a kb:hasSibling relation (to kb:Ombretta and kb:Serena).  
+ • kb:Maria has a kb:hasSibling relation (to kb:Rosanna).  
+ • kb:Dino has a kb:hasSibling relation (to kb:Nella).  
+ • kb:Serena has a kb:hasSibling relation (to kb:Luigi and kb:Ombretta).  
+ • kb:Ombretta has a kb:hasSibling relation (to kb:Luigi and kb:Serena).  
+ • kb:Francesco has a kb:hasSibling relation (to kb:Giuseppe).  
+ • kb:Anna is connected via a sibling relation (NonnoLuigi has a sibling relation with kb:Anna—and since sibling is symmetric, Anna has a sibling).
+
+Now, let’s consider the negative examples:
+
+ • kb:Dora does not have any kb:hasSibling relation.  
+ • kb:Gianni is not asserted to have any sibling relationship.  
+ • kb:Luca is not known to have any sibling either.
+
+Thus, a natural candidate for the “Friend” concept is to require that an individual is a Person and has at least one sibling (i.e. it appears in a hasSibling assertion). In Manchester syntax this is written as follows:
+
+  kb:Person and (kb:hasSibling some kb:Person)
+
+This complex class expression covers all the positive examples (each has at least one sibling) and excludes the negatives (none of which have any sibling relationship asserted).
+
+So one acceptable answer is:
+
+ Friend ≡ kb:Person and (kb:hasSibling some kb:Person)

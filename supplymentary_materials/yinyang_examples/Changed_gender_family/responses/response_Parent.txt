@@ -1,0 +1,32 @@
+To determine the complex class expression for "Parent" based on the given positive and negative examples, we need to identify the properties that apply to all the positive examples but none of the negative examples. 
+
+Let's analyze the relationships for each of the positive examples:
+
+1. **Maria**: hasChild with Serena, Ombretta, Luigi
+2. **Nella**: hasChild with Giovanna, Marisella
+3. **Rosanna**: hasChild with Valentina, Milly, Antonella
+4. **Dino**: hasChild with Luigi, Ombretta, Serena
+5. **Francesco**: hasChild with Valentina, Milly, Antonella
+6. **NonnaLina**: hasChild with Dino, Nella
+7. **NonnoLuigi**: hasChild with Dino, Nella
+8. **Mauro**: hasChild with Marisella, Giovanna
+9. **Carmela**: hasChild with Giuseppe, Francesco
+10. **Girolamo**: hasChild with Giuseppe, Francesco
+
+Now, let's analyze the relationships for each of the negative examples:
+
+1. **Giovanna**: hasParent with Nella, Mauro
+2. **Marisella**: hasParent with Mauro, Nella
+3. **Ombretta**: hasParent with Maria, Dino
+4. **Serena**: hasParent with Maria, Dino
+5. **Valentina**: hasParent with Francesco, Rosanna
+6. **Luca**: hasParent with Luciano, Lucrezia
+7. **Luigi**: hasParent with Dino, Maria
+
+From this analysis, we can see that the common property among all positive examples is the "hasChild" relationship. None of the negative examples have this property as a parent (they are all children in the relationships).
+
+Therefore, the complex class expression for "Parent" is:
+
+**Person and (hasChild some Person)**
+
+This expression captures the essence of being a parent, as it requires the individual to have at least one child, which is true for all positive examples and not true for any of the negative examples.

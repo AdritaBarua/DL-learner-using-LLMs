@@ -1,0 +1,41 @@
+To determine the complex class expression that distinguishes the positive examples from the negative examples, we need to analyze the relationships and class memberships of the individuals in both sets.
+
+### Positive Examples:
+- **Antonella**: Female, hasParent Rosanna, hasSibling Milly, Valentina
+- **Giovanna**: Male, hasParent Mauro, Nella, hasSibling Marisella
+- **Maria**: Male, Female, hasParent Dora, Gianni, hasChild Luigi, Serena, Ombretta, hasSibling Rosanna
+- **Marisella**: Male, hasParent Mauro, Nella, hasSibling Giovanna
+- **Milly**: Male, hasParent Francesco, Rosanna, hasSibling Antonella, Valentina
+- **Miriam**: Male, hasSibling Emilia, Mauro, Paolo
+- **Nella**: Male, hasParent NonnoLuigi, NonnaLina, hasChild Giovanna, Marisella, hasSibling Dino
+- **Ombretta**: Male, hasParent Dino, Maria, hasSibling Serena, Luigi
+- **Rosanna**: Male, hasChild Antonella, Milly, Valentina, hasSibling Maria
+- **Serena**: Male, hasParent Dino, Maria, hasSibling Ombretta, Luigi
+- **Valentina**: Male, hasParent Francesco, Rosanna, hasSibling Antonella, Milly
+
+### Negative Examples:
+- **Dino**: Female, hasParent NonnoLuigi, NonnaLina, hasChild Luigi, Serena, Ombretta, hasSibling Nella
+- **Luigi**: Female, hasParent Dino, Maria, hasSibling Serena, Ombretta
+- **Mauro**: Female, hasChild Giovanna, Marisella, hasSibling Paolo, Miriam, Emilia
+- **Francesco**: Female, hasParent Girolamo, Carmela, hasChild Milly, Antonella, Valentina, hasSibling Giuseppe
+- **Giuseppe**: Female, hasParent Girolamo, Carmela, hasSibling Francesco
+- **Carmela**: Male, hasChild Francesco, Giuseppe
+
+### Analysis:
+1. **Class Membership**: 
+   - All positive examples are instances of the class `Male`.
+   - Negative examples include both `Male` and `Female`.
+
+2. **Relationships**:
+   - Positive examples have a variety of relationships, but a common feature is that they all have a `hasSibling` relationship.
+   - Negative examples also have `hasSibling` relationships, but they are not exclusively `Male`.
+
+3. **Distinguishing Feature**:
+   - The key distinguishing feature is that all positive examples are `Male` and have a `hasSibling` relationship.
+
+### Complex Class Expression:
+Given the analysis, the complex class expression that applies to the positive examples but not to the negative examples is:
+
+**Male and (hasSibling some Thing)**
+
+This expression captures the fact that all positive examples are `Male` and have at least one sibling, which is not a universal feature among the negative examples.

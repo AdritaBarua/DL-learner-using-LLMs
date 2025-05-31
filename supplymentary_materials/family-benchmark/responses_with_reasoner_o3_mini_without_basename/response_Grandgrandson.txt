@@ -1,0 +1,279 @@
+✅ SUCCESS on attempt 2
+
+LLM output:
+1: Male and (hasParent some Thing) and not ({F3M45, F6M85, F7M115, F10M197, F9M170, F9M144, F6M92, F3M43, F8M134, F9M142, F10M184, F8M132}) (pred. acc.: 100.00%, F‐measure: 100.00%)
+2: Male and not (married some Thing) and not ({F6M92, F8M134}) (pred. acc.: 95.83%, F‐measure: 97.00%)
+3: Male and (hasParent some Thing) and not (hasChild some (Male)) (pred. acc.: 91.67%, F‐measure: 93.33%)
+4: Person and Male and not (married some Thing) (pred. acc.: 87.50%, F‐measure: 89.29%)
+5: Male and (hasParent some Thing) and ((not (hasChild some Thing)) or (hasChild some Female)) (pred. acc.: 89.58%, F‐measure: 90.00%)
+
+Reasoner feedback:
+Reasoner: Pellet
+--- Expr 1 ---
+LLM expr: Male and (hasParent some Thing) and not ({F3M45, F6M85, F7M115, F10M197, F9M170, F9M144, F6M92, F3M43, F8M134, F9M142, F10M184, F8M132})
+Reported accuracy: 100.00%
+Positive ex. F3M51 -> true
+Positive ex. F6M99 -> true
+Positive ex. F5M68 -> true
+Positive ex. F10M190 -> true
+Positive ex. F8M138 -> true
+Positive ex. F10M199 -> true
+Positive ex. F7M113 -> true
+Positive ex. F7M125 -> true
+Positive ex. F7M112 -> true
+Positive ex. F7M123 -> true
+Positive ex. F9M161 -> true
+Positive ex. F7M117 -> true
+Positive ex. F2M18 -> true
+Positive ex. F2M35 -> true
+Positive ex. F2M25 -> true
+Positive ex. F3M47 -> true
+Positive ex. F2M23 -> true
+Positive ex. F9M147 -> true
+Positive ex. F7M131 -> true
+Positive ex. F9M155 -> true
+Positive ex. F9M166 -> true
+Positive ex. F2M32 -> true
+Positive ex. F7M110 -> true
+Positive ex. F6M75 -> true
+Negative ex. F8M132 -> false
+Negative ex. F8M134 -> false
+Negative ex. F2F30 -> false
+Negative ex. F3F53 -> false
+Negative ex. F9F148 -> false
+Negative ex. F10M197 -> false
+Negative ex. F10M184 -> false
+Negative ex. F10F193 -> false
+Negative ex. F10F192 -> false
+Negative ex. F10F198 -> false
+Negative ex. F6F70 -> false
+Negative ex. F9M170 -> false
+Negative ex. F7M115 -> false
+Negative ex. F5F65 -> false
+Negative ex. F6M92 -> false
+Negative ex. F3M45 -> false
+Negative ex. F9M144 -> false
+Negative ex. F6M85 -> false
+Negative ex. F2F17 -> false
+Negative ex. F3M43 -> false
+Negative ex. F9F141 -> false
+Negative ex. F2F36 -> false
+Negative ex. F9M142 -> false
+Negative ex. F3F49 -> false
+Reasoner accuracy for expr 1: 100.00% (48/48 correct)
+Expr 1 is VALID.
+--- Expr 2 ---
+LLM expr: Male and not (married some Thing) and not ({F6M92, F8M134})
+Reported accuracy: 95.83%
+Positive ex. F3M51 -> true
+Positive ex. F6M99 -> true
+Positive ex. F5M68 -> true
+Positive ex. F10M190 -> false
+Positive ex. F8M138 -> true
+Positive ex. F10M199 -> false
+Positive ex. F7M113 -> false
+Positive ex. F7M125 -> false
+Positive ex. F7M112 -> true
+Positive ex. F7M123 -> false
+Positive ex. F9M161 -> true
+Positive ex. F7M117 -> true
+Positive ex. F2M18 -> true
+Positive ex. F2M35 -> true
+Positive ex. F2M25 -> true
+Positive ex. F3M47 -> false
+Positive ex. F2M23 -> false
+Positive ex. F9M147 -> true
+Positive ex. F7M131 -> true
+Positive ex. F9M155 -> false
+Positive ex. F9M166 -> true
+Positive ex. F2M32 -> true
+Positive ex. F7M110 -> false
+Positive ex. F6M75 -> false
+Negative ex. F8M132 -> false
+Negative ex. F8M134 -> false
+Negative ex. F2F30 -> false
+Negative ex. F3F53 -> false
+Negative ex. F9F148 -> false
+Negative ex. F10M197 -> false
+Negative ex. F10M184 -> false
+Negative ex. F10F193 -> false
+Negative ex. F10F192 -> false
+Negative ex. F10F198 -> false
+Negative ex. F6F70 -> false
+Negative ex. F9M170 -> false
+Negative ex. F7M115 -> false
+Negative ex. F5F65 -> false
+Negative ex. F6M92 -> false
+Negative ex. F3M45 -> false
+Negative ex. F9M144 -> false
+Negative ex. F6M85 -> false
+Negative ex. F2F17 -> false
+Negative ex. F3M43 -> false
+Negative ex. F9F141 -> false
+Negative ex. F2F36 -> false
+Negative ex. F9M142 -> false
+Negative ex. F3F49 -> false
+Reasoner accuracy for expr 2: 79.17% (38/48 correct)
+Expr 2 is INVALID.
+--- Expr 3 ---
+LLM expr: Male and (hasParent some Thing) and not (hasChild some (Male))
+Reported accuracy: 91.67%
+Positive ex. F3M51 -> true
+Positive ex. F6M99 -> true
+Positive ex. F5M68 -> true
+Positive ex. F10M190 -> true
+Positive ex. F8M138 -> true
+Positive ex. F10M199 -> true
+Positive ex. F7M113 -> true
+Positive ex. F7M125 -> true
+Positive ex. F7M112 -> true
+Positive ex. F7M123 -> false
+Positive ex. F9M161 -> true
+Positive ex. F7M117 -> true
+Positive ex. F2M18 -> true
+Positive ex. F2M35 -> true
+Positive ex. F2M25 -> true
+Positive ex. F3M47 -> true
+Positive ex. F2M23 -> false
+Positive ex. F9M147 -> true
+Positive ex. F7M131 -> true
+Positive ex. F9M155 -> true
+Positive ex. F9M166 -> true
+Positive ex. F2M32 -> true
+Positive ex. F7M110 -> false
+Positive ex. F6M75 -> true
+Negative ex. F8M132 -> false
+Negative ex. F8M134 -> false
+Negative ex. F2F30 -> false
+Negative ex. F3F53 -> false
+Negative ex. F9F148 -> false
+Negative ex. F10M197 -> false
+Negative ex. F10M184 -> true
+Negative ex. F10F193 -> false
+Negative ex. F10F192 -> false
+Negative ex. F10F198 -> false
+Negative ex. F6F70 -> false
+Negative ex. F9M170 -> false
+Negative ex. F7M115 -> false
+Negative ex. F5F65 -> false
+Negative ex. F6M92 -> false
+Negative ex. F3M45 -> false
+Negative ex. F9M144 -> false
+Negative ex. F6M85 -> false
+Negative ex. F2F17 -> false
+Negative ex. F3M43 -> false
+Negative ex. F9F141 -> false
+Negative ex. F2F36 -> false
+Negative ex. F9M142 -> false
+Negative ex. F3F49 -> false
+Reasoner accuracy for expr 3: 91.67% (44/48 correct)
+Expr 3 is INVALID.
+--- Expr 4 ---
+LLM expr: Person and Male and not (married some Thing)
+Reported accuracy: 87.50%
+Positive ex. F3M51 -> true
+Positive ex. F6M99 -> true
+Positive ex. F5M68 -> true
+Positive ex. F10M190 -> false
+Positive ex. F8M138 -> true
+Positive ex. F10M199 -> false
+Positive ex. F7M113 -> false
+Positive ex. F7M125 -> false
+Positive ex. F7M112 -> true
+Positive ex. F7M123 -> false
+Positive ex. F9M161 -> true
+Positive ex. F7M117 -> true
+Positive ex. F2M18 -> true
+Positive ex. F2M35 -> true
+Positive ex. F2M25 -> true
+Positive ex. F3M47 -> false
+Positive ex. F2M23 -> false
+Positive ex. F9M147 -> true
+Positive ex. F7M131 -> true
+Positive ex. F9M155 -> false
+Positive ex. F9M166 -> true
+Positive ex. F2M32 -> true
+Positive ex. F7M110 -> false
+Positive ex. F6M75 -> false
+Negative ex. F8M132 -> false
+Negative ex. F8M134 -> false
+Negative ex. F2F30 -> false
+Negative ex. F3F53 -> false
+Negative ex. F9F148 -> false
+Negative ex. F10M197 -> false
+Negative ex. F10M184 -> false
+Negative ex. F10F193 -> false
+Negative ex. F10F192 -> false
+Negative ex. F10F198 -> false
+Negative ex. F6F70 -> false
+Negative ex. F9M170 -> false
+Negative ex. F7M115 -> false
+Negative ex. F5F65 -> false
+Negative ex. F6M92 -> false
+Negative ex. F3M45 -> false
+Negative ex. F9M144 -> false
+Negative ex. F6M85 -> false
+Negative ex. F2F17 -> false
+Negative ex. F3M43 -> false
+Negative ex. F9F141 -> false
+Negative ex. F2F36 -> false
+Negative ex. F9M142 -> false
+Negative ex. F3F49 -> false
+Reasoner accuracy for expr 4: 79.17% (38/48 correct)
+Expr 4 is INVALID.
+--- Expr 5 ---
+LLM expr: Male and (hasParent some Thing) and ((not (hasChild some Thing)) or (hasChild some Female))
+Reported accuracy: 89.58%
+Positive ex. F3M51 -> true
+Positive ex. F6M99 -> true
+Positive ex. F5M68 -> true
+Positive ex. F10M190 -> true
+Positive ex. F8M138 -> true
+Positive ex. F10M199 -> true
+Positive ex. F7M113 -> true
+Positive ex. F7M125 -> true
+Positive ex. F7M112 -> true
+Positive ex. F7M123 -> true
+Positive ex. F9M161 -> true
+Positive ex. F7M117 -> true
+Positive ex. F2M18 -> true
+Positive ex. F2M35 -> true
+Positive ex. F2M25 -> true
+Positive ex. F3M47 -> true
+Positive ex. F2M23 -> false
+Positive ex. F9M147 -> true
+Positive ex. F7M131 -> true
+Positive ex. F9M155 -> true
+Positive ex. F9M166 -> true
+Positive ex. F2M32 -> true
+Positive ex. F7M110 -> false
+Positive ex. F6M75 -> true
+Negative ex. F8M132 -> false
+Negative ex. F8M134 -> false
+Negative ex. F2F30 -> false
+Negative ex. F3F53 -> false
+Negative ex. F9F148 -> false
+Negative ex. F10M197 -> true
+Negative ex. F10M184 -> true
+Negative ex. F10F193 -> false
+Negative ex. F10F192 -> false
+Negative ex. F10F198 -> false
+Negative ex. F6F70 -> false
+Negative ex. F9M170 -> false
+Negative ex. F7M115 -> true
+Negative ex. F5F65 -> false
+Negative ex. F6M92 -> true
+Negative ex. F3M45 -> false
+Negative ex. F9M144 -> false
+Negative ex. F6M85 -> false
+Negative ex. F2F17 -> false
+Negative ex. F3M43 -> false
+Negative ex. F9F141 -> false
+Negative ex. F2F36 -> false
+Negative ex. F9M142 -> false
+Negative ex. F3F49 -> false
+Reasoner accuracy for expr 5: 87.50% (42/48 correct)
+Expr 5 is INVALID.
+=== Overall accuracy: 20.00%
+
+Processing time for o3-mini: 283.67 seconds

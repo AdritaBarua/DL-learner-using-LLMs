@@ -1,0 +1,124 @@
+✅ SUCCESS on attempt 1
+
+LLM output:
+1: hasChild some Thing (accuracy 100%, length 3, depth 1)
+2: Person and (hasChild some Thing) (accuracy 100%, length 4, depth 1)
+3: hasChild some Person (accuracy 100%, length 3, depth 1)
+4: Person and (hasChild some Person) (accuracy 100%, length 4, depth 1)
+5: hasChild min 1 Person (accuracy 100%, length 4, depth 1)
+
+Reasoner feedback:
+Reasoner: Pellet
+--- Expr 1 ---
+LLM expr: hasChild some Thing
+Reported accuracy: 100.00%
+Positive ex. Francesco -> true
+Positive ex. NonnaLina -> true
+Positive ex. Mauro -> true
+Positive ex. Carmela -> true
+Positive ex. Dino -> true
+Positive ex. Nella -> true
+Positive ex. Girolamo -> true
+Positive ex. Maria -> true
+Positive ex. Rosanna -> true
+Positive ex. NonnoLuigi -> true
+Negative ex. Valentina -> false
+Negative ex. Marisella -> false
+Negative ex. Ombretta -> false
+Negative ex. Luca -> false
+Negative ex. Giovanna -> false
+Negative ex. Luigi -> false
+Negative ex. Serena -> false
+Reasoner accuracy for expr 1: 100.00% (17/17 correct)
+Expr 1 is VALID.
+--- Expr 2 ---
+LLM expr: Person and (hasChild some Thing)
+Reported accuracy: 100.00%
+Positive ex. Francesco -> true
+Positive ex. NonnaLina -> true
+Positive ex. Mauro -> true
+Positive ex. Carmela -> true
+Positive ex. Dino -> true
+Positive ex. Nella -> true
+Positive ex. Girolamo -> true
+Positive ex. Maria -> true
+Positive ex. Rosanna -> true
+Positive ex. NonnoLuigi -> true
+Negative ex. Valentina -> false
+Negative ex. Marisella -> false
+Negative ex. Ombretta -> false
+Negative ex. Luca -> false
+Negative ex. Giovanna -> false
+Negative ex. Luigi -> false
+Negative ex. Serena -> false
+Reasoner accuracy for expr 2: 100.00% (17/17 correct)
+Expr 2 is VALID.
+--- Expr 3 ---
+LLM expr: hasChild some Person
+Reported accuracy: 100.00%
+Positive ex. Francesco -> true
+Positive ex. NonnaLina -> true
+Positive ex. Mauro -> true
+Positive ex. Carmela -> true
+Positive ex. Dino -> true
+Positive ex. Nella -> true
+Positive ex. Girolamo -> true
+Positive ex. Maria -> true
+Positive ex. Rosanna -> true
+Positive ex. NonnoLuigi -> true
+Negative ex. Valentina -> false
+Negative ex. Marisella -> false
+Negative ex. Ombretta -> false
+Negative ex. Luca -> false
+Negative ex. Giovanna -> false
+Negative ex. Luigi -> false
+Negative ex. Serena -> false
+Reasoner accuracy for expr 3: 100.00% (17/17 correct)
+Expr 3 is VALID.
+--- Expr 4 ---
+LLM expr: Person and (hasChild some Person)
+Reported accuracy: 100.00%
+Positive ex. Francesco -> true
+Positive ex. NonnaLina -> true
+Positive ex. Mauro -> true
+Positive ex. Carmela -> true
+Positive ex. Dino -> true
+Positive ex. Nella -> true
+Positive ex. Girolamo -> true
+Positive ex. Maria -> true
+Positive ex. Rosanna -> true
+Positive ex. NonnoLuigi -> true
+Negative ex. Valentina -> false
+Negative ex. Marisella -> false
+Negative ex. Ombretta -> false
+Negative ex. Luca -> false
+Negative ex. Giovanna -> false
+Negative ex. Luigi -> false
+Negative ex. Serena -> false
+Reasoner accuracy for expr 4: 100.00% (17/17 correct)
+Expr 4 is VALID.
+--- Expr 5 ---
+LLM expr: hasChild min 1 Person
+Reported accuracy: 100.00%
+Positive ex. Francesco -> true
+Positive ex. NonnaLina -> true
+Positive ex. Mauro -> true
+Positive ex. Carmela -> true
+Positive ex. Dino -> true
+Positive ex. Nella -> true
+Positive ex. Girolamo -> true
+Positive ex. Maria -> true
+Positive ex. Rosanna -> true
+Positive ex. NonnoLuigi -> true
+Negative ex. Valentina -> false
+Negative ex. Marisella -> false
+Negative ex. Ombretta -> false
+Negative ex. Luca -> false
+Negative ex. Giovanna -> false
+Negative ex. Luigi -> false
+Negative ex. Serena -> false
+Reasoner accuracy for expr 5: 100.00% (17/17 correct)
+Expr 5 is VALID.
+=== Overall accuracy: 100.00%
+
+Processing time for o3-mini: 49.97 seconds

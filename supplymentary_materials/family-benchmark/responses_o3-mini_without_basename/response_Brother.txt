@@ -1,0 +1,5 @@
+The answer is:
+
+ Male and (hasSibling some Thing)
+
+In other words, the individuals that are male and that have at least one sibling (i.e. there exists some value for the property hasSibling) are selected by the class expression.

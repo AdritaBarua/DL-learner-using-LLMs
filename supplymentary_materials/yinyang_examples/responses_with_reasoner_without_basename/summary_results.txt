@@ -1,0 +1,10 @@
+Total Successes: 6
+Total Failures:  3
+
+Details:
+response_Daughter.txt: ✅ success on attempt 1
+response_Father.txt: ✅ success on attempt 1
+response_Offspring.txt: ✅ success on attempt 3
+response_Parent.txt: ✅ success on attempt 1
+response_Sibling.txt: ✅ success on attempt 1
+response_Sister.txt: ✅ success on attempt 1

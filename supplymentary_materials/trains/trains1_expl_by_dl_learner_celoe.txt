@@ -1,0 +1,72 @@
+prefixes = [ ("kb","http://example.com/trains#") ]
+
+ks.type = "OWL File"
+ks.fileName = "trains2.owl"
+
+reasoner.type = "closed world reasoner"
+reasoner.sources = { ks }
+
+lp.type = "posNegStandard"
+lp.positiveExamples = {"kb:east1", "kb:east2", "kb:east3"}
+lp.negativeExamples = {"kb:west7", "kb:west9"}
+
+// Common properties: not Double Car, Jagged Car
+alg.type = "ocel"
+//alg.maxExecutionTimeInSeconds = 10
+
+DL-Learner command line interface
+Initializing component 'ks' of type OWL File ...
+... initialized component 'ks' in 1ms. Status: OK
+Initializing component 'reasoner' of type closed world reasoner ...
+Loaded reasoner: Pellet (com.clarkparsia.pellet.owlapiv3.PelletReasoner)
+Materializing TBox...
+materialising concepts
+
+[.....] 0%
+[.....] 7%
+[.....] 14%
+[=....] 21%
+[=....] 28%
+[=....] 35%
+[==...] 42%
+[==...] 50%
+[==...] 57%materialising object properties ...
+
+[===..] 64%
+[===..] 71%
+[===..] 78%
+[====.] 85%
+[====.] 92%materialising datatype properties
+...TBox materialised in 56 ms.
+... initialized component 'reasoner' in 435ms. Status: OK
+Initializing component 'lp' of type PosNegLPStandard ...
+... initialized component 'lp' in 1ms. Status: OK
+Initializing component 'alg' of type OWL Class Expression Learner ...
+... initialized component 'alg' in 49ms. Status: OK
+Running algorithm instance "alg" (OCEL)
+starting top down refinement with: Thing (60% accuracy)
+more accurate (100.00%) class expression found: hasCar some ClosedCar
+Maximum time (10 seconds) reached, stopping now...
+solutions (at most 20 are shown):
+1: hasCar some ClosedCar (accuracy 100%, length 3, depth 1)
+2: Train and (hasCar some ClosedCar) (accuracy 100%, length 5, depth 1)
+3: hasCar some (ClosedCar and ClosedCar) (accuracy 100%, length 5, depth 1)
+4: hasCar some (ClosedCar and ShortCar) (accuracy 100%, length 5, depth 1)
+5: (not (ClosedCar)) and (hasCar some ClosedCar) (accuracy 100%, length 6, depth 1)
+6: (not (DoubleCar)) and (hasCar some ClosedCar) (accuracy 100%, length 6, depth 1)
+7: (not (JaggedCar)) and (hasCar some ClosedCar) (accuracy 100%, length 6, depth 1)
+8: (not (LongCar)) and (hasCar some ClosedCar) (accuracy 100%, length 6, depth 1)
+9: (not (OpenCar)) and (hasCar some ClosedCar) (accuracy 100%, length 6, depth 1)
+10: (not (Shape)) and (hasCar some ClosedCar) (accuracy 100%, length 6, depth 1)
+11: (not (ShortCar)) and (hasCar some ClosedCar) (accuracy 100%, length 6, depth 1)
+12: (hasCar some ClosedCar) and (hasCar some Thing) (accuracy 100%, length 7, depth 1)
+13: hasCar some (ClosedCar and (not (DoubleCar))) (accuracy 100%, length 6, depth 1)
+14: hasCar some (ClosedCar and (not (JaggedCar))) (accuracy 100%, length 6, depth 1)
+15: hasCar some (ClosedCar and (not (LongCar))) (accuracy 100%, length 6, depth 1)
+16: hasCar some (ClosedCar and (not (OpenCar))) (accuracy 100%, length 6, depth 1)
+17: hasCar some (ClosedCar and (hasShape some Thing)) (accuracy 100%, length 7, depth 2)
+18: hasCar some (ClosedCar and (load some Thing)) (accuracy 100%, length 7, depth 2)
+19: hasCar some (ClosedCar and (loadCount some Thing)) (accuracy 100%, length 7, depth 2)
+20: hasCar some (ClosedCar and (wheels some Thing)) (accuracy 100%, length 7, depth 2)
+Algorithm stopped (50900 descriptions tested).
+

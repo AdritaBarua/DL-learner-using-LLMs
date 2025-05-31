@@ -1,0 +1,15 @@
+Below is one acceptable answer. In our KB the three positive examples—
+
+ • kb:NonnoLuigi  
+ • kb:Isidoro  
+ • kb:Gianni
+
+—all have the same distinguishing feature: each is a male who has at least one child who in turn is a parent (that is, who has a child). In contrast, none of the negative examples has this two‐generation property. (Note that although the question’s header says “GrandMother,” the given positive examples are all male; thus the intended learned concept is that of a grandfather.) 
+
+Using Manchester OWL syntax we can capture this by writing:
+  kb:Male and (kb:hasChild some (kb:hasChild some kb:Person))
+
+This complex class expression says “an individual is (a) male and (b) has at least one child who in turn has at least one child (of type Person).”
+
+Thus one acceptable answer is:
+  kb:Male and (kb:hasChild some (kb:hasChild some kb:Person))
