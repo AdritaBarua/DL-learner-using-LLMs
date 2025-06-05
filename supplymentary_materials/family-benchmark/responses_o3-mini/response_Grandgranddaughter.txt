@@ -1,9 +1,0 @@
-One acceptable answer was to require that a “grandgranddaughter” is a female that has a three‐generation chain via the hasParent role. In other words, the individual must be female and have a parent, whose parent in turn has a parent. (Notice that a “granddaughter” would have only a two‐generation chain, so by requiring three “hasParent” steps we are “going one generation further” than a granddaughter.)
-
-In DL–syntax one acceptable answer was:
-
-  Female ⊓ (∃hasParent.(∃hasParent.(∃hasParent.Person)))
-
-That is, in words: “A grandgranddaughter is a Female who has some parent, who in turn has some parent, who in turn has some parent (a Person).”
-
-Any answer equivalent to the above expression is correct.

@@ -1,5 +1,0 @@
-One acceptable answer was to capture the “daughter” role – that is, exactly those individuals that are known to be female and who are known to be someone’s child. (In our ontology “child‐hood” is recorded by having a hasParent–relation.) In other words, the DL‐learner–style complex class expression that covers the positives (which are all female “daughters”) while excluding the negatives (which are either male or adults never known as a child) is:
-
-  Female and (hasParent some Person)
-
-That is, an individual is in the desired class if and only if it is a Female and it has at least one parent (some Person). This expression correctly covers, for example, ex:F1F5, ex:F2F17, ex:F10F175, etc.–all of which appear (directly or via an inverse “hasChild” assertion) as being someone's child—while excluding, for instance, ex:F10F189, ex:F7F114, ex:F6F70, and the male individuals in the negative list that have no such hasParent assertion.

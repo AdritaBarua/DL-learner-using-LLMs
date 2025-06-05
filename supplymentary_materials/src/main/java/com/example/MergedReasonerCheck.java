@@ -28,7 +28,7 @@ import java.util.regex.Pattern;
 
 /**
  * Main entry point: wraps DL‑Learner’s ClosedWorldReasoner (relocated into com.example.dllearner)
- * with a simple command‑line driver exactly as before.
+ * with a simple command‑line driver.
  */
 public class MergedReasonerCheck {
 
@@ -219,7 +219,7 @@ public class MergedReasonerCheck {
                 idx = Integer.toString(++counter);
             }
 
-            // 4) extract accuracy/F‑measure from metrics (unchanged) …
+            // 4) extract accuracy/F‑measure from metrics 
             boolean hasAcc = false, hasF = false;
             double rAcc = 0, fMeas = 0;
             if (!metrics.isEmpty()) {
@@ -246,7 +246,6 @@ public class MergedReasonerCheck {
 
 
             // inject prefix block + preprocess
-            // **no angle brackets**, just bare Manchester syntax
             parser.setStringToParse(raw);
             OWLClassExpression cls = parser.parseClassExpression();
 

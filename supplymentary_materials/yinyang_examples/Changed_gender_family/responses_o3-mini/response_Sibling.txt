@@ -1,7 +1,0 @@
-Based on the given ontology, note that every positive example (kb:Luigi, kb:Maria, kb:Dino, kb:Serena, kb:Ombretta, kb:Francesco, kb:Anna) appears in at least one assertion of the property hasSibling (for example, kb:Luigi is stated as having a sibling kb:Ombretta or kb:Serena, kb:Maria appears with a sibling kb:Rosanna, kb:Dino appears with a sibling kb:Nella, etc.), whereas the negatives (kb:Dora, kb:Gianni, kb:Luca) do not occur as subjects in any hasSibling relationship. (Recall that hasSibling’s range is already Person.) 
-
-Thus a class expression that covers the positives and excludes the negatives is one saying “an individual is a Person and has at least one sibling” – which in Manchester syntax is written as:
-
-  Person and (hasSibling some Person)
-
-This is the complex class expression for Sibling based on the given examples.

@@ -1,7 +1,0 @@
-We can notice that every individual in the positive set (kb:Luigi, kb:Maria, kb:Dino, kb:Serena, kb:Ombretta, kb:Luca) is asserted to be the child of someone—that is, each one has at least one kb:hasParent relation. In contrast, the two negatives (kb:Dora and kb:Gianni) appear only as parents (for example, kb:Dora has children kb:Rosanna and kb:Maria, and kb:Gianni has child kb:Maria) but are not known to be children themselves. 
-
-Thus, a distinguishing feature for “Offspring” is that an individual must be a Person and have at least one parent (i.e. be in the range of kb:hasParent).
-
-In Manchester syntax the complex class expression for Offspring can be written as:
-
-  Person and (hasParent some Person)

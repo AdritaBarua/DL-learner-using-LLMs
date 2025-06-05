@@ -1,9 +1,0 @@
-All of the positive examples are annotated with at least one sibling (via the hasSibling property), while none of the negatives have any hasSibling relationship. (Recall that hasSibling’s range is Person.) Therefore one complex class expression that covers all the positives but not the negatives is:
-
-  hasSibling some Person
-
-In Manchester syntax one may also write this as:
-
-  Person and (hasSibling some Person)
-
-Since every individual is a Person anyway, the essence of the classifier is that the individual must have a sibling.
