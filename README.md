@@ -8,7 +8,7 @@ This repository contains supplementary materials and scripts used for evaluating
 
 #### `LLM_gen_DL-learner_with_resoner.ipynb`
 This notebook demonstrates:
-- How to use LLMs (e.g., GPT-4, o3-mini) to generate DL class expressions.
+- Prompting LLMs (e.g., GPT-4, o3-mini) to generate DL class expressions.
 - Construction of prompts with positive/negative examples and background knowledge.
 - Automatic validation using a Java-based OWL reasoner.
 - Logging of results including correctness and average processing time.
