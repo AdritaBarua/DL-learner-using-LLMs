@@ -1,4 +1,4 @@
-# LLM-Driven DL-Learner Framework with Ontology Reasoning
+# LLM-Driven DL-Learner Framework
 
 This repository contains supplementary materials and scripts used for evaluating Concept Induction in Description Logic(DL) class expressions through Large Language Models (LLMs).
 
