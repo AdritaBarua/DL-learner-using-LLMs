@@ -60,7 +60,7 @@ EOF
 ## 📁 Dataset
 
 The repository also contains folders such as `yinyang_examples` with:
-- Different ontology configurations for the basic_family.owl ontology(default, changed gender, changed relations).
+- Different ontology configurations for the basicFamily.owl ontology(default, changed gender, changed relations).
 - Positive/negative example sets.
 - DL-Learner outputs.
 - Reasoner validation outputs from different LLMs.
