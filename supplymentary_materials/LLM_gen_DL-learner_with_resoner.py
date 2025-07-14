@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[143]:
-
-
 #gpt-4o family
 import os
 import subprocess
@@ -13,7 +7,7 @@ import time
 from openai import OpenAI
 
 # Initialize OpenAI client
-client = OpenAI(api_key="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")
+client = OpenAI(api_key="your api key")
 
 log_file = "debug_log.txt"
 if os.path.isdir(log_file):
@@ -202,10 +196,6 @@ if __name__ == "__main__":
         kb_file,
         kb_file_text
     )
-
-
-# In[6]:
-
 
 #gpt-4o family benchmark
 import os
