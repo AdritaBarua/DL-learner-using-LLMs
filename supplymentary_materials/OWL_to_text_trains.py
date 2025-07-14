@@ -3,7 +3,7 @@ from rdflib import Graph, Namespace, RDF, RDFS, OWL, URIRef, BNode
 
 # Load the OWL ontology file
 g = Graph()
-g.parse("/Users/adrita/Downloads/test_DL_learner/trains/trains2.owl", format="xml")  # Change format if necessary (e.g., "turtle", "nt")
+g.parse("trains/trains2.owl", format="xml")  # Change format if necessary (e.g., "turtle", "nt")
 
 # Define common namespaces (update based on your ontology)
 EX = Namespace("http://example.com/trains#")  # Modify this to match your ontology's namespace
