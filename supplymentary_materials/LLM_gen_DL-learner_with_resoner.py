@@ -198,7 +198,7 @@ Don't give me any description just the shortest complex class expressions(upto f
 if __name__ == "__main__":
     positive_folder   = "yinyang_examples/positive"
     negative_folder   = "yinyang_examples/negative"
-    output_folder     = "yinyang_examples/responses_with_reasoner_without_basename"
+    output_folder     = "yinyang_examples/responses_with_reasoner_gpt4o_without_basename"
     kb_file           = "yinyang_examples/basicFamily.owl"
     kb_file_text      = "yinyang_examples/KB_family.txt"
 
