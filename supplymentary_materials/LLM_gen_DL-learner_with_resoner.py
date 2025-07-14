@@ -1,0 +1,213 @@
+#gpt-4o basic_family(without basename)
+import os
+import subprocess
+import openai
+import time
+
+from openai import OpenAI
+
+# Initialize OpenAI client
+client = OpenAI(api_key="your api key")
+
+log_file = "debug_log.txt"
+if os.path.isdir(log_file):
+    os.rmdir(log_file)
+
+def log_message(message: str):
+    with open(log_file, "a", encoding="utf‑8") as f:
+        f.write(message + "\n")
+    print(message)
+
+def read_text_file(path: str) -> str:
+    with open(path, "r", encoding="utf‑8") as f:
+        return f.read().strip()
+
+'''
+#o3-mini
+def ask_question(prompt: str) -> str:
+    start_time = time.time()  # Record start time
+    resp = client.chat.completions.create(
+        model="o3-mini",
+        reasoning_effort="high",
+        messages=[
+            {"role": "system", "content": "You are a helpful Description Logic learner."},
+            {"role": "user",   "content": prompt}
+        ],
+        store=True,
+    )
+'''
+#gpt-4o
+def ask_question(prompt: str) -> str:
+    start_time = time.time()  # Record start time
+    resp = client.chat.completions.create(
+        model="gpt-4o",
+        messages=[
+            {"role": "system", "content": "You are a helpful Description Logic learner."},
+            {"role": "user",   "content": prompt}
+        ],
+        temperature=0,
+        top_p=1
+    )
+    end_time = time.time()  # Record end time
+    processing_time = end_time - start_time  # Calculate processing time
+    text = resp.choices[0].message.content.strip()
+    log_message(f"\nLLM ➤ {text}")
+    # Print the processing time
+    print(f"Processing time for gpt-4o: {processing_time:.2f} seconds")  
+    return text, processing_time
+
+
+def closed_world_reasoner(
+    llm_block: str,
+    kb_file: str,
+    base_iri: str,
+    pos_list: str,
+    neg_list: str
+):
+    """
+    Calls your GenericReasonerCheck jar-with-dependencies using Pellet.
+    - llm_block: the full multiline LLM output (lines “1: …” through “5: …”)
+    - pos_list, neg_list: comma-separated names
+    Returns (valid: bool, feedback: str).
+    """
+    cmd = [
+        "java", "-jar",
+        "target/merged-reasoner-check-1.0-SNAPSHOT.jar",
+        kb_file,
+        base_iri,
+        "-",            # read the LLM block from stdin
+        pos_list,
+        neg_list
+    ]
+    log_message(f"\n▶ Running Pellet: {' '.join(cmd)}")
+    proc = subprocess.run(
+        cmd,
+        input=llm_block,
+        capture_output=True,
+        text=True
+    )
+    out = proc.stdout.strip()
+    err = proc.stderr.strip()
+    if out:
+        log_message(f"Pellet stdout ➤\n{out}")
+    if err:
+        log_message(f"Pellet stderr ➤\n{err}")
+
+    #valid = (proc.returncode == 0)
+    #feedback = out if out else err
+    valid = (proc.returncode == 0)
+     # always include both streams
+    feedback_parts = []
+    if out:
+        feedback_parts.append(out)
+    if err:
+        feedback_parts.append(err)
+    feedback = "\n".join(feedback_parts)
+
+    return valid, feedback
+
+def process_files(positive_folder, negative_folder, output_folder, kb_file, kb_file_text):
+    kb_text = read_text_file(kb_file_text)
+
+    for fname in sorted(os.listdir(positive_folder)):
+        if not fname.startswith("positive_") or not fname.endswith(".txt"):
+            continue
+        base = fname[len("positive_"):-4]
+        pos_path = os.path.join(positive_folder, fname)
+        neg_path = os.path.join(negative_folder, f"negative_{base}.txt")
+        if not os.path.exists(neg_path):
+            continue
+
+        # Read and clean up names for Java
+        pos_names = [ln.replace("kb:", "").strip()
+                     for ln in read_text_file(pos_path).splitlines() if ln.strip()]
+        neg_names = [ln.replace("kb:", "").strip()
+                     for ln in read_text_file(neg_path).splitlines() if ln.strip()]
+        pos_arg = ",".join(pos_names)
+        neg_arg = ",".join(neg_names)
+
+        print(f"\n=== Processing batch: {base} ===")
+        base_iri = input("Enter your base IRI (e.g. http://example.org/onto#): ").strip()
+        if not (base_iri.endswith("#") or base_iri.endswith("/")):
+            base_iri += "#"
+
+        attempts = 0
+        max_attempts = 3
+        valid = False
+        feedback = ""
+        llm_block = ""
+        processing_time = 0.0
+
+        while attempts < max_attempts and not valid:
+            prompt = f"""
+Take the given ontology as the knowledge base: {kb_text}.
+
+Use this knowledge base to extract complex class expressions for the given positive and negative examples. A complex class expression is an OWL class expression that consists of the classes and properties that apply to the positive examples but not to the negative examples.
+Use Manchester syntax for the complex class expressions. 
+For example:
+If the positive examples are:
+(Dino, Luigi, Mauro, Francesco, Giuseppe)
+
+And the negative examples are:
+(Antonella, Giovanna, Maria, Marisella, Milly, Nella, NonnaLina, Ombretta, Rosanna, Serena, Valentina, Luca)
+
+Then the complex class expression generated by DL-Learner is(first 5 are shown):
+1: Male and (hasSibling some Thing) (accuracy 100%, length 5, depth 1)
+2: Male and ((not (Male)) or (hasSibling some Thing)) (accuracy 100%, length 8, depth 1)
+3: Male and ((hasChild some Thing) or (hasSibling some Thing)) (accuracy 100%, length 9, depth 1)
+4: Male and ((hasSibling some Thing) or (hasSibling some Thing)) (accuracy 100%, length 9, depth 1)
+5: Male and ((hasSibling some Thing) or (hasParent max 1 Thing)) (accuracy 100%, length 10, depth 1)
+
+All the class expressions are generated using the Closed World Assumption of the knowledge base.
+
+Now, perform a logical reasoning based on the knowledge base to find the shortest complex class expressions for the following examples:
+
+Positive examples: {pos_arg}
+Negative examples: {neg_arg}
+{feedback} 
+Don't give me any description just the shortest complex class expressions(upto first 5) and follow the example format:
+"""
+            #Generate the complex class expression for {base}.
+            llm_block, processing_time = ask_question(prompt)
+            valid, reason = closed_world_reasoner(
+                llm_block, kb_file, base_iri, pos_arg, neg_arg
+            )
+            log_message(f"Validation result ➤ valid={valid}, feedback:\n{reason}")
+            if not valid:
+                feedback = f"Previous attempt:\n{llm_block}\nReasoner output:\n{reason}\nPlease refine based on the Reasoner feedback."
+                log_message(f"Reasoner feedback:\n{feedback}")
+            attempts += 1
+
+        # Save final LLM block + reasoner output
+        out_path = os.path.join(output_folder, f"response_{base}.txt")
+        with open(out_path, "w", encoding="utf-8") as f:
+            if valid:
+                f.write("✅ SUCCESS on attempt {}\n\n".format(attempts))
+                f.write("LLM output:\n" + llm_block + "\n\n")
+                f.write("Reasoner feedback:\n" + reason + "\n")
+                f.write(f"\nProcessing time for gpt-4o: {processing_time:.2f} seconds\n")  # Save the processing time in the output file
+            else:
+                f.write("❌ All {} attempts were invalid.\n\n".format(max_attempts))
+                f.write("Last LLM output:\n" + llm_block + "\n\n")
+                f.write("Last reasoner feedback:\n" + reason + "\n")
+                f.write(f"\nProcessing time for gpt-4o: {processing_time:.2f} seconds\n")  # Save the processing time in the output file
+        log_message(f"\n✔ Saved final batch to {out_path}\n")
+
+        
+        
+if __name__ == "__main__":
+    positive_folder   = "yinyang_examples/positive"
+    negative_folder   = "yinyang_examples/negative"
+    output_folder     = "yinyang_examples/responses_with_reasoner_without_basename"
+    kb_file           = "yinyang_examples/basicFamily.owl"
+    kb_file_text      = "yinyang_examples/KB_family.txt"
+
+    os.makedirs(output_folder, exist_ok=True)
+    process_files(
+        positive_folder,
+        negative_folder,
+        output_folder,
+        kb_file,
+        kb_file_text
+    )
+
