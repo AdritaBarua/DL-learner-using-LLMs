@@ -20,7 +20,9 @@ This utility notebook:
 
 #### Install dependencies
 
+```
 pip install -r requirements.txt
+```
 
 ## ⚙️ Java OWL Reasoner
 
