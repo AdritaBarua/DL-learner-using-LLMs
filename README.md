@@ -18,6 +18,10 @@ This utility notebook:
 - Converts OWL ontologies into human-readable natural language text.
 - Is useful for prompt creation or manual inspection of ontology axioms.
 
+#### Install dependencies
+
+pip install -r requirements.txt
+
 ## ⚙️ Java OWL Reasoner
 
 To validate generated class expressions with a symbolic reasoner, compile and invoke the following Java class:
